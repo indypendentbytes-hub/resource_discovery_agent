@@ -1,0 +1,128 @@
+{
+  "source_id": "SRC-172",
+  "official_name": "BusinessApp.io",
+  "submitted_url": "https://businessapp.io/",
+  "canonical_url": "https://businessapp.io/",
+  "organization": "BusinessApp.io",
+  "jurisdiction": "Online",
+  "service_geographies": [
+    "Online"
+  ],
+  "authority_class": "Commercial provider primary source",
+  "source_format": "Freemium software platform and product documentation",
+  "resource_category": "Markets, Business & Economic Intelligence",
+  "primary_categories": [
+    "website_analytics",
+    "advertising_monitoring",
+    "social_media_analytics",
+    "digital_presence_management"
+  ],
+  "resource_types": [
+    "free_business_resource",
+    "analytics_tool",
+    "commercial_freemium_tool"
+  ],
+  "inclusion_basis": [
+    "business_enabling_infrastructure"
+  ],
+  "audiences": {
+    "business_stages": [
+      "exploring",
+      "startup",
+      "pre_revenue",
+      "early_revenue"
+    ],
+    "user_types": [
+      "aspiring_entrepreneur",
+      "small_business",
+      "nonprofit",
+      "independent_operator"
+    ],
+    "goals": [
+      "measure_online_visibility",
+      "monitor_marketing_activity",
+      "track_website_traffic",
+      "track_social_impressions",
+      "establish_baseline_metrics"
+    ]
+  },
+  "cost": {
+    "model": "free_basic_tier",
+    "verification_required": true,
+    "paid_upgrade_available": true,
+    "details": "Free basic analytics tier with optional paid upgrades; verify current plan terms and connected-product requirements."
+  },
+  "capability_tags": [
+    "website traffic monitoring",
+    "advertising activity monitoring",
+    "social media impressions",
+    "digital presence performance",
+    "consolidated analytics dashboard",
+    "baseline marketing metrics"
+  ],
+  "core_user_value": "Give budget-constrained businesses a consolidated view of online visibility and basic marketing performance.",
+  "recommendation_triggers": [
+    "How can I see whether people are finding my business?",
+    "Is there a free way to track my website and social performance?",
+    "How do I monitor traffic without buying expensive software?",
+    "How can I establish baseline marketing metrics?",
+    "Which of my online channels are getting attention?"
+  ],
+  "setup_requirements": [
+    "Business website URL",
+    "Access to social accounts",
+    "Access to advertising accounts where applicable",
+    "Defined reporting period",
+    "Current baseline numbers if available",
+    "One or two visibility or lead-generation goals"
+  ],
+  "useful_kpis": [
+    "Website visits",
+    "Traffic trend over time",
+    "Social impressions",
+    "Advertising activity",
+    "Channel-level visibility",
+    "Month-over-month growth",
+    "Traffic spikes after campaigns",
+    "Impressions-to-inquiry conversion when lead data is available"
+  ],
+  "metric_boundaries": {
+    "visibility": [
+      "Traffic",
+      "Reach",
+      "Impressions"
+    ],
+    "engagement": [
+      "Clicks",
+      "Comments",
+      "Saves",
+      "Time on site"
+    ],
+    "conversion": [
+      "Inquiries",
+      "Appointments",
+      "Purchases",
+      "Revenue"
+    ]
+  },
+  "eligibility": [],
+  "exclusions": [
+    "The free tier primarily establishes visibility; additional tools or manual tracking may be needed to connect visibility to customers and revenue.",
+    "Available metrics depend on connected products, accounts, platform permissions, and plan.",
+    "This is not a funding opportunity or a public-data source."
+  ],
+  "engagement_route": "Review current plan terms at https://businessapp.io/ and connect only the accounts the user is authorized to manage.",
+  "status": "verification_required",
+  "last_verified": "2026-07-24",
+  "refresh_trigger": "Verify plan, price, included analytics, account connections, and data availability before every recommendation.",
+  "citation_rule": "Cite the official BusinessApp.io page and the exact product documentation supporting each metric claim.",
+  "known_failure_modes": [
+    "Treating impressions as engagement, customers, or revenue.",
+    "Assuming every analytics module is included in the free tier.",
+    "Omitting free standalone alternatives such as native platform analytics or Google Search Console."
+  ],
+  "escalation_requirements": [
+    "Escalate account-access, privacy, advertising-attribution, and financial-return claims to the appropriate account owner or specialist."
+  ],
+  "live_verification_required": true
+}

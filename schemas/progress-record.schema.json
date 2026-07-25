@@ -1,0 +1,123 @@
+{
+  "$defs": {
+    "GoalType": {
+      "enum": [
+        "clarify_direction",
+        "start_a_business",
+        "find_funding",
+        "validate_an_idea",
+        "access_data",
+        "improve_operations",
+        "find_customers",
+        "hire_workers",
+        "obtain_certification",
+        "buy_a_business",
+        "sell_a_business",
+        "acquire_property",
+        "purchase_equipment",
+        "enter_government_contracting",
+        "expand_into_new_markets",
+        "measure_online_visibility",
+        "monitor_marketing_activity",
+        "track_website_traffic",
+        "track_social_impressions",
+        "establish_baseline_metrics"
+      ],
+      "title": "GoalType",
+      "type": "string"
+    },
+    "ProgressState": {
+      "enum": [
+        "planned",
+        "in_progress",
+        "blocked",
+        "completed"
+      ],
+      "title": "ProgressState",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "actions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Actions",
+      "type": "array"
+    },
+    "blockers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Blockers",
+      "type": "array"
+    },
+    "completion_kpi": {
+      "title": "Completion Kpi",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "goal": {
+      "$ref": "#/$defs/GoalType"
+    },
+    "next_stage": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Next Stage"
+    },
+    "preparation": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Preparation",
+      "type": "array"
+    },
+    "recommendation_source_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Recommendation Source Ids",
+      "type": "array"
+    },
+    "record_id": {
+      "title": "Record Id",
+      "type": "string"
+    },
+    "state": {
+      "$ref": "#/$defs/ProgressState"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "user_id": {
+      "title": "User Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "record_id",
+    "user_id",
+    "goal",
+    "state",
+    "completion_kpi",
+    "updated_at"
+  ],
+  "title": "ProgressRecord",
+  "type": "object"
+}

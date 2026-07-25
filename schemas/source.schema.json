@@ -1,0 +1,458 @@
+{
+  "$defs": {
+    "AudienceClassification": {
+      "additionalProperties": false,
+      "properties": {
+        "business_stages": {
+          "items": {
+            "$ref": "#/$defs/BusinessStage"
+          },
+          "title": "Business Stages",
+          "type": "array"
+        },
+        "goals": {
+          "items": {
+            "$ref": "#/$defs/GoalType"
+          },
+          "title": "Goals",
+          "type": "array"
+        },
+        "user_types": {
+          "items": {
+            "$ref": "#/$defs/UserType"
+          },
+          "title": "User Types",
+          "type": "array"
+        }
+      },
+      "title": "AudienceClassification",
+      "type": "object"
+    },
+    "BusinessStage": {
+      "enum": [
+        "exploring",
+        "startup",
+        "pre_revenue",
+        "early_revenue",
+        "established",
+        "growth",
+        "acquisition",
+        "succession",
+        "exit"
+      ],
+      "title": "BusinessStage",
+      "type": "string"
+    },
+    "CostClassification": {
+      "additionalProperties": false,
+      "properties": {
+        "checked_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Checked At"
+        },
+        "details": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Details"
+        },
+        "model": {
+          "$ref": "#/$defs/CostModel"
+        },
+        "paid_upgrade_available": {
+          "default": false,
+          "title": "Paid Upgrade Available",
+          "type": "boolean"
+        },
+        "verification_required": {
+          "default": true,
+          "title": "Verification Required",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "model"
+      ],
+      "title": "CostClassification",
+      "type": "object"
+    },
+    "CostModel": {
+      "enum": [
+        "free",
+        "free_basic_tier",
+        "free_with_eligibility",
+        "subsidized",
+        "freemium",
+        "paid",
+        "success_fee",
+        "unknown"
+      ],
+      "title": "CostModel",
+      "type": "string"
+    },
+    "GoalType": {
+      "enum": [
+        "clarify_direction",
+        "start_a_business",
+        "find_funding",
+        "validate_an_idea",
+        "access_data",
+        "improve_operations",
+        "find_customers",
+        "hire_workers",
+        "obtain_certification",
+        "buy_a_business",
+        "sell_a_business",
+        "acquire_property",
+        "purchase_equipment",
+        "enter_government_contracting",
+        "expand_into_new_markets",
+        "measure_online_visibility",
+        "monitor_marketing_activity",
+        "track_website_traffic",
+        "track_social_impressions",
+        "establish_baseline_metrics"
+      ],
+      "title": "GoalType",
+      "type": "string"
+    },
+    "InclusionBasis": {
+      "enum": [
+        "direct_assistance",
+        "funding_or_financial_access",
+        "useful_public_information",
+        "business_enabling_infrastructure",
+        "opportunity_access"
+      ],
+      "title": "InclusionBasis",
+      "type": "string"
+    },
+    "MetricBoundaries": {
+      "additionalProperties": false,
+      "properties": {
+        "conversion": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Conversion",
+          "type": "array"
+        },
+        "engagement": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Engagement",
+          "type": "array"
+        },
+        "visibility": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Visibility",
+          "type": "array"
+        }
+      },
+      "title": "MetricBoundaries",
+      "type": "object"
+    },
+    "ResourceType": {
+      "enum": [
+        "free_public_resource",
+        "free_business_resource",
+        "public_dataset",
+        "funding_opportunity",
+        "technical_assistance_program",
+        "training_program",
+        "mentorship_program",
+        "business_service",
+        "commercial_tool",
+        "analytics_tool",
+        "commercial_freemium_tool",
+        "government_program",
+        "nonprofit_program",
+        "university_program",
+        "accelerator_or_incubator",
+        "procurement_opportunity",
+        "facility_or_equipment_resource",
+        "legal_or_regulatory_resource",
+        "research_or_market_intelligence",
+        "community_support_resource"
+      ],
+      "title": "ResourceType",
+      "type": "string"
+    },
+    "SourceStatus": {
+      "enum": [
+        "active",
+        "closed",
+        "archived",
+        "quarantined",
+        "unverified",
+        "verification_required"
+      ],
+      "title": "SourceStatus",
+      "type": "string"
+    },
+    "UserType": {
+      "enum": [
+        "aspiring_entrepreneur",
+        "business_owner",
+        "nonprofit",
+        "freelancer",
+        "worker",
+        "student",
+        "researcher",
+        "investor",
+        "community_organization",
+        "grower",
+        "food_business",
+        "employer",
+        "small_business",
+        "independent_operator"
+      ],
+      "title": "UserType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "audiences": {
+      "$ref": "#/$defs/AudienceClassification"
+    },
+    "authority_class": {
+      "minLength": 1,
+      "title": "Authority Class",
+      "type": "string"
+    },
+    "canonical_url": {
+      "minLength": 1,
+      "title": "Canonical Url",
+      "type": "string"
+    },
+    "capability_tags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Capability Tags",
+      "type": "array"
+    },
+    "citation_rule": {
+      "minLength": 1,
+      "title": "Citation Rule",
+      "type": "string"
+    },
+    "core_user_value": {
+      "minLength": 1,
+      "title": "Core User Value",
+      "type": "string"
+    },
+    "cost": {
+      "$ref": "#/$defs/CostClassification"
+    },
+    "eligibility": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Eligibility",
+      "type": "array"
+    },
+    "engagement_route": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Engagement Route"
+    },
+    "escalation_requirements": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Escalation Requirements",
+      "type": "array"
+    },
+    "exclusions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Exclusions",
+      "type": "array"
+    },
+    "inclusion_basis": {
+      "items": {
+        "$ref": "#/$defs/InclusionBasis"
+      },
+      "minItems": 1,
+      "title": "Inclusion Basis",
+      "type": "array"
+    },
+    "jurisdiction": {
+      "minLength": 1,
+      "title": "Jurisdiction",
+      "type": "string"
+    },
+    "known_failure_modes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Known Failure Modes",
+      "type": "array"
+    },
+    "last_verified": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Last Verified"
+    },
+    "live_verification_required": {
+      "default": false,
+      "title": "Live Verification Required",
+      "type": "boolean"
+    },
+    "metric_boundaries": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/MetricBoundaries"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "official_name": {
+      "minLength": 1,
+      "title": "Official Name",
+      "type": "string"
+    },
+    "organization": {
+      "minLength": 1,
+      "title": "Organization",
+      "type": "string"
+    },
+    "primary_categories": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Primary Categories",
+      "type": "array"
+    },
+    "recommendation_triggers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Recommendation Triggers",
+      "type": "array"
+    },
+    "refresh_trigger": {
+      "minLength": 1,
+      "title": "Refresh Trigger",
+      "type": "string"
+    },
+    "resource_category": {
+      "minLength": 1,
+      "title": "Resource Category",
+      "type": "string"
+    },
+    "resource_types": {
+      "items": {
+        "$ref": "#/$defs/ResourceType"
+      },
+      "minItems": 1,
+      "title": "Resource Types",
+      "type": "array"
+    },
+    "service_geographies": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Service Geographies",
+      "type": "array"
+    },
+    "setup_requirements": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Setup Requirements",
+      "type": "array"
+    },
+    "source_format": {
+      "minLength": 1,
+      "title": "Source Format",
+      "type": "string"
+    },
+    "source_id": {
+      "pattern": "^SRC-\\d{3,}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/SourceStatus"
+    },
+    "submitted_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Submitted Url"
+    },
+    "useful_kpis": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Useful Kpis",
+      "type": "array"
+    }
+  },
+  "required": [
+    "source_id",
+    "official_name",
+    "canonical_url",
+    "organization",
+    "jurisdiction",
+    "authority_class",
+    "source_format",
+    "resource_category",
+    "resource_types",
+    "inclusion_basis",
+    "audiences",
+    "cost",
+    "core_user_value",
+    "status",
+    "refresh_trigger",
+    "citation_rule"
+  ],
+  "title": "SourceRecord",
+  "type": "object"
+}

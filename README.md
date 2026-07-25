@@ -1,5 +1,10 @@
 # resource_discovery_agent
 
+> **Governing scope:** This is a general-purpose opportunity and support
+> navigation system for any user seeking resources, public information,
+> funding, training, services, infrastructure, or opportunity access. The
+> grower network is one supported pathway, not the governing audience.
+
 ## Purpose
 
 The Resource Discovery Agent helps people identify, compare, prepare for, and successfully engage with programs and organizations that can support business ownership.
@@ -21,6 +26,11 @@ The agent should help a user understand:
 - what the next logical resource or stage should be.
 
 The primary outcome is not resource discovery alone. The primary outcome is successful, informed progress toward business ownership.
+
+When a user is unsure what to pursue, the agent first helps them compare a small
+set of possible goals, test a direction with a low-risk first step, and define a
+measurable success signal. Resource matching begins after the direction is clear
+enough to act on.
 
 ## Problem
 
@@ -409,3 +419,17 @@ The first MVP is complete when it can:
 INDYpendent Bytes owns the agent architecture, decision logic, governed knowledge structures, proprietary partnership knowledge, and internal operating rules.
 
 Public sources remain attributable to their original publishers. Source ingestion must preserve provenance, usage limitations, verification dates, and citation requirements.
+
+## Developer Quick Start
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python -m pip install -e ".[dev]"
+.\.venv\Scripts\resource-agent-export-schemas --check
+.\.venv\Scripts\resource-agent-validate-catalog
+.\.venv\Scripts\pytest
+```
+
+The core is provider-neutral. It prioritizes free, directly eligible resources
+while allowing an explainable exception when a paid resource is materially
+better, necessary, or time-sensitive. See `docs/architecture.md`.

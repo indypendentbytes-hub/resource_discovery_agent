@@ -1,0 +1,571 @@
+{
+  "$defs": {
+    "BusinessStage": {
+      "enum": [
+        "exploring",
+        "startup",
+        "pre_revenue",
+        "early_revenue",
+        "established",
+        "growth",
+        "acquisition",
+        "succession",
+        "exit"
+      ],
+      "title": "BusinessStage",
+      "type": "string"
+    },
+    "CandidateMatch": {
+      "additionalProperties": false,
+      "properties": {
+        "constraints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Constraints",
+          "type": "array"
+        },
+        "disqualifiers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Disqualifiers",
+          "type": "array"
+        },
+        "positive_factors": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Positive Factors",
+          "type": "array"
+        },
+        "rank": {
+          "minimum": 1,
+          "title": "Rank",
+          "type": "integer"
+        },
+        "score": {
+          "title": "Score",
+          "type": "number"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "uncertainties": {
+          "items": {
+            "$ref": "#/$defs/Uncertainty"
+          },
+          "title": "Uncertainties",
+          "type": "array"
+        },
+        "verification": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VerificationResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "source_id",
+        "rank",
+        "score"
+      ],
+      "title": "CandidateMatch",
+      "type": "object"
+    },
+    "Citation": {
+      "additionalProperties": false,
+      "properties": {
+        "accessed_at": {
+          "format": "date-time",
+          "title": "Accessed At",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "supports": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Supports",
+          "type": "array"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "title",
+        "url",
+        "accessed_at"
+      ],
+      "title": "Citation",
+      "type": "object"
+    },
+    "EscalationDecision": {
+      "additionalProperties": false,
+      "properties": {
+        "destination": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Destination"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        },
+        "urgent": {
+          "default": false,
+          "title": "Urgent",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "required"
+      ],
+      "title": "EscalationDecision",
+      "type": "object"
+    },
+    "GoalType": {
+      "enum": [
+        "clarify_direction",
+        "start_a_business",
+        "find_funding",
+        "validate_an_idea",
+        "access_data",
+        "improve_operations",
+        "find_customers",
+        "hire_workers",
+        "obtain_certification",
+        "buy_a_business",
+        "sell_a_business",
+        "acquire_property",
+        "purchase_equipment",
+        "enter_government_contracting",
+        "expand_into_new_markets",
+        "measure_online_visibility",
+        "monitor_marketing_activity",
+        "track_website_traffic",
+        "track_social_impressions",
+        "establish_baseline_metrics"
+      ],
+      "title": "GoalType",
+      "type": "string"
+    },
+    "Uncertainty": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "minLength": 1,
+          "title": "Field",
+          "type": "string"
+        },
+        "material_to_ranking": {
+          "default": true,
+          "title": "Material To Ranking",
+          "type": "boolean"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "verification_question": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verification Question"
+        }
+      },
+      "required": [
+        "field",
+        "reason"
+      ],
+      "title": "Uncertainty",
+      "type": "object"
+    },
+    "UserProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "accessibility_constraints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Accessibility Constraints",
+          "type": "array"
+        },
+        "active_applications": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Active Applications",
+          "type": "array"
+        },
+        "available_time": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Available Time"
+        },
+        "blockers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Blockers",
+          "type": "array"
+        },
+        "budget": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Budget"
+        },
+        "business_stage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BusinessStage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "business_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Business Type"
+        },
+        "completed_resources": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Completed Resources",
+          "type": "array"
+        },
+        "documentation_ready": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Documentation Ready",
+          "type": "array"
+        },
+        "experience": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Experience",
+          "type": "array"
+        },
+        "goals": {
+          "items": {
+            "$ref": "#/$defs/GoalType"
+          },
+          "title": "Goals",
+          "type": "array"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "next_check_in": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Next Check In"
+        },
+        "outcomes_achieved": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Outcomes Achieved",
+          "type": "array"
+        },
+        "preferred_formats": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Preferred Formats",
+          "type": "array"
+        },
+        "target_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Date"
+        },
+        "user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "User Id"
+        },
+        "user_type": {
+          "$ref": "#/$defs/UserType"
+        }
+      },
+      "required": [
+        "user_type"
+      ],
+      "title": "UserProfile",
+      "type": "object"
+    },
+    "UserType": {
+      "enum": [
+        "aspiring_entrepreneur",
+        "business_owner",
+        "nonprofit",
+        "freelancer",
+        "worker",
+        "student",
+        "researcher",
+        "investor",
+        "community_organization",
+        "grower",
+        "food_business",
+        "employer",
+        "small_business",
+        "independent_operator"
+      ],
+      "title": "UserType",
+      "type": "string"
+    },
+    "VerificationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "checked_at": {
+          "format": "date-time",
+          "title": "Checked At",
+          "type": "string"
+        },
+        "citations": {
+          "items": {
+            "$ref": "#/$defs/Citation"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "state": {
+          "$ref": "#/$defs/VerificationState"
+        },
+        "unresolved": {
+          "items": {
+            "$ref": "#/$defs/Uncertainty"
+          },
+          "title": "Unresolved",
+          "type": "array"
+        },
+        "verified_fields": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Verified Fields",
+          "type": "object"
+        }
+      },
+      "required": [
+        "source_id",
+        "state",
+        "checked_at"
+      ],
+      "title": "VerificationResult",
+      "type": "object"
+    },
+    "VerificationState": {
+      "enum": [
+        "verified",
+        "partially_verified",
+        "not_verified",
+        "failed"
+      ],
+      "title": "VerificationState",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "citations": {
+      "items": {
+        "$ref": "#/$defs/Citation"
+      },
+      "title": "Citations",
+      "type": "array"
+    },
+    "comparison": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Comparison",
+      "type": "array"
+    },
+    "completion_kpi": {
+      "title": "Completion Kpi",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "escalation": {
+      "$ref": "#/$defs/EscalationDecision"
+    },
+    "expected_timeline": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Expected Timeline"
+    },
+    "goal": {
+      "$ref": "#/$defs/GoalType"
+    },
+    "next_step": {
+      "title": "Next Step",
+      "type": "string"
+    },
+    "preparation_checklist": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Preparation Checklist",
+      "type": "array"
+    },
+    "profile": {
+      "$ref": "#/$defs/UserProfile"
+    },
+    "questions_to_ask": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Questions To Ask",
+      "type": "array"
+    },
+    "recommendations": {
+      "items": {
+        "$ref": "#/$defs/CandidateMatch"
+      },
+      "minItems": 1,
+      "title": "Recommendations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "profile",
+    "goal",
+    "recommendations",
+    "completion_kpi",
+    "next_step",
+    "escalation",
+    "created_at"
+  ],
+  "title": "RecommendationBundle",
+  "type": "object"
+}

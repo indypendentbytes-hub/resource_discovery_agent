@@ -1,0 +1,80 @@
+resource_types:
+  - free_public_resource
+  - free_business_resource
+  - public_dataset
+  - funding_opportunity
+  - technical_assistance_program
+  - training_program
+  - mentorship_program
+  - business_service
+  - commercial_tool
+  - analytics_tool
+  - commercial_freemium_tool
+  - government_program
+  - nonprofit_program
+  - university_program
+  - accelerator_or_incubator
+  - procurement_opportunity
+  - facility_or_equipment_resource
+  - legal_or_regulatory_resource
+  - research_or_market_intelligence
+  - community_support_resource
+
+cost_models:
+  - free
+  - free_basic_tier
+  - free_with_eligibility
+  - subsidized
+  - freemium
+  - paid
+  - success_fee
+  - unknown
+
+business_stages:
+  - exploring
+  - startup
+  - pre_revenue
+  - early_revenue
+  - established
+  - growth
+  - acquisition
+  - succession
+  - exit
+
+user_types:
+  - aspiring_entrepreneur
+  - business_owner
+  - nonprofit
+  - freelancer
+  - worker
+  - student
+  - researcher
+  - investor
+  - community_organization
+  - grower
+  - food_business
+  - employer
+  - small_business
+  - independent_operator
+
+goals:
+  - clarify_direction
+  - start_a_business
+  - find_funding
+  - validate_an_idea
+  - access_data
+  - improve_operations
+  - find_customers
+  - hire_workers
+  - obtain_certification
+  - buy_a_business
+  - sell_a_business
+  - acquire_property
+  - purchase_equipment
+  - enter_government_contracting
+  - expand_into_new_markets
+  - measure_online_visibility
+  - monitor_marketing_activity
+  - track_website_traffic
+  - track_social_impressions
+  - establish_baseline_metrics

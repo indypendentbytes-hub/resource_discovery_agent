@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "resource-discovery-agent"
+version = "0.1.0"
+description = "Governed, explainable navigation of resources, data, funding, and support."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Proprietary" }
+authors = [{ name = "INDYpendent Bytes" }]
+dependencies = ["openpyxl>=3.1,<4", "pydantic>=2.9,<3"]
+
+[project.optional-dependencies]
+dev = [
+  "jsonschema>=4.23,<5",
+  "mypy>=1.13,<2",
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+  "ruff>=0.8,<1",
+]
+
+[project.scripts]
+resource-agent-export-schemas = "resource_discovery_agent.tools.export_schemas:main"
+resource-agent-validate-catalog = "resource_discovery_agent.tools.validate_catalog:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/resource_discovery_agent"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["resource_discovery_agent"]
+mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = ["openpyxl", "openpyxl.*"]
+ignore_missing_imports = true

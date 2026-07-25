@@ -1,0 +1,45 @@
+{
+  "imported_at": "2026-07-24T23:45:33.6327508Z",
+  "owner": "INDYpendent Bytes",
+  "artifacts": [
+    {
+      "filename": "IB_User_Resource_Agent_Knowledge_Source_Catalog_v3.xlsx",
+      "logical_origin": "external://IB User Resource Agent/IB_User_Resource_Agent_Knowledge_Source_Catalog_v3.xlsx",
+      "catalog_version": "v3",
+      "sha256": "2167788b6716dc707036375ca5249a97a07a8a8b7cc969c7b08601851beab838",
+      "reported_source_count": 171
+    },
+    {
+      "filename": "IB_User_Resource_Agent_Guide.pdf",
+      "logical_origin": "external://IB User Resource Agent/IB_User_Resource_Agent_Guide.pdf",
+      "catalog_version": "2026-07-22",
+      "sha256": "857db2ab2d62de3713b95fb5fbfeee16339d5132da1359ec592ee1113a3b47a0",
+      "reported_source_count": 191
+    }
+  ],
+  "curated_additions": [
+    {
+      "source_id": "SRC-172",
+      "filename": "curated-additions/businessapp-io.json",
+      "classification_source": "User-provided correction with official product-page and documentation review",
+      "reviewed_at": "2026-07-24",
+      "status": "verification_required"
+    }
+  ],
+  "known_discrepancies": [
+    {
+      "code": "guide_catalog_count_mismatch",
+      "status": "review_required"
+    },
+    {
+      "code": "invalid_canonical_url",
+      "status": "review_required",
+      "affected_records": 3
+    },
+    {
+      "code": "unknown_category",
+      "status": "review_required",
+      "affected_records": 2
+    }
+  ]
+}
