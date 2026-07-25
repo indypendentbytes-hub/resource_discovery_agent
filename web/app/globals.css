@@ -27,27 +27,27 @@
 }
 
 :root {
-  --background: #f4f1e8;
-  --foreground: #182b2a;
-  --card: #fffdf7;
-  --card-foreground: #182b2a;
-  --primary: #0d6861;
-  --primary-foreground: #fffdf7;
-  --secondary: #e2e8dc;
-  --secondary-foreground: #203b38;
-  --muted: #e9e5da;
-  --muted-foreground: #5c6b67;
-  --accent: #d9a441;
-  --accent-foreground: #182b2a;
-  --border: #d4d2c7;
-  --input: #c9ccc2;
-  --ring: #0d6861;
-  --destructive: #9b3b35;
-  --destructive-foreground: #fffdf7;
+  --background: #f3e9dd;
+  --foreground: #1a2633;
+  --card: #fff7e8;
+  --card-foreground: #1a2633;
+  --primary: #00780f;
+  --primary-foreground: #fff7e8;
+  --secondary: #fff7e8;
+  --secondary-foreground: #1a2633;
+  --muted: #fff7e8;
+  --muted-foreground: #4a4f57;
+  --accent: #c65a1e;
+  --accent-foreground: #fff7e8;
+  --border: #4a4f57;
+  --input: #4a4f57;
+  --ring: #00780f;
+  --destructive: #c65a1e;
+  --destructive-foreground: #fff7e8;
   --radius: 0.75rem;
 }
 
-* { border-color: var(--border); }
+* { border-color: color-mix(in srgb, var(--border) 28%, transparent); }
 html { scroll-behavior: smooth; }
 body { min-height: 100vh; background: var(--background); color: var(--foreground); }
 button, a, textarea { outline-offset: 3px; }
