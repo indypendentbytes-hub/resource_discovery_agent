@@ -1,0 +1,25 @@
+{
+  "name": "resource-discovery-agent",
+  "version": "1.0.0",
+  "description": "Resource Discovery Agent - A guided decision-support system for business ownership programs",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "echo 'Build step placeholder'",
+    "lint": "echo 'Linting placeholder'"
+  },
+  "keywords": [
+    "resource-discovery",
+    "business-support",
+    "cloudflare-workers"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.1.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
