@@ -1,8 +1,9 @@
 {
   "batch_id": "resource-discovery-2026-07-30-local-01",
   "discovered_at": "2026-07-30T23:09:00Z",
+  "promoted_at": "2026-07-30T23:17:00Z",
   "scope": "New Indianapolis, Marion County, Central Indiana, and Indiana resources not present in the 2026-07-30 seed catalog",
-  "promotion_status": "PROPOSED_FOR_CANONICAL_CATALOG",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
   "records": [
     {
       "resource_id": "ican-assistance-center",
