@@ -1,7 +1,7 @@
 # Minimal wrangler.toml for resource_discovery_agent
 # Replace placeholders below with your Cloudflare account values and adjust `main` to point to your Worker entry file.
 
-name = "resource_discovery_agent"
+name = "resource-discovery-agent"
 compatibility_date = "2026-07-30"
 # set to "javascript" or "webpack" depending on your setup; use "rust" for Rust workers
 type = "javascript"
