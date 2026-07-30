@@ -1,0 +1,23 @@
+# Minimal wrangler.toml for resource_discovery_agent
+# Replace placeholders below with your Cloudflare account values and adjust `main` to point to your Worker entry file.
+
+name = "resource_discovery_agent"
+compatibility_date = "2026-07-30"
+# set to "javascript" or "webpack" depending on your setup; use "rust" for Rust workers
+type = "javascript"
+
+# Path to your worker entry (adjust if your code lives elsewhere)
+# If you use a module worker and your entry is at src/index.js, keep as-is; otherwise change.
+main = "src/index.js"
+
+# Replace with your Cloudflare Account ID or set via env / Cloudflare dashboard
+account_id = "<YOUR_CF_ACCOUNT_ID>"
+
+# When deploying to workers.dev during testing, set to true. For production routes, set workers_dev = false and configure routes in the dashboard.
+workers_dev = true
+
+# If you build static assets, uncomment and set the folder your build produces (e.g., ./public or ./dist).
+# [site]
+# bucket = "./public"
+
+# If you use Wrangler v2+ with an entry-point package or build step, you may need a build script in package.json that produces the `main` file above.
