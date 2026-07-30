@@ -1,0 +1,30 @@
+{
+  "geography": "Indianapolis",
+  "default_thresholds": {
+    "minimum_total": 3,
+    "minimum_verified": 2,
+    "minimum_local": 1
+  },
+  "categories": [
+    {"name": "emergency funding", "priority": "CRITICAL", "minimum_total": 3},
+    {"name": "food access", "priority": "CRITICAL", "minimum_total": 5},
+    {"name": "business funding", "priority": "HIGH", "minimum_total": 5},
+    {"name": "technical assistance", "priority": "HIGH", "minimum_total": 4},
+    {"name": "business planning", "priority": "HIGH", "minimum_total": 3},
+    {"name": "workforce development", "priority": "HIGH", "minimum_total": 4},
+    {"name": "training", "priority": "HIGH", "minimum_total": 4},
+    {"name": "land access", "priority": "HIGH", "minimum_total": 3},
+    {"name": "transportation", "priority": "HIGH", "minimum_total": 3},
+    {"name": "housing support", "priority": "CRITICAL", "minimum_total": 4},
+    {"name": "legal assistance", "priority": "HIGH", "minimum_total": 3},
+    {"name": "childcare", "priority": "HIGH", "minimum_total": 3},
+    {"name": "healthcare", "priority": "CRITICAL", "minimum_total": 4},
+    {"name": "reentry support", "priority": "HIGH", "minimum_total": 4},
+    {"name": "veteran services", "priority": "HIGH", "minimum_total": 3},
+    {"name": "procurement", "priority": "HIGH", "minimum_total": 3},
+    {"name": "market access", "priority": "HIGH", "minimum_total": 3},
+    {"name": "agriculture", "priority": "HIGH", "minimum_total": 4},
+    {"name": "small business", "priority": "HIGH", "minimum_total": 5},
+    {"name": "nonprofit support", "priority": "NORMAL", "minimum_total": 3}
+  ]
+}
