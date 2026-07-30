@@ -1,22 +1,41 @@
 <!-- IB Tailwind surface reference patterns -->
 
-<!-- Dark-aware sticker card -->
-<div class="bg-white dark:bg-[#1E1E1E] text-text-primaryLight dark:text-text-primaryDark rounded-xl border-2 border-ib-denim shadow-sticker p-5 relative">
+<!-- Grower sticker card -->
+<div class="relative bg-white dark:bg-[#1E1E1E] text-text-primaryLight dark:text-text-primaryDark rounded-xl border-2 border-ib-denim shadow-sticker p-5 mb-4">
   <div class="absolute inset-0 bg-soil opacity-15 mix-blend-multiply pointer-events-none"></div>
-  <!-- content -->
+
+  <div class="relative z-10">
+    <h3 class="font-bold mb-1">Grower: Example Farm</h3>
+    <p class="opacity-90">2 acres • mixed veg • organic-leaning</p>
+  </div>
 </div>
 
 <!-- Cream soil panel -->
-<div class="relative bg-ib-cream text-text-onCreamLight dark:text-text-onCreamDark rounded-xl p-5">
+<div class="relative bg-ib-cream text-text-onCreamLight dark:text-text-onCreamDark rounded-xl p-5 mt-4">
   <div class="absolute inset-0 bg-soil opacity-15 mix-blend-multiply pointer-events-none"></div>
-  <!-- content -->
+  <div class="relative z-10">
+    <!-- content -->
+  </div>
 </div>
 
-<!-- Denim grain divider -->
-<div class="h-10 bg-ib-denim text-text-onDenimLight dark:text-text-onDenimDark mask-[url(#grain)]"></div>
+<!-- Denim divider -->
+<div class="h-10 bg-ib-denim text-text-onDenimLight dark:text-text-onDenimDark"></div>
 
 <!-- Green soil surface -->
-<div class="relative bg-greenSoil text-text-onGreenLight dark:text-text-onGreenDark">
+<div class="relative bg-greenSoil text-text-onGreenLight dark:text-text-onGreenDark p-6 rounded-xl">
   <div class="absolute inset-0 bg-soil opacity-15 mix-blend-multiply pointer-events-none"></div>
-  <!-- content -->
+  <div class="relative z-10">
+    <!-- content -->
+  </div>
 </div>
+
+<!-- Header sticker -->
+<div class="bg-ib-linen dark:bg-[#3A3A3A] text-text-primaryLight dark:text-text-primaryDark p-3 rounded-md border-l-4 border-ib-green font-bold tracking-wide relative">
+  <div class="absolute w-6 h-6 bottom-0 right-0 bg-ib-border dark:bg-[#555] shadow-md rotate-3 rounded-br-md"></div>
+  <span class="relative z-10">Resource Discovery</span>
+</div>
+
+<!-- Action button -->
+<button class="px-4 py-2 rounded-full border-2 border-ib-denim bg-white dark:bg-[#1E1E1E] text-text-primaryLight dark:text-text-primaryDark shadow-sm hover:shadow-lg hover:-translate-y-1 transition">
+  View
+</button>
