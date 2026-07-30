@@ -1,0 +1,196 @@
+:root {
+  --ib-text-primary-light: #1A1A1A;
+  --ib-text-secondary-light: #333333;
+  --ib-text-on-denim-light: #F3E9DD;
+  --ib-text-on-green-light: #FFFFFF;
+  --ib-text-on-cream-light: #1A1A1A;
+  --ib-text-primary-dark: #F3F3F3;
+  --ib-text-secondary-dark: #DADADA;
+  --ib-text-on-denim-dark: #FFFFFF;
+  --ib-text-on-green-dark: #FFFFFF;
+  --ib-text-on-cream-dark: #1A1A1A;
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  background: #F6F2EA;
+  color: var(--ib-text-primary-light);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #F4F7F1 0%, #F6F2EA 100%);
+}
+
+body,
+.preview,
+.card-sticker,
+.panel-soil,
+.header-sticker,
+.surface-green-soil {
+  color: var(--ib-text-primary-light);
+}
+
+.page-shell {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.hero {
+  max-width: 780px;
+  margin-bottom: 36px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #005588;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  display: block !important;
+  margin: 0;
+  font-size: clamp(2.6rem, 8vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: var(--ib-text-primary-light);
+}
+
+.lede {
+  margin: 24px 0 0;
+  max-width: 700px;
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  line-height: 1.55;
+  color: var(--ib-text-secondary-light);
+}
+
+.preview {
+  position: relative;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-radius: 14px;
+  padding: 20px;
+  border: 2px solid rgba(0, 85, 136, 0.25);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.12), 0 6px 12px rgba(0,0,0,0.08);
+  font-family: system-ui, sans-serif;
+  line-height: 1.45;
+}
+
+.preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23grain)'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4,
+.preview .preview-label,
+.preview .preview-title,
+.preview .preview-heading,
+.preview .preview-state,
+.preview .preview-tag {
+  display: none !important;
+}
+
+.preview::before,
+.preview *::before {
+  content: none !important;
+}
+
+.preview .state-description {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid #D4CFC6;
+  position: relative;
+  z-index: 1;
+}
+
+.preview .state-description:last-child { margin-bottom: 0; }
+
+.preview .state-description:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+}
+
+.preview .state-empty { border-left: 4px solid #005588; }
+.preview .state-loading { border-left: 4px solid #00780F; }
+.preview .state-stale { border-left: 4px solid #C65A1E; }
+.preview .state-closed { border-left: 4px solid #4A4F57; }
+.preview .state-escalation { border-left: 4px solid #B3261E; }
+.preview .state-verified { border-left: 4px solid #689F38; }
+
+.bg-denim,
+.divider-denim,
+.platform-architecture,
+.state-empty {
+  background: #005588;
+  color: var(--ib-text-on-denim-light);
+}
+
+.surface-green-soil {
+  color: var(--ib-text-on-green-light);
+}
+
+.panel-soil {
+  color: var(--ib-text-on-cream-light);
+}
+
+.card-sticker {
+  background: #FFFFFF;
+  color: var(--ib-text-primary-light);
+}
+
+.header-sticker {
+  background: #F3E9DD;
+  color: #1A1A1A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; }
+
+  body,
+  .preview,
+  .card-sticker,
+  .panel-soil,
+  .header-sticker,
+  .surface-green-soil {
+    color: var(--ib-text-primary-dark);
+  }
+
+  .bg-denim,
+  .divider-denim,
+  .platform-architecture,
+  .state-empty {
+    color: var(--ib-text-on-denim-dark);
+  }
+
+  .surface-green-soil { color: var(--ib-text-on-green-dark); }
+  .panel-soil { color: var(--ib-text-on-cream-dark); }
+
+  .card-sticker {
+    background: #1E1E1E;
+    color: var(--ib-text-primary-dark);
+  }
+
+  .header-sticker {
+    background: #3A3A3A;
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-shell { padding: 44px 0; }
+}
