@@ -1,0 +1,15 @@
+{
+  "catalog_version": "2026-07-30.2",
+  "verified_at": "2026-07-30T23:17:00Z",
+  "scope": "Indianapolis, Marion County, Central Indiana, and Indiana resources",
+  "record_count": 37,
+  "sources": [
+    "resource-catalog.seed.json",
+    "resource-discovery-batch-2026-07-30.json"
+  ],
+  "rules": {
+    "require_unique_resource_ids": true,
+    "include_only_promoted_batches": true,
+    "preserve_availability_notes": true
+  }
+}
