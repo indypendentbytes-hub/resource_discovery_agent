@@ -1,10 +1,12 @@
-export default function StickerCard({ children, className = "" }) {
+export default function StickerCard({ children }) {
   return (
-    <section
-      className={`relative overflow-hidden rounded-xl border-2 border-ib-denim bg-white p-5 text-text-primaryLight shadow-sticker dark:bg-[#1E1E1E] dark:text-text-primaryDark ${className}`}
-    >
-      <div className="pointer-events-none absolute inset-0 bg-soil opacity-15 mix-blend-multiply" />
-      <div className="relative z-10">{children}</div>
-    </section>
+    <div className="
+      relative bg-white dark:bg-[#1E1E1E]
+      text-text-primaryLight dark:text-text-primaryDark
+      rounded-xl border-2 border-ib-denim shadow-sticker p-5
+    ">
+      <div className="absolute inset-0 bg-soil opacity-15 mix-blend-multiply pointer-events-none"></div>
+      {children}
+    </div>
   );
 }
