@@ -158,6 +158,14 @@ body,
   color: #1A1A1A;
 }
 
+.surface-green-soil *,
+.panel-soil *,
+.card-sticker *,
+.header-sticker *,
+.divider-denim * {
+  color: inherit !important;
+}
+
 @media (prefers-color-scheme: dark) {
   :root { color-scheme: dark; }
 
