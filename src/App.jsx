@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DiscoveryAgentLayout from "./components/layout/DiscoveryAgentLayout";
 import { routeResources } from "./agent/routingEngine";
+import { searchResources } from "./services/resourceSearch";
 
 const initialMessages = [
   {
@@ -74,26 +75,66 @@ export default function App() {
   const [messages, setMessages] = useState(initialMessages);
   const [resources, setResources] = useState([]);
   const [routingState, setRoutingState] = useState("empty");
-  const [routingSummary, setRoutingSummary] = useState("No matches yet. Start with one goal or constraint.");
+  const [routingSummary, setRoutingSummary] = useState(
+    "No matches yet. Start with one goal or constraint.",
+  );
+  const [isSearching, setIsSearching] = useState(false);
 
-  function handleSend(text) {
+  async function handleSend(text) {
     const cleanText = text.trim();
-    if (!cleanText) return;
+    if (!cleanText || isSearching) return;
 
-    const result = routeResources(cleanText, resourceGraph);
-    setResources(result.recommendations);
-    setRoutingState(result.state);
-    setRoutingSummary(result.summary);
-
-    const assistantText = result.question
-      ? `${result.summary} ${result.question}`
-      : result.summary;
+    const localResult = routeResources(cleanText, resourceGraph);
+    setResources(localResult.recommendations);
+    setRoutingState("loading");
+    setRoutingSummary(
+      "Checking governed matches, official program sources, eligibility, availability, and freshness.",
+    );
+    setIsSearching(true);
 
     setMessages((current) => [
       ...current,
       { sender: "user", text: cleanText },
-      { sender: "assistant", text: assistantText },
+      {
+        sender: "assistant",
+        text: "I found the initial catalog matches. I’m verifying current program details and authoritative sources now.",
+      },
     ]);
+
+    try {
+      const liveResult = await searchResources({
+        query: cleanText,
+        routingSummary: localResult.summary,
+        candidates: localResult.recommendations,
+      });
+
+      setRoutingState(localResult.state === "empty" ? "verified" : localResult.state);
+      setRoutingSummary(
+        `Live verification completed ${new Date(liveResult.checkedAt).toLocaleString()}.`,
+      );
+      setMessages((current) => [
+        ...current.slice(0, -1),
+        { sender: "assistant", text: liveResult.answer },
+      ]);
+    } catch (error) {
+      const fallbackText = localResult.question
+        ? `${localResult.summary} ${localResult.question}`
+        : localResult.summary;
+
+      setRoutingState(localResult.state);
+      setRoutingSummary(
+        "Local routing completed, but live verification is currently unavailable.",
+      );
+      setMessages((current) => [
+        ...current.slice(0, -1),
+        {
+          sender: "assistant",
+          text: `${fallbackText}\n\nLive verification notice: ${error.message}`,
+        },
+      ]);
+    } finally {
+      setIsSearching(false);
+    }
   }
 
   function handleResourceSelect(resource) {
@@ -123,6 +164,7 @@ export default function App() {
           routingSummary={routingSummary}
           onSend={handleSend}
           onResourceSelect={handleResourceSelect}
+          isSearching={isSearching}
         />
       </div>
     </main>
