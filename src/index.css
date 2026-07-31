@@ -3,8 +3,14 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  color: #1A1A1A;
+  font-family: "Work Sans", Arial, ui-sans-serif, system-ui, sans-serif;
+  color: #000000;
+  background: #F3E9DD;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
   background: #F3E9DD;
 }
 
@@ -12,6 +18,175 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background: #F3E9DD;
+  color: #000000;
+}
+
+main,
+header,
+section,
+footer {
+  color: #000000 !important;
+}
+
+main {
+  background: #F3E9DD !important;
+}
+
+header {
+  background: #005588 !important;
+  border-color: #D4CFC6 !important;
+}
+
+header a {
+  color: #F3E9DD !important;
+}
+
+h1,
+h2,
+h3,
+.font-black {
+  font-family: "BioRhyme", Georgia, serif;
+  letter-spacing: -0.025em;
+}
+
+#top h1 {
+  max-width: 760px;
+  font-size: clamp(2.75rem, 6vw, 4.75rem) !important;
+  line-height: 1.03 !important;
+}
+
+#resource-agent h2 {
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem) !important;
+  line-height: 1.08 !important;
+}
+
+#how-it-works,
+#resource-agent {
+  background: #FFFFFF !important;
+}
+
+#pathways {
+  background: #F3E9DD !important;
+}
+
+article,
+aside,
+#resource-agent > div > div {
+  border-radius: 4px !important;
+}
+
+button,
+a[class*="rounded-full"] {
+  border-radius: 6px !important;
+}
+
+input,
+textarea {
+  border-radius: 4px !important;
+  background: #F9F4CB !important;
+  color: #000000 !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #C65A1E !important;
+  outline-offset: 3px;
+}
+
+.bg-ib-denim {
+  background-color: #005588 !important;
+}
+
+.text-ib-denim {
+  color: #005588 !important;
+}
+
+.border-ib-denim {
+  border-color: #005588 !important;
+}
+
+#top a:first-of-type,
+#pathways article a {
+  background: #00780F !important;
+  color: #FFFFFF !important;
+}
+
+#top aside,
+#pathways article {
+  background: #F3E9DD !important;
+  border: 1px solid #D4CFC6 !important;
+  box-shadow: none !important;
+}
+
+#resource-agent > div > p:first-child,
+#how-it-works > div > p,
+#pathways > div > p {
+  color: #00780F !important;
+}
+
+#resource-agent .shadow-sm,
+#resource-agent [class*="shadow-"] {
+  box-shadow: none !important;
+}
+
+#resource-agent [class*="rounded-3xl"],
+#resource-agent [class*="rounded-2xl"] {
+  border-radius: 4px !important;
+}
+
+#resource-agent [class*="bg-white"] {
+  background: #FFFFFF !important;
+}
+
+#resource-agent [class*="border-black"] {
+  border-color: #D4CFC6 !important;
+}
+
+footer {
+  background: #005588 !important;
+  border-color: #D4CFC6 !important;
+}
+
+footer,
+footer a,
+footer p {
+  color: #F3E9DD !important;
+}
+
+@media (max-width: 900px) {
+  header nav {
+    gap: 1rem !important;
+  }
+
+  #top {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body,
+  main {
+    background: #F3E9DD !important;
+    color: #000000 !important;
+  }
+
+  section,
+  article,
+  aside,
+  div,
+  p,
+  h1,
+  h2,
+  h3,
+  label {
+    color: inherit;
+  }
 }
 
 button,
