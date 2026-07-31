@@ -1,10 +1,12 @@
 import { useState } from "react";
 import DiscoveryAgentLayout from "./components/layout/DiscoveryAgentLayout";
+import RecognitionCard from "./components/RecognitionCard";
 import { routeResources } from "./agent/routingEngine";
 import { searchResources } from "./services/resourceSearch";
 
 const CULTIVATOR_INTAKE_URL = "https://form.jotform.com/261957669272069";
 const LAND_HOST_INTAKE_URL = "https://form.jotform.com/261957830963066";
+const FACEBOOK_URL = "https://www.facebook.com/indypendentbytes/";
 const LINKEDIN_URL = "https://www.linkedin.com/company/indypendent-bytes/";
 const INSTAGRAM_URL = "https://www.instagram.com/indypendent.bytes/";
 
@@ -193,6 +195,7 @@ export default function App() {
             <a href="#how-it-works" className="hover:underline">How it works</a>
             <a href="#pathways" className="hover:underline">Get involved</a>
             <a href="#resource-agent" className="hover:underline">Find resources</a>
+            <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" className="hover:underline">Facebook</a>
             <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
             <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:underline">Instagram</a>
           </nav>
@@ -299,6 +302,8 @@ export default function App() {
         </div>
       </section>
 
+      <RecognitionCard />
+
       <section id="resource-agent" className="border-t border-black/10 px-4 py-16 dark:border-white/10 md:py-20">
         <div className="mx-auto max-w-6xl">
           <p className="mb-2 font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">
@@ -330,6 +335,7 @@ export default function App() {
             <a href={CULTIVATOR_INTAKE_URL} target="_blank" rel="noreferrer" className="hover:underline">Cultivator intake</a>
             <a href={LAND_HOST_INTAKE_URL} target="_blank" rel="noreferrer" className="hover:underline">Land host intake</a>
             <a href="#resource-agent" className="hover:underline">Resource Discovery Agent</a>
+            <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" className="hover:underline">Facebook</a>
             <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
             <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:underline">Instagram</a>
           </div>
