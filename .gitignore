@@ -3,3 +3,6 @@
 .env.local
 .DS_Store
 node_modules
+Cloudflare API token/
+.cloudflared/
+cfut_*.txt
