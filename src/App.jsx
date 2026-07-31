@@ -185,8 +185,8 @@ export default function App() {
   }
 
   return (
-    <main className="min-h-screen bg-ib-linen text-text-primaryLight dark:bg-[#121212] dark:text-text-primaryDark">
-      <header className="border-b border-black/10 bg-ib-linen/95 px-4 py-4 backdrop-blur dark:border-white/10 dark:bg-[#121212]/95">
+    <main className="min-h-screen bg-ib-linen text-text-primaryLight">
+      <header className="border-b border-black/10 bg-ib-linen/95 px-4 py-4 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
           <a href="#top" className="font-black tracking-tight">
             INDYpendent Bytes
@@ -195,29 +195,26 @@ export default function App() {
             <a href="#how-it-works" className="hover:underline">How it works</a>
             <a href="#pathways" className="hover:underline">Get involved</a>
             <a href="#resource-agent" className="hover:underline">Find resources</a>
-            <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" className="hover:underline">Facebook</a>
-            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
-            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:underline">Instagram</a>
           </nav>
         </div>
       </header>
 
-      <section id="top" className="px-4 py-16 md:py-24">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+      <section id="top" className="px-4 py-12 md:py-16 lg:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <p className="mb-4 font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">
+            <p className="mb-4 max-w-2xl text-sm font-bold uppercase tracking-[0.16em] text-ib-denim">
               Shared Structure for a Stronger Local Food Economy
             </p>
-            <h1 className="max-w-4xl text-5xl font-black leading-[0.98] md:text-7xl">
+            <h1 className="max-w-3xl text-4xl font-black leading-[1.02] sm:text-5xl lg:text-6xl">
               Connecting people, land, resources, and local food opportunity.
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 opacity-85 md:text-xl">
+            <p className="mt-5 max-w-2xl text-lg leading-8 opacity-85">
               INDYpendent Bytes helps communities navigate support, activate underused land, prepare cultivators, and build clearer pathways into a coordinated regional food system.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-7 flex flex-wrap gap-3">
               <a
                 href="#resource-agent"
-                className="rounded-full bg-ib-denim px-6 py-3 font-bold text-white transition hover:opacity-90"
+                className="rounded-full bg-ib-denim px-5 py-3 font-bold text-white transition hover:opacity-90"
               >
                 Find resources
               </a>
@@ -225,7 +222,7 @@ export default function App() {
                 href={CULTIVATOR_INTAKE_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border-2 border-current px-6 py-3 font-bold transition hover:bg-black/5 dark:hover:bg-white/10"
+                className="rounded-full border-2 border-current px-5 py-3 font-bold transition hover:bg-black/5"
               >
                 Become a cultivator
               </a>
@@ -233,19 +230,19 @@ export default function App() {
                 href={LAND_HOST_INTAKE_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border-2 border-current px-6 py-3 font-bold transition hover:bg-black/5 dark:hover:bg-white/10"
+                className="rounded-full border-2 border-current px-5 py-3 font-bold transition hover:bg-black/5"
               >
                 Become a land host
               </a>
             </div>
           </div>
 
-          <aside className="rounded-3xl bg-white p-8 shadow-sm dark:bg-white/5">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">
+          <aside className="rounded-3xl border border-black/10 bg-white p-7 shadow-sm">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-ib-denim">
               Start here
             </p>
-            <h2 className="mt-3 text-3xl font-black">Choose the path that fits your goal.</h2>
-            <div className="mt-6 space-y-5 text-base leading-7 opacity-85">
+            <h2 className="mt-3 text-2xl font-black md:text-3xl">Choose the path that fits your goal.</h2>
+            <div className="mt-5 space-y-4 text-base leading-7 opacity-85">
               <p><strong>Need help finding support?</strong> Use the Resource Discovery Agent.</p>
               <p><strong>Want to cultivate food?</strong> Complete the cultivator interest form.</p>
               <p><strong>Have land that could support production?</strong> Complete the land host intake.</p>
@@ -254,21 +251,21 @@ export default function App() {
         </div>
       </section>
 
-      <section id="how-it-works" className="bg-white px-4 py-16 dark:bg-white/5">
+      <section id="how-it-works" className="bg-white px-4 py-14">
         <div className="mx-auto max-w-6xl">
-          <p className="font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">How it works</p>
-          <h2 className="mt-3 max-w-3xl text-4xl font-black md:text-5xl">
+          <p className="font-bold uppercase tracking-[0.16em] text-ib-denim">How it works</p>
+          <h2 className="mt-3 max-w-3xl text-3xl font-black md:text-4xl">
             One public entry point. Clear next steps.
           </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
             {[
               ["1", "Tell us what you need", "Use the agent or select the intake path that matches your role."],
               ["2", "Get routed correctly", "Receive relevant information, resources, preparation steps, or an IB intake pathway."],
               ["3", "Move forward prepared", "Understand what to expect, what to have ready, and what happens next."],
             ].map(([number, title, description]) => (
-              <article key={number} className="rounded-3xl border border-black/10 p-7 dark:border-white/10">
-                <p className="text-4xl font-black text-ib-denim dark:text-ib-linen">{number}</p>
-                <h3 className="mt-5 text-2xl font-black">{title}</h3>
+              <article key={number} className="rounded-3xl border border-black/10 p-6">
+                <p className="text-3xl font-black text-ib-denim">{number}</p>
+                <h3 className="mt-4 text-xl font-black">{title}</h3>
                 <p className="mt-3 leading-7 opacity-80">{description}</p>
               </article>
             ))}
@@ -276,23 +273,23 @@ export default function App() {
         </div>
       </section>
 
-      <section id="pathways" className="px-4 py-16 md:py-20">
+      <section id="pathways" className="px-4 py-14 md:py-16">
         <div className="mx-auto max-w-6xl">
-          <p className="font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">Get involved</p>
-          <h2 className="mt-3 text-4xl font-black md:text-5xl">Three ways to begin.</h2>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <p className="font-bold uppercase tracking-[0.16em] text-ib-denim">Get involved</p>
+          <h2 className="mt-3 text-3xl font-black md:text-4xl">Three ways to begin.</h2>
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
             {pathways.map((pathway) => (
-              <article key={pathway.title} className="flex min-h-[340px] flex-col rounded-3xl bg-white p-8 shadow-sm dark:bg-white/5">
-                <p className="text-sm font-bold uppercase tracking-[0.16em] text-ib-denim dark:text-ib-linen">
+              <article key={pathway.title} className="flex min-h-[300px] flex-col rounded-3xl border border-black/10 bg-white p-7 shadow-sm">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-ib-denim">
                   {pathway.eyebrow}
                 </p>
-                <h3 className="mt-4 text-3xl font-black">{pathway.title}</h3>
+                <h3 className="mt-4 text-2xl font-black">{pathway.title}</h3>
                 <p className="mt-4 flex-1 leading-7 opacity-80">{pathway.description}</p>
                 <a
                   href={pathway.href}
                   target={pathway.external ? "_blank" : undefined}
                   rel={pathway.external ? "noreferrer" : undefined}
-                  className="mt-8 inline-flex w-fit rounded-full bg-ib-denim px-5 py-3 font-bold text-white transition hover:opacity-90"
+                  className="mt-7 inline-flex w-fit rounded-full bg-ib-denim px-5 py-3 font-bold text-white transition hover:opacity-90"
                 >
                   {pathway.label}
                 </a>
@@ -304,13 +301,13 @@ export default function App() {
 
       <RecognitionCard />
 
-      <section id="resource-agent" className="border-t border-black/10 px-4 py-16 dark:border-white/10 md:py-20">
+      <section id="resource-agent" className="border-t border-black/10 bg-white px-4 py-14 md:py-16">
         <div className="mx-auto max-w-6xl">
-          <p className="mb-2 font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">
-            INDYpendent Bytes
+          <p className="mb-2 font-bold uppercase tracking-[0.16em] text-ib-denim">
+            Find the right next step
           </p>
-          <h2 className="mb-4 text-4xl font-black md:text-6xl">Resource Discovery Agent</h2>
-          <p className="mb-8 max-w-3xl text-lg leading-8 opacity-80">
+          <h2 className="mb-4 text-3xl font-black md:text-5xl">Resource Discovery Agent</h2>
+          <p className="mb-7 max-w-3xl text-lg leading-8 opacity-80">
             Tell the agent what you are trying to accomplish, where you are located, and what constraints you are facing. It will help organize relevant options and next steps instead of giving you a list of disconnected links.
           </p>
           <DiscoveryAgentLayout
@@ -325,7 +322,7 @@ export default function App() {
         </div>
       </section>
 
-      <footer className="border-t border-black/10 px-4 py-10 dark:border-white/10">
+      <footer className="border-t border-black/10 px-4 py-10">
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 md:flex-row md:items-center">
           <div>
             <p className="font-black">INDYpendent Bytes</p>
