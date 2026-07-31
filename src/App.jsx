@@ -5,6 +5,8 @@ import { searchResources } from "./services/resourceSearch";
 
 const CULTIVATOR_INTAKE_URL = "https://form.jotform.com/261957669272069";
 const LAND_HOST_INTAKE_URL = "https://form.jotform.com/261957830963066";
+const LINKEDIN_URL = "https://www.linkedin.com/company/indypendent-bytes/";
+const INSTAGRAM_URL = "https://www.instagram.com/indypendent.bytes/";
 
 const initialMessages = [
   {
@@ -191,6 +193,8 @@ export default function App() {
             <a href="#how-it-works" className="hover:underline">How it works</a>
             <a href="#pathways" className="hover:underline">Get involved</a>
             <a href="#resource-agent" className="hover:underline">Find resources</a>
+            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:underline">Instagram</a>
           </nav>
         </div>
       </header>
@@ -326,6 +330,8 @@ export default function App() {
             <a href={CULTIVATOR_INTAKE_URL} target="_blank" rel="noreferrer" className="hover:underline">Cultivator intake</a>
             <a href={LAND_HOST_INTAKE_URL} target="_blank" rel="noreferrer" className="hover:underline">Land host intake</a>
             <a href="#resource-agent" className="hover:underline">Resource Discovery Agent</a>
+            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:underline">Instagram</a>
           </div>
         </div>
       </footer>
