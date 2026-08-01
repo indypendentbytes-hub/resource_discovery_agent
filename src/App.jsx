@@ -186,110 +186,103 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-ib-linen text-text-primaryLight">
-      <header className="border-b border-black/10 bg-ib-linen/95 px-4 py-4 backdrop-blur">
+      <header className="border-b border-black/10 bg-[#F3E9DD] px-4 py-3">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
-          <a href="#top" className="font-black tracking-tight">
+          <a href="#top" className="flex items-center gap-3 font-black tracking-tight text-[#1A1A1A]">
+            <span className="h-3 w-3 rounded-sm bg-[#00780F]" aria-hidden="true" />
             INDYpendent Bytes
           </a>
-          <nav className="hidden items-center gap-6 text-sm font-bold md:flex" aria-label="Primary navigation">
-            <a href="#how-it-works" className="hover:underline">How it works</a>
-            <a href="#pathways" className="hover:underline">Get involved</a>
-            <a href="#resource-agent" className="hover:underline">Find resources</a>
+          <nav className="hidden items-center gap-6 text-sm font-semibold md:flex" aria-label="Primary navigation">
+            <a href="#how-it-works" className="hover:text-[#00780F]">How it works</a>
+            <a href="#pathways" className="hover:text-[#00780F]">Get involved</a>
+            <a href="#resource-agent" className="hover:text-[#00780F]">Find resources</a>
           </nav>
         </div>
       </header>
 
-      <section id="top" className="px-4 py-12 md:py-16 lg:py-20">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <p className="mb-4 max-w-2xl text-sm font-bold uppercase tracking-[0.16em] text-ib-denim">
+      <section id="top" className="px-4 py-8 md:py-10">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-4xl">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#005588] sm:text-sm">
               Shared Structure for a Stronger Local Food Economy
             </p>
-            <h1 className="max-w-3xl text-4xl font-black leading-[1.02] sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-4xl text-3xl font-black leading-[1.06] sm:text-4xl lg:text-5xl">
               Connecting people, land, resources, and local food opportunity.
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 opacity-85">
+            <p className="mt-4 max-w-3xl text-base leading-7 opacity-85 sm:text-lg">
               INDYpendent Bytes helps communities navigate support, activate underused land, prepare cultivators, and build clearer pathways into a coordinated regional food system.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href="#resource-agent"
-                className="rounded-full bg-ib-denim px-5 py-3 font-bold text-white transition hover:opacity-90"
-              >
-                Find resources
-              </a>
-              <a
-                href={CULTIVATOR_INTAKE_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border-2 border-current px-5 py-3 font-bold transition hover:bg-black/5"
-              >
-                Become a cultivator
-              </a>
-              <a
-                href={LAND_HOST_INTAKE_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border-2 border-current px-5 py-3 font-bold transition hover:bg-black/5"
-              >
-                Become a land host
-              </a>
-            </div>
           </div>
 
-          <aside className="rounded-3xl border border-black/10 bg-white p-7 shadow-sm">
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-ib-denim">
-              Start here
-            </p>
-            <h2 className="mt-3 text-2xl font-black md:text-3xl">Choose the path that fits your goal.</h2>
-            <div className="mt-5 space-y-4 text-base leading-7 opacity-85">
-              <p><strong>Need help finding support?</strong> Use the Resource Discovery Agent.</p>
-              <p><strong>Want to cultivate food?</strong> Complete the cultivator interest form.</p>
-              <p><strong>Have land that could support production?</strong> Complete the land host intake.</p>
-            </div>
-          </aside>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <a
+              href="#resource-agent"
+              className="rounded-md bg-[#00780F] px-5 py-4 font-bold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#C65A1E] focus:ring-offset-2"
+            >
+              <span className="block text-xs uppercase tracking-[0.14em] opacity-80">Need support?</span>
+              <span className="mt-1 block text-lg">Find resources</span>
+            </a>
+            <a
+              href={CULTIVATOR_INTAKE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-md border border-[#00780F] bg-white px-5 py-4 font-bold text-[#1A1A1A] transition hover:bg-[#F9F4CB] focus:outline-none focus:ring-2 focus:ring-[#C65A1E] focus:ring-offset-2"
+            >
+              <span className="block text-xs uppercase tracking-[0.14em] text-[#005588]">Want to cultivate?</span>
+              <span className="mt-1 block text-lg">Start cultivator intake</span>
+            </a>
+            <a
+              href={LAND_HOST_INTAKE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-md border border-[#005588] bg-white px-5 py-4 font-bold text-[#1A1A1A] transition hover:bg-[#F9F4CB] focus:outline-none focus:ring-2 focus:ring-[#C65A1E] focus:ring-offset-2"
+            >
+              <span className="block text-xs uppercase tracking-[0.14em] text-[#005588]">Have land?</span>
+              <span className="mt-1 block text-lg">Start land host intake</span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section id="how-it-works" className="bg-white px-4 py-14">
+      <section id="how-it-works" className="bg-white px-4 py-12">
         <div className="mx-auto max-w-6xl">
-          <p className="font-bold uppercase tracking-[0.16em] text-ib-denim">How it works</p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-black md:text-4xl">
+          <p className="font-bold uppercase tracking-[0.16em] text-[#005588]">How it works</p>
+          <h2 className="mt-2 max-w-3xl text-3xl font-black md:text-4xl">
             One public entry point. Clear next steps.
           </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-7 grid gap-4 md:grid-cols-3">
             {[
               ["1", "Tell us what you need", "Use the agent or select the intake path that matches your role."],
               ["2", "Get routed correctly", "Receive relevant information, resources, preparation steps, or an IB intake pathway."],
               ["3", "Move forward prepared", "Understand what to expect, what to have ready, and what happens next."],
             ].map(([number, title, description]) => (
-              <article key={number} className="rounded-3xl border border-black/10 p-6">
-                <p className="text-3xl font-black text-ib-denim">{number}</p>
-                <h3 className="mt-4 text-xl font-black">{title}</h3>
-                <p className="mt-3 leading-7 opacity-80">{description}</p>
+              <article key={number} className="rounded-md border border-black/10 p-6">
+                <p className="text-2xl font-black text-[#00780F]">{number}</p>
+                <h3 className="mt-3 text-xl font-black">{title}</h3>
+                <p className="mt-2 leading-7 opacity-80">{description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="pathways" className="px-4 py-14 md:py-16">
+      <section id="pathways" className="px-4 py-12 md:py-14">
         <div className="mx-auto max-w-6xl">
-          <p className="font-bold uppercase tracking-[0.16em] text-ib-denim">Get involved</p>
-          <h2 className="mt-3 text-3xl font-black md:text-4xl">Three ways to begin.</h2>
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          <p className="font-bold uppercase tracking-[0.16em] text-[#005588]">Get involved</p>
+          <h2 className="mt-2 text-3xl font-black md:text-4xl">Three ways to begin.</h2>
+          <div className="mt-7 grid gap-4 lg:grid-cols-3">
             {pathways.map((pathway) => (
-              <article key={pathway.title} className="flex min-h-[300px] flex-col rounded-3xl border border-black/10 bg-white p-7 shadow-sm">
-                <p className="text-sm font-bold uppercase tracking-[0.16em] text-ib-denim">
+              <article key={pathway.title} className="flex min-h-[280px] flex-col rounded-md border border-black/10 bg-white p-6">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#005588]">
                   {pathway.eyebrow}
                 </p>
-                <h3 className="mt-4 text-2xl font-black">{pathway.title}</h3>
-                <p className="mt-4 flex-1 leading-7 opacity-80">{pathway.description}</p>
+                <h3 className="mt-3 text-2xl font-black">{pathway.title}</h3>
+                <p className="mt-3 flex-1 leading-7 opacity-80">{pathway.description}</p>
                 <a
                   href={pathway.href}
                   target={pathway.external ? "_blank" : undefined}
                   rel={pathway.external ? "noreferrer" : undefined}
-                  className="mt-7 inline-flex w-fit rounded-full bg-ib-denim px-5 py-3 font-bold text-white transition hover:opacity-90"
+                  className="mt-6 inline-flex w-fit rounded-md bg-[#00780F] px-5 py-3 font-bold text-white transition hover:opacity-90"
                 >
                   {pathway.label}
                 </a>
@@ -301,13 +294,13 @@ export default function App() {
 
       <RecognitionCard />
 
-      <section id="resource-agent" className="border-t border-black/10 bg-white px-4 py-14 md:py-16">
+      <section id="resource-agent" className="border-t border-black/10 bg-white px-4 py-12 md:py-14">
         <div className="mx-auto max-w-6xl">
-          <p className="mb-2 font-bold uppercase tracking-[0.16em] text-ib-denim">
+          <p className="mb-2 font-bold uppercase tracking-[0.16em] text-[#005588]">
             Find the right next step
           </p>
-          <h2 className="mb-4 text-3xl font-black md:text-5xl">Resource Discovery Agent</h2>
-          <p className="mb-7 max-w-3xl text-lg leading-8 opacity-80">
+          <h2 className="mb-3 text-3xl font-black md:text-4xl">Resource Discovery Agent</h2>
+          <p className="mb-6 max-w-3xl text-lg leading-8 opacity-80">
             Tell the agent what you are trying to accomplish, where you are located, and what constraints you are facing. It will help organize relevant options and next steps instead of giving you a list of disconnected links.
           </p>
           <DiscoveryAgentLayout
@@ -322,11 +315,11 @@ export default function App() {
         </div>
       </section>
 
-      <footer className="border-t border-black/10 px-4 py-10">
+      <footer className="border-t border-black/10 bg-[#005588] px-4 py-9 text-white">
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 md:flex-row md:items-center">
           <div>
             <p className="font-black">INDYpendent Bytes</p>
-            <p className="mt-1 text-sm opacity-70">Regional Food Systems Coordination Infrastructure</p>
+            <p className="mt-1 text-sm text-white/75">Regional Food Systems Coordination Infrastructure</p>
           </div>
           <div className="flex flex-wrap gap-4 text-sm font-bold">
             <a href={CULTIVATOR_INTAKE_URL} target="_blank" rel="noreferrer" className="hover:underline">Cultivator intake</a>
