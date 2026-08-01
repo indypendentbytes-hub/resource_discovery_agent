@@ -1,0 +1,107 @@
+{
+  "source_id": "ORG-FOUNTAIN-FUND",
+  "official_name": "The Fountain Fund",
+  "organization_type": "501(c)(3) nonprofit lender and reentry-support organization",
+  "canonical_url": "https://www.fountainfund.org/",
+  "service_focus": [
+    "low-interest lending",
+    "financial coaching",
+    "credit building",
+    "reentry economic mobility",
+    "transportation access",
+    "housing stabilization",
+    "court-debt relief",
+    "employment-related expenses",
+    "small-business startup and expansion"
+  ],
+  "best_fit_roles": [
+    "formerly incarcerated people",
+    "justice-impacted entrepreneurs",
+    "reentering workers",
+    "people facing barriers to traditional credit"
+  ],
+  "eligibility_summary": "Applicants must have a record of past incarceration, demonstrate ability to repay, and show that the loan could materially improve their circumstances. Exact requirements vary by loan purpose and location.",
+  "loan_summary": {
+    "typical_interest_rate": "5%",
+    "published_range": "$250-$15,000",
+    "uses": [
+      "court-imposed debt",
+      "job-related expenses",
+      "transportation",
+      "rental housing costs",
+      "child support",
+      "starting or expanding a business"
+    ]
+  },
+  "geography": {
+    "status": "limited regional availability",
+    "known_locations": [
+      "Charlottesville, Virginia",
+      "Richmond, Virginia",
+      "Boston, Massachusetts",
+      "Philadelphia, Pennsylvania",
+      "New Orleans, Louisiana"
+    ],
+    "indiana_status": "No Indianapolis or Indiana lending location was confirmed as of 2026-08-01. Treat as a prospective national partner or referral model unless current Indiana availability is verified."
+  },
+  "how_to_engage": "Review the official FAQ and lending policies, then submit the official loan inquiry form. Confirm that the applicant's location and loan purpose are currently served before referring.",
+  "what_to_have_ready": [
+    "proof of past incarceration",
+    "income and repayment information",
+    "specific use of funds",
+    "personal cash-flow information",
+    "employment history where required",
+    "business plan and financial projections for business loans",
+    "EIN, state registration, licenses, and business bank account where required"
+  ],
+  "questions_to_ask": [
+    "Is the applicant's current location served?",
+    "Is the requested loan purpose available in that location?",
+    "What repayment-capacity documentation is required?",
+    "Are business loans currently available in the applicant's region?",
+    "Can a local reentry organization become a referral or expansion partner?"
+  ],
+  "indypendent_bytes_alignment": {
+    "fit": "high for the reentry economic-mobility pathway",
+    "potential_role": "specialized capital, credit-building, and financial-coaching partner for justice-impacted participants",
+    "boundary": "Do not present The Fountain Fund as a current INDYpendent Bytes partner or as currently available in Indiana without direct confirmation.",
+    "strategic_value": "The model addresses barriers that training alone does not solve, including transportation, housing, court debt, credit, employment expenses, and startup capital."
+  },
+  "categories": [
+    "reentry support",
+    "economic mobility",
+    "microloans",
+    "business funding",
+    "credit building",
+    "financial coaching",
+    "transportation assistance",
+    "housing stability",
+    "barriers to employment"
+  ],
+  "tags": [
+    "formerly incarcerated",
+    "justice impacted",
+    "reentry",
+    "low interest loan",
+    "business startup",
+    "business expansion",
+    "credit building",
+    "financial dignity",
+    "transportation",
+    "housing",
+    "court debt",
+    "employment barriers"
+  ],
+  "authority_class": "official provider",
+  "verification": {
+    "last_verified": "2026-08-01",
+    "sources": [
+      "https://www.fountainfund.org/",
+      "https://www.fountainfund.org/what-we-do",
+      "https://www.fountainfund.org/questions",
+      "https://www.fountainfund.org/lending-policies",
+      "https://www.fountainfund.org/loan-inquiries"
+    ],
+    "refresh_trigger": "Verify geography, loan products, interest rate, maximum loan, eligibility, and inquiry availability at recommendation time."
+  }
+}
