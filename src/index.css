@@ -18,8 +18,9 @@
   --brand-green: #00780F;
   --brand-green-dark: #00660D;
   --brand-green-bright: #2D9B4E;
-  --denim: #005588;
-  --denim-dark: #003D66;
+  --denim: #043e60;
+  --denim-dark: #032a42;
+  --denim-light: #0a5578;
   --linen: #F3E9DD;
   --cream: #F9F4CB;
   --pumpkin: #C65A1E;
@@ -232,9 +233,9 @@ h1, h2, h3, .font-display {
   background: rgba(243, 233, 221, 0.7);
 }
 
-/* Feature strip */
+/* Feature strip — denim tint */
 .feature-strip {
-  background: linear-gradient(180deg, rgba(0, 85, 136, 0.28), rgba(11, 61, 30, 0.96));
+  background: linear-gradient(180deg, rgba(4, 62, 96, 0.35), rgba(11, 61, 30, 0.96));
   border: 1px solid rgba(243, 233, 221, 0.12);
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
@@ -284,7 +285,7 @@ h1, h2, h3, .font-display {
   border: 1px solid var(--border);
 }
 .card-denim {
-  background: linear-gradient(160deg, #006BA3 0%, #005588 100%);
+  background: linear-gradient(160deg, #0a5578 0%, #043e60 100%);
   color: #fff;
 }
 .card-icon {
@@ -378,7 +379,7 @@ h1, h2, h3, .font-display {
 
 /* Footer */
 .site-footer {
-  background: var(--denim-dark);
+  background: var(--denim);
   border-top: 3px solid var(--pumpkin);
   position: relative;
 }

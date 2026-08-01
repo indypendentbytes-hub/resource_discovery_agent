@@ -1,6 +1,6 @@
 /**
  * INDYpendent Bytes mark — brand palette
- * Pumpkin wheat + denim gear + brand-green leaves
+ * Pumpkin wheat + denim gear (#043e60) + brand-green leaves
  */
 export default function BrandLogo({ className = "h-9 w-9", title = "INDYpendent Bytes" }) {
   return (
@@ -12,8 +12,8 @@ export default function BrandLogo({ className = "h-9 w-9", title = "INDYpendent 
       role="img"
       aria-label={title}
     >
-      {/* Gear — denim */}
-      <g fill="#005588">
+      {/* Gear — denim #043e60 */}
+      <g fill="#043e60">
         <path d="M118 118c22 4 38 24 38 48 0 6-1 12-3 17l14 8c4-8 6-16 6-25 0-32-22-58-52-64l-3 16z" />
         <path d="M148 95l8-14 12 7-6 15c-4-3-9-6-14-8z" />
         <path d="M168 118l15-4 4 13-14 5c-1-5-3-9-5-14z" />

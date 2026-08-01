@@ -29,7 +29,7 @@ export default function ResourcePanel({ resources, onResourceSelect }) {
                 <span>Describe your goal, location, and any constraints.</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#005588] text-xs font-bold text-white">2</span>
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#043e60] text-xs font-bold text-white">2</span>
                 <span>Review matched pathways and resource options.</span>
               </li>
               <li className="flex gap-3">
