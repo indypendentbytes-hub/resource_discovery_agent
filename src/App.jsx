@@ -1,6 +1,5 @@
 import { useState } from "react";
 import DiscoveryAgentLayout from "./components/layout/DiscoveryAgentLayout";
-import HeroIllustration from "./components/HeroIllustration";
 import RecognitionCard from "./components/RecognitionCard";
 import { routeResources } from "./agent/routingEngine";
 import { searchResources } from "./services/resourceSearch";
@@ -76,35 +75,6 @@ const resourceGraph = [
     dateChecked: "2026-07-01",
     citation: "Sample unverified coordination record",
     friction: 0.4,
-  },
-];
-
-const pathways = [
-  {
-    eyebrow: "Everyone",
-    title: "Resource Discovery Agent",
-    description:
-      "Describe a goal and get a guided path to programs, training, funding, land, and business resources — with clear next steps.",
-    href: "#resource-agent",
-    label: "Find resources",
-  },
-  {
-    eyebrow: "Growers",
-    title: "Become a Cultivator",
-    description:
-      "Share experience, goals, land access, and training needs. We help you prepare and connect into the coordinated system.",
-    href: CULTIVATOR_INTAKE_URL,
-    label: "Start intake",
-    external: true,
-  },
-  {
-    eyebrow: "Landowners",
-    title: "Become a Land Host",
-    description:
-      "Share available land, water, access, and interest in supporting local production through a structured arrangement.",
-    href: LAND_HOST_INTAKE_URL,
-    label: "Start intake",
-    external: true,
   },
 ];
 
@@ -186,11 +156,11 @@ export default function App() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FAF8F4] text-[#1A1A1A]">
-      {/* Header — glass, minimal */}
+    <main className="min-h-screen">
+      {/* Header */}
       <header className="site-header sticky top-0 z-50">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <a href="#top" className="brand flex items-center gap-2.5 text-sm font-semibold tracking-tight">
+          <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-[#F5EDE0]">
             <span className="brand-dot" aria-hidden="true" />
             INDYpendent Bytes
           </a>
@@ -199,36 +169,43 @@ export default function App() {
             <a href="#pathways">Get involved</a>
             <a href="#resource-agent">Find resources</a>
           </nav>
-          <a href="#resource-agent" className="cta cta-primary !py-2 !px-4 text-xs md:text-sm">
+          <a href="#resource-agent" className="cta-sand !py-2 !px-4 text-xs md:text-sm">
             Find resources
           </a>
         </div>
       </header>
 
-      {/* Hero — bold type, open space */}
-      <section id="top" className="px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C65A1E]">
+      {/* Hero */}
+      <section id="top" className="hero relative px-6 pt-20 pb-28 md:pt-28 md:pb-36">
+        <div className="leaf-cluster" aria-hidden="true">
+          <div className="leaf leaf-1" />
+          <div className="leaf leaf-2" />
+          <div className="leaf leaf-3" />
+          <div className="leaf leaf-4" />
+          <div className="leaf leaf-5" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-6xl">
+          <div className="max-w-xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4A84B]">
               Shared structure for a stronger local food economy
             </p>
-            <h1 className="mt-5 text-[#1A1A1A]">
-              Connecting people, land, resources &amp; opportunity.
+            <h1 className="hero-title mt-5 font-display">
+              Connecting people, land &amp; opportunity.
             </h1>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-[#1A1A1A]/65 md:text-lg">
-              Navigate support, activate underused land, prepare cultivators, and
-              build clearer pathways into a coordinated regional food system.
+            <p className="hero-sub mt-6 text-base leading-relaxed md:text-lg">
+              Navigate support, activate underused land, prepare cultivators,
+              and build clearer pathways into a coordinated regional food system.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#resource-agent" className="cta cta-primary">
+            <div className="mt-10 flex flex-wrap gap-3">
+              <a href="#resource-agent" className="cta-sand">
                 Find resources
-                <span aria-hidden="true">→</span>
               </a>
               <a
                 href={CULTIVATOR_INTAKE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta cta-ghost"
+                className="cta-ghost-light"
               >
                 Cultivator intake
               </a>
@@ -236,77 +213,152 @@ export default function App() {
                 href={LAND_HOST_INTAKE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta cta-ghost"
+                className="cta-ghost-light"
               >
                 Land host intake
               </a>
             </div>
           </div>
-          <HeroIllustration />
         </div>
       </section>
 
-      {/* How it works */}
-      <section id="how-it-works" className="border-t border-[#E8E2D9] bg-white px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#00780F]">
-            How it works
-          </p>
-          <h2
-            className="mt-3 max-w-lg text-3xl font-semibold tracking-tight md:text-4xl"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            One entry point. Clear next steps.
-          </h2>
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
+      {/* Feature strip — overlaps hero like the reference */}
+      <section id="how-it-works" className="relative z-20 -mt-16 px-6">
+        <div className="feature-strip mx-auto max-w-5xl px-6 py-10 md:px-12 md:py-12">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["01", "Tell us what you need", "Use the agent or pick the intake path that matches your role."],
-              ["02", "Get routed correctly", "Receive relevant resources, preparation steps, or an IB pathway."],
-              ["03", "Move forward prepared", "Know what to expect, what to have ready, and what happens next."],
-            ].map(([num, title, body]) => (
-              <article key={num} className="step-card">
-                <span className="step-num">{num}</span>
-                <h3 className="mt-4 text-lg font-semibold tracking-tight">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#1A1A1A]/60">{body}</p>
-              </article>
+              {
+                icon: (
+                  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" strokeLinecap="round" />
+                  </svg>
+                ),
+                title: "Tell us what you need",
+                body: "Use the agent or pick the intake path that matches your role.",
+              },
+              {
+                icon: (
+                  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9 22V12h6v10" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                ),
+                title: "Get routed correctly",
+                body: "Receive relevant resources, preparation steps, or an IB pathway.",
+              },
+              {
+                icon: (
+                  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" strokeLinecap="round" />
+                  </svg>
+                ),
+                title: "Move forward prepared",
+                body: "Know what to expect, what to have ready, and what happens next.",
+              },
+              {
+                icon: (
+                  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" strokeLinecap="round" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" strokeLinecap="round" />
+                  </svg>
+                ),
+                title: "Stay connected",
+                body: "Join a coordinated system linking land, growers, and local buyers.",
+              },
+            ].map((f) => (
+              <div key={f.title} className="text-center">
+                <div className="feature-icon">{f.icon}</div>
+                <h3 className="text-sm font-semibold text-[#F5EDE0]">{f.title}</h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-[#F5EDE0]/55">{f.body}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pathways */}
+      {/* Pathways — nature cards */}
       <section id="pathways" className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#005588]">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4A84B]">
             Get involved
           </p>
-          <h2
-            className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
+          <h2 className="mt-3 text-center text-3xl font-semibold tracking-tight text-[#F5EDE0] md:text-4xl font-display">
             Three ways to begin.
           </h2>
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
-            {pathways.map((p) => (
-              <article key={p.title} className="pathway-card">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C65A1E]">
-                  {p.eyebrow}
-                </p>
-                <h3 className="mt-3 text-xl font-semibold tracking-tight">{p.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-[#1A1A1A]/60">
-                  {p.description}
-                </p>
-                <a
-                  href={p.href}
-                  target={p.external ? "_blank" : undefined}
-                  rel={p.external ? "noopener noreferrer" : undefined}
-                  className="pathway-link"
-                >
-                  {p.label}
-                  <span aria-hidden="true">→</span>
-                </a>
-              </article>
-            ))}
+
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="#resource-agent" className="nature-card card-green">
+              <div className="card-icon">🌿</div>
+              <h3 className="text-lg font-semibold">Resource Agent</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-80">
+                Guided pathways to programs, training, funding, land, and business resources.
+              </p>
+              <span className="mt-4 text-sm font-semibold opacity-90">Find resources →</span>
+            </a>
+
+            <a
+              href={CULTIVATOR_INTAKE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nature-card card-soil"
+            >
+              <div className="card-icon">🌱</div>
+              <h3 className="text-lg font-semibold">Become a Cultivator</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-80">
+                Share experience, goals, land access, and training needs.
+              </p>
+              <span className="mt-4 text-sm font-semibold opacity-90">Start intake →</span>
+            </a>
+
+            <a
+              href={LAND_HOST_INTAKE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nature-card card-sand sm:col-span-2 lg:col-span-1"
+            >
+              <div className="card-icon">🌾</div>
+              <h3 className="text-lg font-semibold">Become a Land Host</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-75">
+                Share available land, water, access, and interest in supporting production.
+              </p>
+              <span className="mt-4 text-sm font-semibold opacity-90">Start intake →</span>
+            </a>
+          </div>
+
+          {/* Secondary row like reference photo + icon cards */}
+          <div className="mt-5 grid gap-5 sm:grid-cols-3">
+            <div
+              className="nature-card !min-h-[180px] overflow-hidden !p-0"
+              style={{
+                backgroundImage:
+                  "url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="flex h-full flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-5">
+                <p className="text-sm font-semibold text-white">Regional coordination</p>
+                <p className="mt-1 text-xs text-white/70">Land · people · local markets</p>
+              </div>
+            </div>
+
+            <div className="nature-card card-soil !min-h-[180px]">
+              <div className="card-icon">🍃</div>
+              <h3 className="text-base font-semibold">Community first</h3>
+              <p className="mt-2 text-xs leading-relaxed opacity-75">
+                Built for cultivators, hosts, and neighbors — not a marketplace.
+              </p>
+            </div>
+
+            <div className="nature-card card-cream !min-h-[180px]">
+              <div className="card-icon">⬡</div>
+              <h3 className="text-base font-semibold">Clear next steps</h3>
+              <p className="mt-2 text-xs leading-relaxed opacity-70">
+                Every path ends with what to prepare and what happens next.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -314,18 +366,15 @@ export default function App() {
       <RecognitionCard />
 
       {/* Agent */}
-      <section id="resource-agent" className="border-t border-[#E8E2D9] bg-white px-6 py-20 md:py-28">
+      <section id="resource-agent" className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C65A1E]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4A84B]">
             Find the right next step
           </p>
-          <h2
-            className="mt-3 max-w-xl text-3xl font-semibold tracking-tight md:text-4xl"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
+          <h2 className="mt-3 max-w-lg text-3xl font-semibold tracking-tight text-[#F5EDE0] md:text-4xl font-display">
             Resource Discovery Agent
           </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-[#1A1A1A]/60">
+          <p className="mt-4 max-w-lg text-base leading-relaxed text-[#F5EDE0]/60">
             Share a goal, location, and constraints. The agent organizes relevant
             options and next steps — not a dump of links.
           </p>
@@ -347,8 +396,8 @@ export default function App() {
       <footer className="site-footer px-6 py-14">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="text-lg font-semibold tracking-tight">INDYpendent Bytes</p>
-            <p className="mt-1 text-sm text-white/50">
+            <p className="text-lg font-semibold tracking-tight text-[#F5EDE0]">INDYpendent Bytes</p>
+            <p className="mt-1 text-sm text-[#F5EDE0]/45">
               Regional Food Systems Coordination Infrastructure
             </p>
           </div>
@@ -361,7 +410,7 @@ export default function App() {
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
-        <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 pt-6 text-xs text-white/40 flex flex-col gap-1 sm:flex-row sm:justify-between">
+        <div className="mx-auto mt-12 max-w-6xl border-t border-white/5 pt-6 text-xs text-[#F5EDE0]/30 flex flex-col gap-1 sm:flex-row sm:justify-between">
           <span>© {new Date().getFullYear()} INDYpendent Bytes</span>
           <span>Built for regional food system coordination</span>
         </div>
