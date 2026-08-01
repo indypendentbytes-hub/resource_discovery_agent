@@ -89,27 +89,27 @@ h1, h2, h3,
 }
 
 .hero-title {
-  font-size: clamp(2.6rem, 6vw, 4.25rem);
-  line-height: 1.08;
+  font-size: clamp(2.15rem, 5vw, 3.5rem);
+  line-height: 1.1;
   color: var(--cream);
-  max-width: 12ch;
+  max-width: 13ch;
 }
 
 .hero-sub {
   color: rgba(245, 237, 224, 0.7);
-  max-width: 36ch;
+  max-width: 38ch;
 }
 
 .cta-sand {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.9rem 1.75rem;
+  padding: 0.85rem 1.6rem;
   border-radius: 999px;
   background: linear-gradient(180deg, #E8D5B5 0%, #C4A574 100%);
   color: #3D2A1A;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.35);
   transition: transform 160ms ease, box-shadow 160ms ease;
@@ -124,12 +124,12 @@ h1, h2, h3,
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.85rem 1.5rem;
+  padding: 0.8rem 1.4rem;
   border-radius: 999px;
   border: 1.5px solid rgba(245, 237, 224, 0.3);
   color: var(--cream);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   text-decoration: none;
   transition: border-color 150ms ease, background 150ms ease;
 }
@@ -139,13 +139,13 @@ h1, h2, h3,
   background: rgba(245, 237, 224, 0.08);
 }
 
-/* Leaf decorations (CSS shapes) */
+/* Leaf decorations */
 .leaf-cluster {
   position: absolute;
   right: -5%;
-  top: 5%;
+  top: 0;
   width: min(52%, 520px);
-  height: 90%;
+  height: 100%;
   pointer-events: none;
   opacity: 0.95;
 }
@@ -158,37 +158,37 @@ h1, h2, h3,
 }
 
 .leaf-1 {
-  width: 180px; height: 220px;
+  width: 160px; height: 195px;
   background: linear-gradient(135deg, #2D9B4E, #0B3D1E);
-  right: 8%; top: 8%;
+  right: 8%; top: 4%;
   transform: rotate(-25deg);
   animation: leafFloat 7s ease-in-out infinite;
 }
 .leaf-2 {
-  width: 140px; height: 170px;
+  width: 120px; height: 150px;
   background: linear-gradient(145deg, #3D8B4A, #145C2E);
-  right: 28%; top: 22%;
+  right: 28%; top: 18%;
   transform: rotate(15deg);
   animation: leafFloat 8s ease-in-out 0.5s infinite reverse;
 }
 .leaf-3 {
-  width: 120px; height: 150px;
+  width: 100px; height: 130px;
   background: linear-gradient(160deg, #C4A574, #8B6B4A);
-  right: 18%; top: 48%;
+  right: 18%; top: 42%;
   transform: rotate(-40deg);
   animation: leafFloat 6.5s ease-in-out 1s infinite;
 }
 .leaf-4 {
-  width: 100px; height: 130px;
+  width: 90px; height: 115px;
   background: linear-gradient(130deg, #5C3D2E, #3D2A1A);
-  right: 35%; top: 55%;
+  right: 35%; top: 50%;
   transform: rotate(30deg);
   animation: leafFloat 7.5s ease-in-out 0.3s infinite reverse;
 }
 .leaf-5 {
-  width: 160px; height: 200px;
+  width: 140px; height: 175px;
   background: linear-gradient(150deg, #1A7A3A, #0B3D1E);
-  right: -2%; top: 35%;
+  right: -2%; top: 28%;
   transform: rotate(5deg);
   animation: leafFloat 9s ease-in-out 0.8s infinite;
 }
@@ -204,7 +204,7 @@ h1, h2, h3,
 .leaf-4 { --rot: 30deg; }
 .leaf-5 { --rot: 5deg; }
 
-/* ---- Feature strip (floating dark green card) ---- */
+/* ---- Feature strip ---- */
 .feature-strip {
   background: linear-gradient(180deg, rgba(11, 61, 30, 0.95), rgba(15, 50, 28, 0.98));
   border: 1px solid rgba(245, 237, 224, 0.1);
@@ -336,7 +336,6 @@ h1, h2, h3,
   cursor: not-allowed;
 }
 
-/* Chat bubbles */
 .bubble-user {
   background: linear-gradient(180deg, #E8D5B5, #C4A574);
   color: #3D2A1A;
@@ -350,7 +349,6 @@ h1, h2, h3,
   border-radius: 1.25rem 1.25rem 1.25rem 0.35rem;
 }
 
-/* Resource result cards */
 .resource-item {
   border-radius: 1rem;
   background: rgba(245, 237, 224, 0.08);
@@ -363,7 +361,6 @@ h1, h2, h3,
   border-color: rgba(212, 168, 75, 0.4);
 }
 
-/* Footer */
 .site-footer {
   background: #061F10;
   border-top: 1px solid rgba(245, 237, 224, 0.06);
@@ -378,7 +375,6 @@ h1, h2, h3,
   color: var(--cream);
 }
 
-/* Focus */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {

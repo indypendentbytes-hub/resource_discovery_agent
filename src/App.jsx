@@ -159,7 +159,7 @@ export default function App() {
     <main className="min-h-screen">
       {/* Header */}
       <header className="site-header sticky top-0 z-50">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
           <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-[#F5EDE0]">
             <span className="brand-dot" aria-hidden="true" />
             INDYpendent Bytes
@@ -175,8 +175,8 @@ export default function App() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section id="top" className="hero relative px-6 pt-20 pb-28 md:pt-28 md:pb-36">
+      {/* Hero — compact so CTAs clear the fold */}
+      <section id="top" className="hero relative px-6 pt-8 pb-24 md:pt-12 md:pb-28">
         <div className="leaf-cluster" aria-hidden="true">
           <div className="leaf leaf-1" />
           <div className="leaf leaf-2" />
@@ -190,14 +190,14 @@ export default function App() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4A84B]">
               Shared structure for a stronger local food economy
             </p>
-            <h1 className="hero-title mt-5 font-display">
+            <h1 className="hero-title mt-2 font-display">
               Connecting people, land &amp; opportunity.
             </h1>
-            <p className="hero-sub mt-6 text-base leading-relaxed md:text-lg">
+            <p className="hero-sub mt-3 text-base leading-relaxed md:text-lg">
               Navigate support, activate underused land, prepare cultivators,
               and build clearer pathways into a coordinated regional food system.
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3">
               <a href="#resource-agent" className="cta-sand">
                 Find resources
               </a>
@@ -223,7 +223,7 @@ export default function App() {
       </section>
 
       {/* Feature strip — overlaps hero like the reference */}
-      <section id="how-it-works" className="relative z-20 -mt-16 px-6">
+      <section id="how-it-works" className="relative z-20 -mt-14 px-6">
         <div className="feature-strip mx-auto max-w-5xl px-6 py-10 md:px-12 md:py-12">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -327,7 +327,6 @@ export default function App() {
             </a>
           </div>
 
-          {/* Secondary row like reference photo + icon cards */}
           <div className="mt-5 grid gap-5 sm:grid-cols-3">
             <div
               className="nature-card !min-h-[180px] overflow-hidden !p-0"
