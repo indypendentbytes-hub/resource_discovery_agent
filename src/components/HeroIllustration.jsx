@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 /**
  * Crossfade photo loop — real people across the local food system.
+ * Progressive loading: only the active + next slide download bandwidth.
  */
 const SLIDES = [
   {
@@ -29,15 +30,23 @@ const SLIDES = [
     alt: "Greenhouse production rows and harvest crates",
     label: "Production & logistics",
   },
-  // Still needed (one photo):
-  // 05-community
 ];
 
 const INTERVAL_MS = 4500;
 
+function prefetch(src) {
+  if (!src || typeof window === "undefined") return;
+  const img = new Image();
+  img.decoding = "async";
+  img.src = src;
+}
+
 export default function HeroIllustration() {
   const [index, setIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
+  // Track which slide indices are allowed to load
+  const [ready, setReady] = useState(() => new Set([0]));
+  const prefetched = useRef(new Set());
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -47,6 +56,7 @@ export default function HeroIllustration() {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
+  // Advance slides
   useEffect(() => {
     if (reducedMotion || SLIDES.length < 2) return undefined;
     const id = setInterval(() => {
@@ -55,21 +65,69 @@ export default function HeroIllustration() {
     return () => clearInterval(id);
   }, [reducedMotion]);
 
+  // Progressive load: current + next only
+  useEffect(() => {
+    const next = (index + 1) % SLIDES.length;
+    setReady((prev) => {
+      if (prev.has(index) && prev.has(next)) return prev;
+      const nextSet = new Set(prev);
+      nextSet.add(index);
+      nextSet.add(next);
+      return nextSet;
+    });
+
+    // Prefetch next in background without blocking
+    const nextSrc = SLIDES[next]?.src;
+    if (nextSrc && !prefetched.current.has(nextSrc)) {
+      prefetched.current.add(nextSrc);
+      prefetch(nextSrc);
+    }
+  }, [index]);
+
+  // Warm the first image immediately (LCP candidate)
+  useEffect(() => {
+    const first = SLIDES[0]?.src;
+    if (first && !prefetched.current.has(first)) {
+      prefetched.current.add(first);
+      prefetch(first);
+    }
+  }, []);
+
+  function goTo(i) {
+    setIndex(i);
+    setReady((prev) => {
+      const nextSet = new Set(prev);
+      nextSet.add(i);
+      nextSet.add((i + 1) % SLIDES.length);
+      return nextSet;
+    });
+  }
+
   return (
     <div
       className="hero-media hero-photo-loop"
       aria-label="Photos of people and places across the local food system"
     >
-      {SLIDES.map((slide, i) => (
-        <img
-          key={slide.src}
-          src={slide.src}
-          alt={slide.alt}
-          className={`hero-slide ${i === index ? "is-active" : ""}`}
-          loading={i === 0 ? "eager" : "lazy"}
-          decoding="async"
-        />
-      ))}
+      {SLIDES.map((slide, i) => {
+        const isActive = i === index;
+        const shouldLoad = ready.has(i);
+
+        return (
+          <img
+            key={slide.src}
+            src={shouldLoad ? slide.src : undefined}
+            alt={isActive ? slide.alt : ""}
+            className={`hero-slide ${isActive ? "is-active" : ""}`}
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+            fetchPriority={i === 0 ? "high" : "low"}
+            width={900}
+            height={675}
+            // Keep layout reserved even before src resolves
+            style={shouldLoad ? undefined : { visibility: "hidden" }}
+          />
+        );
+      })}
 
       <div className="hero-slide-caption">
         <span className="hero-slide-label">{SLIDES[index].label}</span>
@@ -82,7 +140,7 @@ export default function HeroIllustration() {
               aria-selected={i === index}
               aria-label={slide.label}
               className={`hero-dot ${i === index ? "is-active" : ""}`}
-              onClick={() => setIndex(i)}
+              onClick={() => goTo(i)}
             />
           ))}
         </div>

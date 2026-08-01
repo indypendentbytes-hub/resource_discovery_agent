@@ -4,6 +4,7 @@ export default function RecognitionCard() {
       id="recognition"
       className="section-cream px-6 py-16 md:py-20"
       aria-labelledby="recognition-heading"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "auto 360px" }}
     >
       <div className="mx-auto max-w-5xl">
         <div className="grid items-center gap-8 rounded-lg border border-[#D4CFC6] bg-[#F3E9DD] px-8 py-10 md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:px-12 md:py-12">
@@ -28,6 +29,8 @@ export default function RecognitionCard() {
               alt="Recognition received by INDYpendent Bytes"
               className="w-full max-w-[220px] h-auto rounded-lg shadow-md"
               loading="lazy"
+              decoding="async"
+              fetchPriority="low"
               width="220"
               height="220"
             />
