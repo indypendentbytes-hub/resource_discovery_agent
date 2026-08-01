@@ -2,38 +2,38 @@ import { useEffect, useState } from "react";
 
 /**
  * Crossfade photo loop — real people across the local food system.
- * Images: community gardens, growers, markets, shared land.
+ * Images live in /public/hero/ (committed or deployed with the site).
  */
 const SLIDES = [
   {
-    src: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=900&q=80",
-    alt: "Community garden with raised beds and growing vegetables",
-    label: "Community gardens",
+    src: "/hero/01-land-sunrise.jpg",
+    alt: "Open land and rolling hills at sunrise",
+    label: "Land",
   },
   {
-    src: "https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=900&q=80",
-    alt: "Grower harvesting fresh produce in a field",
-    label: "Cultivators at work",
+    src: "/hero/02-tilling.jpg",
+    alt: "Cultivator tilling soil with a walk-behind tiller",
+    label: "Preparing ground",
   },
   {
-    src: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=900&q=80",
-    alt: "Fresh vegetables at a local market stall",
-    label: "Local markets",
+    src: "/hero/03-harvest.jpg",
+    alt: "Grower carrying a crate of fresh harvest",
+    label: "Cultivators",
   },
   {
-    src: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80",
-    alt: "Hands planting seedlings in soil",
-    label: "Shared land",
+    src: "/hero/04-urban-garden.jpg",
+    alt: "Urban grower with a wheelbarrow in a backyard garden",
+    label: "Neighborhood land",
   },
   {
-    src: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=900&q=80",
-    alt: "People working together in a community garden",
-    label: "Neighbors coordinating",
+    src: "/hero/05-community.jpg",
+    alt: "Neighbors working together tending plants",
+    label: "Community",
   },
   {
-    src: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4a6?w=900&q=80",
-    alt: "Tractor and farmland at sunrise",
-    label: "Regional production",
+    src: "/hero/06-greenhouse.jpg",
+    alt: "Greenhouse production rows and harvest crates",
+    label: "Production & logistics",
   },
 ];
 
@@ -42,6 +42,7 @@ const INTERVAL_MS = 4500;
 export default function HeroIllustration() {
   const [index, setIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [failed, setFailed] = useState({});
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -64,16 +65,19 @@ export default function HeroIllustration() {
       className="hero-media hero-photo-loop"
       aria-label="Photos of people and places across the local food system"
     >
-      {SLIDES.map((slide, i) => (
-        <img
-          key={slide.src}
-          src={slide.src}
-          alt={slide.alt}
-          className={`hero-slide ${i === index ? "is-active" : ""}`}
-          loading={i === 0 ? "eager" : "lazy"}
-          decoding="async"
-        />
-      ))}
+      {SLIDES.map((slide, i) =>
+        failed[i] ? null : (
+          <img
+            key={slide.src}
+            src={slide.src}
+            alt={slide.alt}
+            className={`hero-slide ${i === index ? "is-active" : ""}`}
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+            onError={() => setFailed((f) => ({ ...f, [i]: true }))}
+          />
+        ),
+      )}
 
       <div className="hero-slide-caption">
         <span className="hero-slide-label">{SLIDES[index].label}</span>
