@@ -1,54 +1,129 @@
+/**
+ * System map: people · land · resources · buyers · logistics
+ * connected through the IB coordination hub.
+ */
 export default function HeroIllustration() {
   return (
-    <div className="hero-media" aria-label="Illustration of connected local food-system pathways">
-      <svg viewBox="0 0 640 440" role="img" aria-labelledby="hero-illustration-title hero-illustration-desc">
+    <div
+      className="hero-media"
+      aria-label="Illustration of connected local food-system pathways"
+    >
+      <svg
+        viewBox="0 0 640 440"
+        role="img"
+        aria-labelledby="hero-illustration-title hero-illustration-desc"
+      >
         <title id="hero-illustration-title">Connected local food economy</title>
         <desc id="hero-illustration-desc">
-          A branded illustration showing land, cultivation, community resources, logistics, and local buyers connected through INDYpendent Bytes.
+          Land, cultivators, resources, logistics, and local buyers connected
+          through INDYpendent Bytes coordination infrastructure.
         </desc>
 
-        <rect x="18" y="18" width="604" height="404" rx="24" fill="#F9F4CB" stroke="#D4CFC6" strokeWidth="2" />
-        <path d="M76 332C156 270 206 298 282 248C362 195 438 220 563 132" fill="none" stroke="#005588" strokeWidth="5" strokeLinecap="round" strokeDasharray="8 12" className="hero-route" />
+        {/* Linen panel */}
+        <rect
+          x="12"
+          y="12"
+          width="616"
+          height="416"
+          rx="16"
+          fill="#F3E9DD"
+          stroke="#D4CFC6"
+          strokeWidth="2"
+        />
 
-        <g className="hero-float hero-float-one">
-          <rect x="52" y="66" width="178" height="112" rx="14" fill="#FFFFFF" stroke="#00780F" strokeWidth="3" />
-          <circle cx="92" cy="108" r="20" fill="#00780F" />
-          <path d="M87 112c12-24 32-16 29-3-3 13-17 18-29 3Z" fill="#F9F4CB" />
-          <text x="124" y="105" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="700" fill="#1A1A1A">Cultivators</text>
-          <text x="124" y="130" fontFamily="Arial, sans-serif" fontSize="13" fill="#4A4A4A">skills + production</text>
+        {/* Soft soil path */}
+        <path
+          d="M40 380 Q180 300 320 220 Q460 140 600 80"
+          fill="none"
+          stroke="#5C4033"
+          strokeWidth="3"
+          strokeOpacity="0.15"
+          strokeDasharray="6 10"
+        />
+
+        {/* Connection routes — denim dashed */}
+        <path
+          d="M160 140 Q240 180 320 220"
+          fill="none"
+          stroke="#005588"
+          strokeWidth="2.5"
+          strokeDasharray="6 8"
+          className="hero-route"
+        />
+        <path
+          d="M480 130 Q400 170 320 220"
+          fill="none"
+          stroke="#005588"
+          strokeWidth="2.5"
+          strokeDasharray="6 8"
+          className="hero-route"
+        />
+        <path
+          d="M150 310 Q230 270 320 220"
+          fill="none"
+          stroke="#005588"
+          strokeWidth="2.5"
+          strokeDasharray="6 8"
+          className="hero-route"
+        />
+        <path
+          d="M490 310 Q410 270 320 220"
+          fill="none"
+          stroke="#005588"
+          strokeWidth="2.5"
+          strokeDasharray="6 8"
+          className="hero-route"
+        />
+
+        {/* Cultivators — green */}
+        <g className="hero-float-one">
+          <rect x="48" y="70" width="170" height="100" rx="8" fill="#FFFFFF" stroke="#00780F" strokeWidth="2.5" />
+          <circle cx="88" cy="120" r="18" fill="#00780F" />
+          <path d="M82 124c10-20 28-14 26-2s-14 16-26 2Z" fill="#F9F4CB" />
+          <text x="116" y="112" fontFamily="system-ui,sans-serif" fontSize="15" fontWeight="700" fill="#1A1A1A">Cultivators</text>
+          <text x="116" y="132" fontFamily="system-ui,sans-serif" fontSize="12" fill="#5C4033">skills · production</text>
         </g>
 
-        <g className="hero-float hero-float-two">
-          <rect x="390" y="58" width="188" height="116" rx="14" fill="#FFFFFF" stroke="#C65A1E" strokeWidth="3" />
-          <path d="M430 122h36V92h-36v30Zm8-42h20v12h-20V80Z" fill="#C65A1E" />
-          <text x="478" y="103" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="700" fill="#1A1A1A">Local buyers</text>
-          <text x="478" y="128" fontFamily="Arial, sans-serif" fontSize="13" fill="#4A4A4A">clear demand</text>
+        {/* Local buyers — pumpkin */}
+        <g className="hero-float-two">
+          <rect x="422" y="60" width="170" height="100" rx="8" fill="#FFFFFF" stroke="#C65A1E" strokeWidth="2.5" />
+          <rect x="448" y="92" width="28" height="36" rx="3" fill="#C65A1E" />
+          <path d="M452 92h20v-10h-20z" fill="#E07A3A" />
+          <text x="488" y="108" fontFamily="system-ui,sans-serif" fontSize="15" fontWeight="700" fill="#1A1A1A">Local buyers</text>
+          <text x="488" y="128" fontFamily="system-ui,sans-serif" fontSize="12" fill="#5C4033">clear demand</text>
         </g>
 
-        <g className="hero-float hero-float-three">
-          <rect x="66" y="270" width="188" height="106" rx="14" fill="#FFFFFF" stroke="#005588" strokeWidth="3" />
-          <path d="M105 328c0-19 15-34 34-34s34 15 34 34" fill="none" stroke="#005588" strokeWidth="7" strokeLinecap="round" />
-          <circle cx="139" cy="293" r="9" fill="#005588" />
-          <text x="182" y="315" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="700" fill="#1A1A1A">Resources</text>
-          <text x="182" y="340" fontFamily="Arial, sans-serif" fontSize="13" fill="#4A4A4A">guided access</text>
+        {/* Land — soil */}
+        <g className="hero-float-three">
+          <rect x="48" y="280" width="170" height="100" rx="8" fill="#FFFFFF" stroke="#5C4033" strokeWidth="2.5" />
+          <path d="M72 350c0-20 18-36 36-36s36 16 36 36" fill="none" stroke="#5C4033" strokeWidth="6" strokeLinecap="round" />
+          <circle cx="108" cy="318" r="8" fill="#00780F" />
+          <text x="156" y="320" fontFamily="system-ui,sans-serif" fontSize="15" fontWeight="700" fill="#1A1A1A">Land</text>
+          <text x="156" y="340" fontFamily="system-ui,sans-serif" fontSize="12" fill="#5C4033">hosts · access</text>
         </g>
 
-        <g className="hero-float hero-float-four">
-          <rect x="386" y="278" width="190" height="100" rx="14" fill="#FFFFFF" stroke="#00780F" strokeWidth="3" />
-          <path d="M420 322h48l-10-19h-38v19Zm8 0a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm32 0a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" fill="#00780F" />
-          <text x="486" y="318" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="700" fill="#1A1A1A">Logistics</text>
-          <text x="486" y="343" fontFamily="Arial, sans-serif" fontSize="13" fill="#4A4A4A">coordinated flow</text>
+        {/* Resources — denim */}
+        <g className="hero-float-four">
+          <rect x="422" y="280" width="170" height="100" rx="8" fill="#FFFFFF" stroke="#005588" strokeWidth="2.5" />
+          <circle cx="462" cy="330" r="20" fill="none" stroke="#005588" strokeWidth="3" />
+          <path d="M462 318v12l8 5" stroke="#005588" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+          <text x="492" y="322" fontFamily="system-ui,sans-serif" fontSize="15" fontWeight="700" fill="#1A1A1A">Resources</text>
+          <text x="492" y="342" fontFamily="system-ui,sans-serif" fontSize="12" fill="#5C4033">guided access</text>
         </g>
 
+        {/* IB hub core */}
         <g className="hero-core">
-          <circle cx="320" cy="220" r="68" fill="#00780F" />
-          <circle cx="320" cy="220" r="54" fill="#F3E9DD" stroke="#FFFFFF" strokeWidth="3" />
-          <text x="320" y="211" textAnchor="middle" fontFamily="Georgia, serif" fontSize="22" fontWeight="700" fill="#005588">INDYpendent</text>
-          <text x="320" y="239" textAnchor="middle" fontFamily="Georgia, serif" fontSize="22" fontWeight="700" fill="#005588">Bytes</text>
+          <circle cx="320" cy="220" r="64" fill="#00780F" />
+          <circle cx="320" cy="220" r="50" fill="#F9F4CB" stroke="#FFFFFF" strokeWidth="3" />
+          <text x="320" y="212" textAnchor="middle" fontFamily="Georgia,serif" fontSize="15" fontWeight="700" fill="#005588">INDYpendent</text>
+          <text x="320" y="234" textAnchor="middle" fontFamily="Georgia,serif" fontSize="15" fontWeight="700" fill="#005588">Bytes</text>
         </g>
 
-        <circle cx="276" cy="248" r="8" fill="#C65A1E" className="hero-pulse" />
-        <circle cx="389" cy="184" r="7" fill="#00780F" className="hero-pulse hero-pulse-delay" />
+        {/* Pulse nodes */}
+        <circle cx="240" cy="180" r="6" fill="#C65A1E" className="hero-pulse" />
+        <circle cx="400" cy="180" r="6" fill="#00780F" className="hero-pulse hero-pulse-delay" />
+        <circle cx="240" cy="260" r="5" fill="#005588" className="hero-pulse" />
+        <circle cx="400" cy="260" r="5" fill="#C65A1E" className="hero-pulse hero-pulse-delay" />
       </svg>
     </div>
   );
