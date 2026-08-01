@@ -2,39 +2,23 @@ import { useEffect, useState } from "react";
 
 /**
  * Crossfade photo loop — real people across the local food system.
- * Images live in /public/hero/ (committed or deployed with the site).
+ *
+ * Photos provided by INDYpendent Bytes. Additional slides will be added
+ * as files land in /public/hero/ or via continued uploads.
  */
 const SLIDES = [
   {
-    src: "/hero/01-land-sunrise.jpg",
+    src: "https://i.imgur.com/UgXbG6X.jpeg",
     alt: "Open land and rolling hills at sunrise",
     label: "Land",
   },
   {
-    src: "/hero/02-tilling.jpg",
-    alt: "Cultivator tilling soil with a walk-behind tiller",
-    label: "Preparing ground",
-  },
-  {
-    src: "/hero/03-harvest.jpg",
-    alt: "Grower carrying a crate of fresh harvest",
-    label: "Cultivators",
-  },
-  {
-    src: "/hero/04-urban-garden.jpg",
-    alt: "Urban grower with a wheelbarrow in a backyard garden",
-    label: "Neighborhood land",
-  },
-  {
-    src: "/hero/05-community.jpg",
-    alt: "Neighbors working together tending plants",
-    label: "Community",
-  },
-  {
-    src: "/hero/06-greenhouse.jpg",
+    src: "https://i.imgur.com/Xr4K9EV.jpeg",
     alt: "Greenhouse production rows and harvest crates",
     label: "Production & logistics",
   },
+  // Remaining user photos — add when available:
+  // 02-tilling, 03-harvest, 04-urban-garden, 05-community
 ];
 
 const INTERVAL_MS = 4500;
@@ -42,7 +26,6 @@ const INTERVAL_MS = 4500;
 export default function HeroIllustration() {
   const [index, setIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [failed, setFailed] = useState({});
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -53,7 +36,7 @@ export default function HeroIllustration() {
   }, []);
 
   useEffect(() => {
-    if (reducedMotion) return undefined;
+    if (reducedMotion || SLIDES.length < 2) return undefined;
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % SLIDES.length);
     }, INTERVAL_MS);
@@ -65,19 +48,16 @@ export default function HeroIllustration() {
       className="hero-media hero-photo-loop"
       aria-label="Photos of people and places across the local food system"
     >
-      {SLIDES.map((slide, i) =>
-        failed[i] ? null : (
-          <img
-            key={slide.src}
-            src={slide.src}
-            alt={slide.alt}
-            className={`hero-slide ${i === index ? "is-active" : ""}`}
-            loading={i === 0 ? "eager" : "lazy"}
-            decoding="async"
-            onError={() => setFailed((f) => ({ ...f, [i]: true }))}
-          />
-        ),
-      )}
+      {SLIDES.map((slide, i) => (
+        <img
+          key={slide.src}
+          src={slide.src}
+          alt={slide.alt}
+          className={`hero-slide ${i === index ? "is-active" : ""}`}
+          loading={i === 0 ? "eager" : "lazy"}
+          decoding="async"
+        />
+      ))}
 
       <div className="hero-slide-caption">
         <span className="hero-slide-label">{SLIDES[index].label}</span>
