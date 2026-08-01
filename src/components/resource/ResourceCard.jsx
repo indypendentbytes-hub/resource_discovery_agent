@@ -1,16 +1,18 @@
-import StickerCard from "../primitives/StickerCard";
-import StickerButton from "../primitives/StickerButton";
-
-export default function ResourceCard({ title, details, onSelect }) {
+export default function ResourceCard({ title, details }) {
   return (
-    <StickerCard>
-      <div className="relative z-10">
-        <h3 className="mb-1 font-bold">{title}</h3>
-        <p className="mb-4 opacity-90">{details}</p>
-        <StickerButton onClick={onSelect} aria-label={`View ${title}`}>
-          View
-        </StickerButton>
-      </div>
-    </StickerCard>
+    <div className="p-4">
+      <h3 className="text-sm font-semibold text-[#1A1A1A] leading-snug">
+        {title}
+      </h3>
+      {details && (
+        <p className="mt-1.5 text-xs leading-relaxed text-[#1A1A1A]/60">
+          {details}
+        </p>
+      )}
+      <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[#C65A1E]">
+        Continue
+        <span aria-hidden="true">→</span>
+      </span>
+    </div>
   );
 }

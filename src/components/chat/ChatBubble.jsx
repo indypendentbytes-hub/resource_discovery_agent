@@ -1,14 +1,17 @@
-import StickerCard from "../primitives/StickerCard";
-
 export default function ChatBubble({ sender, children }) {
-  const borderColor =
-    sender === "user" ? "border-l-4 border-ib-denim" : "border-l-4 border-ib-green";
+  const isUser = sender === "user";
 
   return (
-    <StickerCard>
-      <div className={`${borderColor} pl-3`}>
+    <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
+      <div
+        className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+          isUser
+            ? "bg-[#00780F] text-white rounded-br-md"
+            : "bg-white text-[#1A1A1A] border border-[#E8E2D9] rounded-bl-md"
+        }`}
+      >
         {children}
       </div>
-    </StickerCard>
+    </div>
   );
 }

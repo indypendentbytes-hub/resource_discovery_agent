@@ -1,9 +1,14 @@
-export default function StickerButton({ children, onClick, type = "button", ...props }) {
+export default function StickerButton({
+  children,
+  onClick,
+  type = "button",
+  ...props
+}) {
   return (
     <button
       type={type}
       onClick={onClick}
-      className="rounded-full border-2 border-ib-denim bg-white px-4 py-2 text-text-primaryLight shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-ib-green/30 dark:bg-[#1E1E1E] dark:text-text-primaryDark"
+      className="inline-flex items-center gap-1.5 rounded-md bg-[#00780F] px-3.5 py-2 text-sm font-semibold text-white transition hover:bg-[#00660D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C65A1E]"
       {...props}
     >
       {children}

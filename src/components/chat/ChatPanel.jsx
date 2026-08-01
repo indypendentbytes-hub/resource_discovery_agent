@@ -13,22 +13,18 @@ export default function ChatPanel({ messages, onSend, isSearching }) {
   }
 
   return (
-    <section className="agent-chat flex min-w-0 flex-col p-5 md:p-7 lg:p-8">
+    <section className="flex min-w-0 flex-col bg-[#FAF8F4] p-5 md:p-6 lg:p-8">
       <div className="mb-5">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#005588]">
-          Guided resource navigation
+        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C65A1E]">
+          Guided navigation
         </p>
-        <h3 className="mt-2 text-xl font-black md:text-2xl">
+        <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-[#1A1A1A] md:text-2xl" style={{ fontFamily: "var(--font-display)" }}>
           What are you trying to accomplish?
         </h3>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed opacity-70 md:text-base">
-          Share your goal, location, and any barriers. The agent will organize
-          relevant options and explain what to do next.
-        </p>
       </div>
 
       <div
-        className="flex min-h-[220px] flex-1 flex-col gap-3 overflow-y-auto rounded-[4px] border border-black/10 bg-white p-4"
+        className="flex min-h-[240px] flex-1 flex-col gap-3 overflow-y-auto rounded-xl bg-[#F3E9DD]/50 p-4"
         aria-live="polite"
       >
         {messages.map((message, index) => (
@@ -40,7 +36,7 @@ export default function ChatPanel({ messages, onSend, isSearching }) {
 
       <form
         onSubmit={handleSubmit}
-        className="mt-5 flex flex-col gap-3 sm:flex-row"
+        className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:items-center"
       >
         <label className="sr-only" htmlFor="resource-question">
           Ask the Resource Discovery Agent
@@ -49,15 +45,15 @@ export default function ChatPanel({ messages, onSend, isSearching }) {
           id="resource-question"
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
-          placeholder="Example: I need land, training, or help starting a business"
-          className="agent-input min-w-0 flex-1 px-4 py-3 text-sm"
+          placeholder="e.g. I need land access near Indianapolis…"
+          className="min-w-0 flex-1 rounded-xl border border-[#E8E2D9] bg-white px-4 py-3.5 text-sm text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 outline-none transition focus:border-[#00780F] focus:ring-2 focus:ring-[#00780F]/15"
           disabled={isSearching}
           autoComplete="off"
         />
         <button
           type="submit"
           disabled={isSearching || !draft.trim()}
-          className="agent-submit px-5 py-3 text-sm"
+          className="rounded-xl bg-[#00780F] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#00660D] disabled:cursor-not-allowed disabled:opacity-40"
         >
           {isSearching ? "Searching…" : "Find my path"}
         </button>

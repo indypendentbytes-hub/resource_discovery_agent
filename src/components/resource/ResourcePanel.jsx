@@ -2,39 +2,40 @@ import ResourceCard from "./ResourceCard";
 
 export default function ResourcePanel({ resources, onResourceSelect }) {
   return (
-    <aside className="agent-resources border-t border-black/10 p-5 md:p-7 lg:border-l lg:border-t-0">
-      <div className="flex items-start justify-between gap-4">
+    <aside className="border-t border-[#E8E2D9] bg-white p-5 md:p-6 lg:border-l lg:border-t-0 lg:p-8">
+      <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#005588]">
-            Recommended next steps
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#005588]">
+            Next steps
           </p>
-          <h3 className="mt-2 text-xl font-black md:text-2xl">Your resource path</h3>
+          <h3
+            className="mt-1.5 text-xl font-semibold tracking-tight text-[#1A1A1A]"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Your path
+          </h3>
         </div>
         {resources.length > 0 && (
-          <span className="rounded-[4px] bg-white px-2.5 py-1 text-xs font-bold border border-black/10">
+          <span className="rounded-full bg-[#00780F]/10 px-2.5 py-0.5 text-xs font-semibold text-[#00780F]">
             {resources.length}
           </span>
         )}
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed opacity-70">
-        Matches appear here with context, preparation steps, and important
-        verification notes.
-      </p>
-
-      <div className="mt-5 max-h-[370px] space-y-3 overflow-y-auto pr-1">
+      <div className="mt-5 max-h-[380px] space-y-2.5 overflow-y-auto">
         {resources.length === 0 ? (
-          <div className="rounded-[4px] border border-dashed border-black/20 bg-white/80 p-5">
-            <p className="font-bold text-sm">Nothing to sort through yet.</p>
-            <p className="mt-2 text-sm leading-relaxed opacity-70">
-              Ask one clear question to begin. Include your location and the
-              main barrier you are facing.
+          <div className="rounded-xl border border-dashed border-[#D4CFC6] bg-[#FAF8F4] p-5">
+            <p className="text-sm font-semibold text-[#1A1A1A]">
+              Nothing here yet
             </p>
-            <div className="mt-4 space-y-1.5 text-xs opacity-75">
-              <p>“I need a place to cultivate food.”</p>
-              <p>“I need emergency business funding.”</p>
-              <p>“I need food assistance near 46218.”</p>
-            </div>
+            <p className="mt-1.5 text-xs leading-relaxed text-[#1A1A1A]/55">
+              Share a goal, location, and any barriers. Matches will appear here.
+            </p>
+            <ul className="mt-4 space-y-1.5 text-xs text-[#1A1A1A]/50">
+              <li>“I need a place to cultivate food.”</li>
+              <li>“I need business funding near 46218.”</li>
+              <li>“I want to host land for growers.”</li>
+            </ul>
           </div>
         ) : (
           resources.map((resource, index) => (
@@ -42,7 +43,7 @@ export default function ResourcePanel({ resources, onResourceSelect }) {
               type="button"
               key={resource.id || index}
               onClick={() => onResourceSelect?.(resource)}
-              className="block w-full rounded-[4px] bg-white p-1 text-left border border-black/8 shadow-sm transition hover:-translate-y-0.5 hover:border-[#00780F]/35 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C65A1E]"
+              className="block w-full rounded-xl border border-[#E8E2D9] bg-[#FAF8F4] text-left transition hover:border-[#00780F]/40 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C65A1E]"
             >
               <ResourceCard title={resource.title} details={resource.details} />
             </button>

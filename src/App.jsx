@@ -14,7 +14,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/indypendent.bytes/";
 const initialMessages = [
   {
     sender: "assistant",
-    text: "Welcome to Resource Discovery. Tell me what you are trying to accomplish, your location, and any hard constraints.",
+    text: "Welcome. Tell me what you are trying to accomplish, where you are, and any hard constraints.",
   },
 ];
 
@@ -81,29 +81,29 @@ const resourceGraph = [
 
 const pathways = [
   {
-    eyebrow: "Find support",
-    title: "Use the Resource Discovery Agent",
+    eyebrow: "Everyone",
+    title: "Resource Discovery Agent",
     description:
-      "Describe what you are trying to accomplish and get a guided path to relevant programs, training, funding, food access, land, and business resources.",
+      "Describe a goal and get a guided path to programs, training, funding, land, and business resources — with clear next steps.",
     href: "#resource-agent",
     label: "Find resources",
   },
   {
-    eyebrow: "Build your pathway",
-    title: "Become an IB Cultivator",
+    eyebrow: "Growers",
+    title: "Become a Cultivator",
     description:
-      "Tell us about your experience, goals, land access, training needs, and interest in participating in a coordinated local food system.",
+      "Share experience, goals, land access, and training needs. We help you prepare and connect into the coordinated system.",
     href: CULTIVATOR_INTAKE_URL,
-    label: "Start cultivator intake",
+    label: "Start intake",
     external: true,
   },
   {
-    eyebrow: "Activate local land",
+    eyebrow: "Landowners",
     title: "Become a Land Host",
     description:
-      "Share information about available land, water, access, and your interest in supporting a local cultivator through a structured arrangement.",
+      "Share available land, water, access, and interest in supporting local production through a structured arrangement.",
     href: LAND_HOST_INTAKE_URL,
-    label: "Start land host intake",
+    label: "Start intake",
     external: true,
   },
 ];
@@ -134,7 +134,7 @@ export default function App() {
       { sender: "user", text: cleanText },
       {
         sender: "assistant",
-        text: "I found the initial catalog matches. I’m verifying current program details and authoritative sources now.",
+        text: "I found initial catalog matches. Verifying current program details now.",
       },
     ]);
 
@@ -186,155 +186,123 @@ export default function App() {
   }
 
   return (
-    <main className="min-h-screen bg-ib-linen text-text-primaryLight">
-      <header className="site-header sticky top-0 z-50 px-4 py-3">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
-          <a
-            href="#top"
-            className="flex items-center gap-2.5 text-sm font-bold tracking-tight sm:text-base"
-          >
-            <span className="brand-marker" aria-hidden="true" />
+    <main className="min-h-screen bg-[#FAF8F4] text-[#1A1A1A]">
+      {/* Header — glass, minimal */}
+      <header className="site-header sticky top-0 z-50">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+          <a href="#top" className="brand flex items-center gap-2.5 text-sm font-semibold tracking-tight">
+            <span className="brand-dot" aria-hidden="true" />
             INDYpendent Bytes
           </a>
-          <nav
-            className="hidden items-center gap-7 text-sm font-semibold md:flex"
-            aria-label="Primary navigation"
-          >
+          <nav className="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Primary">
             <a href="#how-it-works">How it works</a>
             <a href="#pathways">Get involved</a>
             <a href="#resource-agent">Find resources</a>
           </nav>
-          <a
-            href="#resource-agent"
-            className="text-sm font-semibold md:hidden"
-          >
+          <a href="#resource-agent" className="cta cta-primary !py-2 !px-4 text-xs md:text-sm">
             Find resources
           </a>
         </div>
       </header>
 
-      <section id="top" className="px-4 py-8 md:py-12">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="hero-copy">
-            <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-[#C65A1E] sm:text-sm">
-              Shared Structure for a Stronger Local Food Economy
+      {/* Hero — bold type, open space */}
+      <section id="top" className="px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C65A1E]">
+              Shared structure for a stronger local food economy
             </p>
-            <h1>
-              Connecting people, land, resources, and local food opportunity.
+            <h1 className="mt-5 text-[#1A1A1A]">
+              Connecting people, land, resources &amp; opportunity.
             </h1>
-
-            <div className="hero-actions mt-6 grid gap-3 sm:grid-cols-3">
-              <a href="#resource-agent" className="action-button action-primary">
-                <span className="action-kicker">Need support?</span>
-                <span className="action-label">Find resources</span>
-                <span className="action-arrow" aria-hidden="true">
-                  →
-                </span>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-[#1A1A1A]/65 md:text-lg">
+              Navigate support, activate underused land, prepare cultivators, and
+              build clearer pathways into a coordinated regional food system.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a href="#resource-agent" className="cta cta-primary">
+                Find resources
+                <span aria-hidden="true">→</span>
               </a>
               <a
                 href={CULTIVATOR_INTAKE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="action-button action-secondary"
+                className="cta cta-ghost"
               >
-                <span className="action-kicker">Want to cultivate?</span>
-                <span className="action-label">Start cultivator intake</span>
-                <span className="action-arrow" aria-hidden="true">
-                  →
-                </span>
+                Cultivator intake
               </a>
               <a
                 href={LAND_HOST_INTAKE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="action-button action-secondary"
+                className="cta cta-ghost"
               >
-                <span className="action-kicker">Have land?</span>
-                <span className="action-label">Start land host intake</span>
-                <span className="action-arrow" aria-hidden="true">
-                  →
-                </span>
+                Land host intake
               </a>
             </div>
-
-            <p className="mt-5 max-w-xl text-base leading-relaxed opacity-80 sm:text-lg">
-              INDYpendent Bytes helps communities navigate support, activate
-              underused land, prepare cultivators, and build clearer pathways
-              into a coordinated regional food system.
-            </p>
           </div>
-
           <HeroIllustration />
         </div>
       </section>
 
-      <section id="how-it-works" className="px-4 py-12 md:py-16">
+      {/* How it works */}
+      <section id="how-it-works" className="border-t border-[#E8E2D9] bg-white px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="section-eyebrow">How it works</p>
-          <h2 className="mt-2 max-w-2xl text-2xl font-black md:text-3xl">
-            One public entry point. Clear next steps.
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#00780F]">
+            How it works
+          </p>
+          <h2
+            className="mt-3 max-w-lg text-3xl font-semibold tracking-tight md:text-4xl"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            One entry point. Clear next steps.
           </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
             {[
-              [
-                "1",
-                "Tell us what you need",
-                "Use the agent or select the intake path that matches your role.",
-              ],
-              [
-                "2",
-                "Get routed correctly",
-                "Receive relevant information, resources, preparation steps, or an IB intake pathway.",
-              ],
-              [
-                "3",
-                "Move forward prepared",
-                "Understand what to expect, what to have ready, and what happens next.",
-              ],
-            ].map(([number, title, description]) => (
-              <article
-                key={number}
-                className="motion-card border border-black/10 bg-white p-6"
-              >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#00780F] text-sm font-bold text-white">
-                  {number}
-                </span>
-                <h3 className="mt-4 text-lg font-black">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed opacity-75">
-                  {description}
-                </p>
+              ["01", "Tell us what you need", "Use the agent or pick the intake path that matches your role."],
+              ["02", "Get routed correctly", "Receive relevant resources, preparation steps, or an IB pathway."],
+              ["03", "Move forward prepared", "Know what to expect, what to have ready, and what happens next."],
+            ].map(([num, title, body]) => (
+              <article key={num} className="step-card">
+                <span className="step-num">{num}</span>
+                <h3 className="mt-4 text-lg font-semibold tracking-tight">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#1A1A1A]/60">{body}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="pathways" className="px-4 py-12 md:py-16">
+      {/* Pathways */}
+      <section id="pathways" className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="section-eyebrow">Get involved</p>
-          <h2 className="mt-2 text-2xl font-black md:text-3xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#005588]">
+            Get involved
+          </p>
+          <h2
+            className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Three ways to begin.
           </h2>
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {pathways.map((pathway) => (
-              <article
-                key={pathway.title}
-                className="motion-card flex min-h-[260px] flex-col p-6"
-              >
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#005588]">
-                  {pathway.eyebrow}
+          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+            {pathways.map((p) => (
+              <article key={p.title} className="pathway-card">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C65A1E]">
+                  {p.eyebrow}
                 </p>
-                <h3 className="mt-3 text-xl font-black">{pathway.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed opacity-75">
-                  {pathway.description}
+                <h3 className="mt-3 text-xl font-semibold tracking-tight">{p.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-[#1A1A1A]/60">
+                  {p.description}
                 </p>
                 <a
-                  href={pathway.href}
-                  target={pathway.external ? "_blank" : undefined}
-                  rel={pathway.external ? "noopener noreferrer" : undefined}
-                  className="pathway-button mt-6 inline-flex w-fit items-center gap-2 px-5 py-2.5 text-sm font-bold text-white"
+                  href={p.href}
+                  target={p.external ? "_blank" : undefined}
+                  rel={p.external ? "noopener noreferrer" : undefined}
+                  className="pathway-link"
                 >
-                  {pathway.label}
+                  {p.label}
                   <span aria-hidden="true">→</span>
                 </a>
               </article>
@@ -345,58 +313,55 @@ export default function App() {
 
       <RecognitionCard />
 
-      <section id="resource-agent" className="border-t border-black/10 px-4 py-12 md:py-16">
+      {/* Agent */}
+      <section id="resource-agent" className="border-t border-[#E8E2D9] bg-white px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="section-eyebrow mb-2">Find the right next step</p>
-          <h2 className="mb-3 text-2xl font-black md:text-3xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C65A1E]">
+            Find the right next step
+          </p>
+          <h2
+            className="mt-3 max-w-xl text-3xl font-semibold tracking-tight md:text-4xl"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Resource Discovery Agent
           </h2>
-          <p className="mb-8 max-w-2xl text-base leading-relaxed opacity-80">
-            Tell the agent what you are trying to accomplish, where you are
-            located, and what constraints you are facing. It will help organize
-            relevant options and next steps instead of giving you a list of
-            disconnected links.
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-[#1A1A1A]/60">
+            Share a goal, location, and constraints. The agent organizes relevant
+            options and next steps — not a dump of links.
           </p>
-          <DiscoveryAgentLayout
-            messages={messages}
-            resources={resources}
-            routingState={routingState}
-            routingSummary={routingSummary}
-            onSend={handleSend}
-            onResourceSelect={handleResourceSelect}
-            isSearching={isSearching}
-          />
+          <div className="mt-12">
+            <DiscoveryAgentLayout
+              messages={messages}
+              resources={resources}
+              routingState={routingState}
+              routingSummary={routingSummary}
+              onSend={handleSend}
+              onResourceSelect={handleResourceSelect}
+              isSearching={isSearching}
+            />
+          </div>
         </div>
       </section>
 
-      <footer className="site-footer px-4 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-8 md:flex-row md:items-start">
+      {/* Footer */}
+      <footer className="site-footer px-6 py-14">
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="font-black text-lg">INDYpendent Bytes</p>
-            <p className="mt-1 text-sm opacity-75">
+            <p className="text-lg font-semibold tracking-tight">INDYpendent Bytes</p>
+            <p className="mt-1 text-sm text-white/50">
               Regional Food Systems Coordination Infrastructure
             </p>
           </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold">
-            <a href={CULTIVATOR_INTAKE_URL} target="_blank" rel="noopener noreferrer">
-              Cultivator intake
-            </a>
-            <a href={LAND_HOST_INTAKE_URL} target="_blank" rel="noopener noreferrer">
-              Land host intake
-            </a>
-            <a href="#resource-agent">Resource Discovery Agent</a>
-            <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
-              Facebook
-            </a>
-            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
+          <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            <a href={CULTIVATOR_INTAKE_URL} target="_blank" rel="noopener noreferrer">Cultivator intake</a>
+            <a href={LAND_HOST_INTAKE_URL} target="_blank" rel="noopener noreferrer">Land host intake</a>
+            <a href="#resource-agent">Resource Agent</a>
+            <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
-        <div className="mx-auto mt-8 max-w-6xl border-t border-white/15 pt-5 text-xs opacity-60 flex flex-col sm:flex-row sm:justify-between gap-2">
+        <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 pt-6 text-xs text-white/40 flex flex-col gap-1 sm:flex-row sm:justify-between">
           <span>© {new Date().getFullYear()} INDYpendent Bytes</span>
           <span>Built for regional food system coordination</span>
         </div>

@@ -1,11 +1,8 @@
-export default function StickerCard({ children }) {
+export default function StickerCard({ children, className = "" }) {
   return (
-    <div className="
-      relative bg-white dark:bg-[#1E1E1E]
-      text-text-primaryLight dark:text-text-primaryDark
-      rounded-xl border-2 border-ib-denim shadow-sticker p-5
-    ">
-      <div className="absolute inset-0 bg-soil opacity-15 mix-blend-multiply pointer-events-none"></div>
+    <div
+      className={`rounded-lg border border-[#E8E2D9] bg-white p-4 ${className}`}
+    >
       {children}
     </div>
   );
