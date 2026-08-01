@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Metric-adjusted system fallbacks reduce layout shift (CLS)
+  while webfonts load. size-adjust / ascent-override approximate
+  BioRhyme and Work Sans proportions.
+*/
+@font-face {
+  font-family: "Work Sans Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Helvetica"), local("sans-serif");
+  size-adjust: 97%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "BioRhyme Fallback";
+  src: local("Georgia"), local("Times New Roman"), local("Times"), local("serif");
+  size-adjust: 108%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 :root {
   --ib-green: #00780F;
   --ib-green-dark: #00660D;
@@ -14,7 +37,10 @@
   --radius-card: 4px;
   --radius-btn: 6px;
 
-  font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "Work Sans", "Work Sans Fallback", system-ui, -apple-system, sans-serif;
+  --font-display: "BioRhyme", "BioRhyme Fallback", Georgia, "Times New Roman", serif;
+
+  font-family: var(--font-sans);
   color: var(--ib-near-black);
   background: var(--ib-linen);
   color-scheme: only light;
@@ -31,7 +57,9 @@ body {
   min-height: 100vh;
   background: var(--ib-linen);
   color: var(--ib-near-black);
-  antialiased;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -39,7 +67,7 @@ h2,
 h3,
 .font-display,
 .font-black {
-  font-family: "BioRhyme", Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   letter-spacing: -0.02em;
 }
 
