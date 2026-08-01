@@ -23,9 +23,7 @@ body {
 }
 
 main,
-header,
-section,
-footer {
+section {
   color: #000000 !important;
 }
 
@@ -34,12 +32,23 @@ main {
 }
 
 header {
-  background: #005588 !important;
-  border-color: #D4CFC6 !important;
+  background: #00780F !important;
+  border-color: #00660D !important;
+  padding-top: 0.65rem !important;
+  padding-bottom: 0.65rem !important;
 }
 
-header a {
-  color: #F3E9DD !important;
+header a,
+header nav a {
+  color: #FFFFFF !important;
+}
+
+header nav a:hover {
+  color: #F9F4CB !important;
+}
+
+header span[aria-hidden="true"] {
+  background: #C65A1E !important;
 }
 
 h1,
@@ -50,14 +59,35 @@ h3,
   letter-spacing: -0.025em;
 }
 
+#top {
+  padding-top: 1.4rem !important;
+  padding-bottom: 1.6rem !important;
+}
+
 #top h1 {
-  max-width: 760px;
-  font-size: clamp(2.75rem, 6vw, 4.75rem) !important;
-  line-height: 1.03 !important;
+  max-width: 690px;
+  font-size: clamp(2.15rem, 4.5vw, 3.45rem) !important;
+  line-height: 1.02 !important;
+}
+
+#top h1 + p {
+  margin-top: 0.65rem !important;
+  max-width: 760px !important;
+  font-size: 1rem !important;
+  line-height: 1.55 !important;
+}
+
+#top > div > div:nth-child(2) {
+  margin-top: 0.9rem !important;
+}
+
+#top > div > div:nth-child(2) a {
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
 }
 
 #resource-agent h2 {
-  font-size: clamp(2.25rem, 4.5vw, 3.75rem) !important;
+  font-size: clamp(2rem, 4vw, 3.25rem) !important;
   line-height: 1.08 !important;
 }
 
@@ -162,8 +192,18 @@ footer p {
   }
 
   #top {
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.4rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #top h1 {
+    font-size: 2rem !important;
+  }
+
+  #top > div > div:nth-child(2) {
+    gap: 0.55rem !important;
   }
 }
 
