@@ -13,21 +13,22 @@ export default function ChatPanel({ messages, onSend, isSearching }) {
   }
 
   return (
-    <section className="flex min-w-0 flex-col bg-[#f8f5ec] p-6 md:p-8 lg:p-9">
+    <section className="agent-chat flex min-w-0 flex-col p-5 md:p-7 lg:p-8">
       <div className="mb-5">
-        <p className="text-xs font-black uppercase tracking-[0.18em] text-ib-denim">
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#005588]">
           Guided resource navigation
         </p>
-        <h3 className="mt-2 text-2xl font-black md:text-3xl">
+        <h3 className="mt-2 text-xl font-black md:text-2xl">
           What are you trying to accomplish?
         </h3>
-        <p className="mt-2 max-w-2xl leading-7 opacity-70">
-          Share your goal, location, and any barriers. The agent will organize relevant options and explain what to do next.
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed opacity-70 md:text-base">
+          Share your goal, location, and any barriers. The agent will organize
+          relevant options and explain what to do next.
         </p>
       </div>
 
       <div
-        className="flex min-h-[235px] flex-1 flex-col gap-4 overflow-y-auto rounded-2xl border border-black/10 bg-white p-4 md:p-5"
+        className="flex min-h-[220px] flex-1 flex-col gap-3 overflow-y-auto rounded-[4px] border border-black/10 bg-white p-4"
         aria-live="polite"
       >
         {messages.map((message, index) => (
@@ -37,7 +38,10 @@ export default function ChatPanel({ messages, onSend, isSearching }) {
         ))}
       </div>
 
-      <form onSubmit={handleSubmit} className="mt-5 flex flex-col gap-3 sm:flex-row">
+      <form
+        onSubmit={handleSubmit}
+        className="mt-5 flex flex-col gap-3 sm:flex-row"
+      >
         <label className="sr-only" htmlFor="resource-question">
           Ask the Resource Discovery Agent
         </label>
@@ -46,12 +50,14 @@ export default function ChatPanel({ messages, onSend, isSearching }) {
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
           placeholder="Example: I need land, training, or help starting a business"
-          className="min-w-0 flex-1 rounded-xl border border-black/15 bg-white px-5 py-4 text-text-primaryLight outline-none transition placeholder:text-black/45 focus:border-ib-denim focus:ring-4 focus:ring-ib-denim/10"
+          className="agent-input min-w-0 flex-1 px-4 py-3 text-sm"
+          disabled={isSearching}
+          autoComplete="off"
         />
         <button
           type="submit"
           disabled={isSearching || !draft.trim()}
-          className="rounded-xl bg-ib-denim px-6 py-4 font-black text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-45"
+          className="agent-submit px-5 py-3 text-sm"
         >
           {isSearching ? "Searching…" : "Find my path"}
         </button>
