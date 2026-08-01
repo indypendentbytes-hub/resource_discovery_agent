@@ -1,0 +1,88 @@
+{
+  "source_id": "IN-DWD-WORKONE-LOCATIONS",
+  "official_name": "Indiana WorkOne Locations",
+  "responsible_organization": "Indiana Department of Workforce Development",
+  "submitted_url": "https://uplink.in.gov/CSS/CSSWorkOneLocation.htm?_st=",
+  "canonical_url": "https://www.in.gov/dwd/workone/",
+  "resource_type": "location_finder",
+  "authority_class": "official_state_government",
+  "jurisdiction": "Indiana",
+  "service_geography": "Statewide by county and workforce region",
+  "resource_categories": [
+    "employment services",
+    "career services",
+    "workforce development",
+    "training access",
+    "reentry support",
+    "adult education",
+    "job search support"
+  ],
+  "best_fit_roles": [
+    "job seeker",
+    "person re-entering the workforce",
+    "justice-impacted person",
+    "veteran",
+    "domestic violence survivor",
+    "person facing barriers to employment",
+    "career changer",
+    "adult learner",
+    "employer seeking workforce services"
+  ],
+  "core_user_value": "Helps Indiana residents locate the correct WorkOne office for employment, career, training, education, unemployment-navigation, and workforce-support services.",
+  "what_it_provides": [
+    "local WorkOne office locations",
+    "county and regional routing",
+    "career exploration and job-search support",
+    "training and education referrals",
+    "workforce re-entry assistance",
+    "access to local workforce-development staff",
+    "in-person, appointment-based, and virtual service information"
+  ],
+  "how_to_engage": {
+    "primary": "Use the official WorkOne county or regional locator to identify the correct local office, then contact that office directly.",
+    "statewide_phone": "1-888-436-9092",
+    "submitted_locator": "https://uplink.in.gov/CSS/CSSWorkOneLocation.htm?_st=",
+    "preferred_locator": "https://www.in.gov/dwd/workone/"
+  },
+  "what_to_have_ready": [
+    "home county and ZIP code",
+    "employment goal",
+    "resume or work history if available",
+    "training or certification interests",
+    "identification and eligibility documents requested by the local program",
+    "known barriers such as transportation, childcare, schedule, disability access, housing instability, or justice involvement"
+  ],
+  "what_to_ask": [
+    "Which services are available for my employment stage and barriers?",
+    "Do I qualify for funded training, certifications, supportive services, or transportation assistance?",
+    "Are services available virtually or only in person?",
+    "What documents should I bring to my first appointment?",
+    "Is there a specialist for veterans, reentry, disability, youth, or other priority populations?",
+    "What is the expected timeline from intake to services or training enrollment?"
+  ],
+  "expected_outcomes": [
+    "correct local office identified",
+    "intake or appointment completed",
+    "employment or training plan created",
+    "referral to appropriate program or supportive service",
+    "job-search, credential, education, or workforce milestone documented"
+  ],
+  "risks_and_limitations": [
+    "The submitted Uplink locator may be session-dependent or less stable than the canonical DWD WorkOne page.",
+    "Services, hours, contacts, and eligibility vary by county, region, funding source, and program.",
+    "The agent must verify the selected office and current details at answer time.",
+    "WorkOne participation does not guarantee employment, training approval, funding, or supportive-service eligibility."
+  ],
+  "agent_routing_rules": [
+    "Use this source when an Indiana user needs local workforce, employment, training, reentry, or career services.",
+    "Route by county or ZIP code before recommending a specific office.",
+    "Prefer the canonical DWD page for current location details while preserving the submitted Uplink URL as an alternate official source.",
+    "For Marion County users, verify WorkOne Indy details on the official Region 12 page.",
+    "Do not treat WorkOne as a substitute for specialized domestic-violence, disability, veteran, legal, housing, or reentry services; pair resources when needed."
+  ],
+  "status": "active",
+  "last_verified": "2026-08-01",
+  "refresh_trigger": "Verify whenever office location, hours, contact information, program availability, or eligibility is presented.",
+  "citation_rule": "Cite the Indiana Department of Workforce Development WorkOne page or the relevant official regional office page.",
+  "relationship_to_indypendent_bytes": "Potential workforce and training referral resource. No formal partnership should be implied unless separately confirmed."
+}
