@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DiscoveryAgentLayout from "./components/layout/DiscoveryAgentLayout";
 import RecognitionCard from "./components/RecognitionCard";
+import BrandLogo from "./components/BrandLogo";
 import { routeResources } from "./agent/routingEngine";
 import { searchResources } from "./services/resourceSearch";
 
@@ -161,7 +162,7 @@ export default function App() {
       <header className="site-header sticky top-0 z-50">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
           <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-[#F3E9DD]">
-            <span className="brand-dot" aria-hidden="true" />
+            <BrandLogo className="h-8 w-8 shrink-0" />
             INDYpendent Bytes
           </a>
           <nav className="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Primary">
@@ -306,7 +307,7 @@ export default function App() {
             >
               <div className="card-icon">🌱</div>
               <h3 className="text-lg font-semibold">Become a Cultivator</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-85">
+              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-80">
                 Share experience, goals, land access, and training needs.
               </p>
               <span className="mt-4 text-sm font-semibold">Start intake →</span>
@@ -396,11 +397,14 @@ export default function App() {
       {/* Footer — denim */}
       <footer className="site-footer px-6 py-14">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-start md:justify-between">
-          <div>
-            <p className="text-lg font-semibold tracking-tight text-[#F3E9DD]">INDYpendent Bytes</p>
-            <p className="mt-1 text-sm text-[#F3E9DD]/45">
-              Regional Food Systems Coordination Infrastructure
-            </p>
+          <div className="flex items-center gap-3">
+            <BrandLogo className="h-10 w-10" />
+            <div>
+              <p className="text-lg font-semibold tracking-tight text-[#F3E9DD]">INDYpendent Bytes</p>
+              <p className="mt-0.5 text-sm text-[#F3E9DD]/45">
+                Regional Food Systems Coordination Infrastructure
+              </p>
+            </div>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
             <a href={CULTIVATOR_INTAKE_URL} target="_blank" rel="noopener noreferrer">Cultivator intake</a>
