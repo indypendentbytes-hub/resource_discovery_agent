@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 
 /**
  * Crossfade photo loop — real people across the local food system.
- *
- * Photos provided by INDYpendent Bytes. Additional slides will be added
- * as files land in /public/hero/ or via continued uploads.
  */
 const SLIDES = [
   {
@@ -13,12 +10,17 @@ const SLIDES = [
     label: "Land",
   },
   {
+    src: "https://i.imgur.com/MIumY3W.jpeg",
+    alt: "Urban grower with a wheelbarrow in a backyard garden",
+    label: "Neighborhood land",
+  },
+  {
     src: "https://i.imgur.com/Xr4K9EV.jpeg",
     alt: "Greenhouse production rows and harvest crates",
     label: "Production & logistics",
   },
-  // Remaining user photos — add when available:
-  // 02-tilling, 03-harvest, 04-urban-garden, 05-community
+  // Still needed (one photo per message):
+  // 02-tilling, 03-harvest, 05-community
 ];
 
 const INTERVAL_MS = 4500;
@@ -66,7 +68,7 @@ export default function HeroIllustration() {
             <button
               key={slide.src}
               type="button"
-              role="tab"
+              role="tab"loque="tab"
               aria-selected={i === index}
               aria-label={slide.label}
               className={`hero-dot ${i === index ? "is-active" : ""}`}
