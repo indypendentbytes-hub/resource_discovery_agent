@@ -332,13 +332,15 @@ export default function App() {
               className="nature-card !min-h-[180px] overflow-hidden !p-0"
               style={{
                 backgroundImage:
-                  "url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80)",
+                  "url(https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
+              role="img"
+              aria-label="Community garden with raised beds and growing vegetables"
             >
               <div className="flex h-full flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-5">
-                <p className="text-sm font-semibold text-white">Regional coordination</p>
+                <p className="text-sm font-semibold text-white">Community gardens</p>
                 <p className="mt-1 text-xs text-white/70">Land · people · local markets</p>
               </div>
             </div>
