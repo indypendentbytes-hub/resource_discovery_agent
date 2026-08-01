@@ -10,6 +10,11 @@ const SLIDES = [
     label: "Land",
   },
   {
+    src: "https://i.imgur.com/sGjs98i.jpeg",
+    alt: "Cultivator tilling soil with a walk-behind tiller",
+    label: "Preparing ground",
+  },
+  {
     src: "https://i.imgur.com/5U7S7UY.jpeg",
     alt: "Grower carrying a crate of fresh harvest",
     label: "Cultivators",
@@ -24,8 +29,8 @@ const SLIDES = [
     alt: "Greenhouse production rows and harvest crates",
     label: "Production & logistics",
   },
-  // Still needed (one photo per message):
-  // 02-tilling, 05-community
+  // Still needed (one photo):
+  // 05-community
 ];
 
 const INTERVAL_MS = 4500;
