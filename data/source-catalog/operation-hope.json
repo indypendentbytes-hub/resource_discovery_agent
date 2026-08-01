@@ -1,0 +1,162 @@
+{
+  "source_id": "org-operation-hope-national-001",
+  "official_name": "Operation HOPE",
+  "entity_type": "nonprofit organization",
+  "canonical_url": "https://operationhope.org/",
+  "responsible_organization": "Operation HOPE, Inc.",
+  "key_person": {
+    "name": "John Hope Bryant",
+    "role": "Founder, Chairman, and CEO"
+  },
+  "jurisdiction": "United States",
+  "service_geography": {
+    "scope": "national",
+    "delivery": ["virtual", "phone", "in-person where available"],
+    "verification_note": "Confirm coach and in-person availability by ZIP code."
+  },
+  "authority_class": "official program provider",
+  "resource_categories": [
+    "economic mobility",
+    "small business development",
+    "entrepreneurship training",
+    "financial capability",
+    "credit improvement",
+    "business planning",
+    "capital readiness",
+    "technical assistance",
+    "coaching and mentorship"
+  ],
+  "capability_tags": [
+    "barriers to employment",
+    "business ownership",
+    "business startup",
+    "business growth",
+    "business plan",
+    "one-on-one coaching",
+    "credit coaching",
+    "money management",
+    "funding readiness",
+    "Black entrepreneurs",
+    "underserved communities",
+    "low-to-moderate income",
+    "justice-impacted entrepreneurs",
+    "veterans",
+    "domestic violence survivors",
+    "remote access",
+    "no-cost services"
+  ],
+  "best_fit_roles": [
+    "aspiring entrepreneur",
+    "early-stage business owner",
+    "existing small business owner",
+    "Black entrepreneur",
+    "person facing barriers to employment",
+    "participant preparing for business ownership",
+    "entrepreneur needing financial stabilization before financing"
+  ],
+  "business_stages_served": ["idea", "pre-revenue", "early revenue", "growth", "stabilizing", "recovery"],
+  "core_user_value": "Provides financial education, individualized coaching, business planning, credit improvement support, and connections that help underserved people move toward business ownership and economic stability.",
+  "programs": [
+    {
+      "name": "Small Business Development",
+      "url": "https://operationhope.org/programs/small-business-development/",
+      "provides": [
+        "group education",
+        "small-group coaching",
+        "individual coaching",
+        "business-plan development",
+        "business fundamentals",
+        "connections to funding and outside resources"
+      ],
+      "cost": "No cost to participants",
+      "typical_timeline": "8 to 12 weeks; verify current program structure"
+    },
+    {
+      "name": "Credit and Money Management",
+      "url": "https://operationhope.org/programs/credit-money-management/",
+      "provides": ["financial education", "credit improvement guidance", "money-management coaching"]
+    },
+    {
+      "name": "One Million Black Businesses (1MBB)",
+      "url": "https://operationhope.org/1mbb/",
+      "population_focus": "Black entrepreneurs and Black-owned businesses",
+      "provides": ["coaching", "business education", "business tools", "network and partner resources"]
+    }
+  ],
+  "eligibility": {
+    "confirmed": [
+      "Small Business Development serves aspiring entrepreneurs and new or existing small business owners.",
+      "1MBB is specifically designed for Black entrepreneurs and Black-owned businesses."
+    ],
+    "verify_before_recommending": [
+      "current enrollment status",
+      "coach availability by ZIP code",
+      "in-person availability",
+      "specialized offer eligibility",
+      "required documentation"
+    ]
+  },
+  "how_to_engage": {
+    "primary": "Register through the official Operation HOPE website and select the relevant coaching program.",
+    "start_url": "https://operationhope.org/get-started/"
+  },
+  "what_to_have_ready": [
+    "reliable contact information and ZIP code",
+    "brief description of the business idea or existing business",
+    "current business stage and main barrier",
+    "basic income, expense, debt, credit, and cash-flow information when relevant",
+    "existing business plan, registration documents, or financial records if available",
+    "a specific goal for the coaching period"
+  ],
+  "questions_to_ask": [
+    "Which program best fits my current business stage and immediate barrier?",
+    "Is a coach available for my ZIP code and how will meetings occur?",
+    "What attendance, homework, and documentation are required?",
+    "Can the coach help me become lender-ready, and how is readiness measured?",
+    "Which services are free and do optional partner tools have fees?",
+    "What referrals are available for legal, accounting, lending, or local technical assistance?"
+  ],
+  "completion_measures": [
+    "coach or learning pathway assigned",
+    "documented business goal and action plan",
+    "completed or improved business plan",
+    "defined credit-improvement or capital-readiness steps",
+    "completed referral to the next needed provider"
+  ],
+  "routing_logic": [
+    {
+      "when": "The user lacks business fundamentals, a plan, or structured coaching",
+      "recommend": "Small Business Development"
+    },
+    {
+      "when": "Credit, debt, budgeting, or financial instability blocks progress",
+      "recommend": "Credit and Money Management before or alongside business coaching"
+    },
+    {
+      "when": "The user is a Black entrepreneur or Black-owned business",
+      "recommend": "1MBB"
+    }
+  ],
+  "indypendent_bytes_alignment": {
+    "role": "Potential economic mobility, financial capability, and general business-readiness resource across INDYpendent Bytes pathways.",
+    "mission_context": "INDYpendent Bytes addresses economic barriers to employment and ownership for the Black community, domestic violence survivors, veterans, justice-impacted and reentering people, and others facing high barriers. Food systems and cultivation are major pathways, but not the entire mission.",
+    "community_partnership_note": "Kheprw Institute remains a priority relationship for Black-community trust, neighborhood-rooted engagement, and locally grounded economic development. Operation HOPE should complement—not replace—community-led partners.",
+    "boundary": "Do not represent Operation HOPE or Kheprw Institute as formal INDYpendent Bytes partners unless a formal relationship exists."
+  },
+  "limitations": [
+    "No guarantee of funding, approval, enrollment, or business success.",
+    "Do not confuse coaching with a direct loan or grant program.",
+    "Do not assume local in-person availability.",
+    "Professional legal, tax, accounting, licensing, or compliance advice may require separate providers."
+  ],
+  "current_status": "active; verify time-sensitive details before recommendation",
+  "last_verified_date": "2026-08-01",
+  "verification_sources": [
+    "https://operationhope.org/about/mission/",
+    "https://operationhope.org/programs/small-business-development/",
+    "https://operationhope.org/programs/",
+    "https://operationhope.org/1mbb/"
+  ],
+  "refresh_trigger": ["quarterly review", "official program change", "local availability change", "formal partnership change"],
+  "citation_rule": "Use the current official Operation HOPE page for program, eligibility, cost, timeline, and enrollment claims."
+}
