@@ -68,7 +68,7 @@ export default function HeroIllustration() {
             <button
               key={slide.src}
               type="button"
-              role="tab"loque="tab"
+              role="tab"
               aria-selected={i === index}
               aria-label={slide.label}
               className={`hero-dot ${i === index ? "is-active" : ""}`}
