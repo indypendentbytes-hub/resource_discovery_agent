@@ -15,16 +15,16 @@ export default function ChatPanel({ messages, onSend, isSearching }) {
   return (
     <section className="agent-chat flex min-w-0 flex-col p-5 md:p-7 lg:p-8">
       <div className="mb-5">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D4A84B]">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C65A1E]">
           Guided navigation
         </p>
-        <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-[#F5EDE0] md:text-2xl font-display">
+        <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-[#F3E9DD] md:text-2xl font-display">
           What are you trying to accomplish?
         </h3>
       </div>
 
       <div
-        className="flex min-h-[240px] flex-1 flex-col gap-3 overflow-y-auto rounded-2xl bg-black/15 p-4"
+        className="flex min-h-[240px] flex-1 flex-col gap-3 overflow-y-auto rounded-lg bg-black/15 p-4"
         aria-live="polite"
       >
         {messages.map((message, index) => (

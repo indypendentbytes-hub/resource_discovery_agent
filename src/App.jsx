@@ -160,7 +160,7 @@ export default function App() {
       {/* Header */}
       <header className="site-header sticky top-0 z-50">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
-          <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-[#F5EDE0]">
+          <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-[#F3E9DD]">
             <span className="brand-dot" aria-hidden="true" />
             INDYpendent Bytes
           </a>
@@ -169,13 +169,13 @@ export default function App() {
             <a href="#pathways">Get involved</a>
             <a href="#resource-agent">Find resources</a>
           </nav>
-          <a href="#resource-agent" className="cta-sand !py-2 !px-4 text-xs md:text-sm">
+          <a href="#resource-agent" className="cta-pumpkin !py-2 !px-4 text-xs md:text-sm">
             Find resources
           </a>
         </div>
       </header>
 
-      {/* Hero — compact so CTAs clear the fold */}
+      {/* Hero — deep green kept */}
       <section id="top" className="hero relative px-6 pt-8 pb-24 md:pt-12 md:pb-28">
         <div className="leaf-cluster" aria-hidden="true">
           <div className="leaf leaf-1" />
@@ -187,8 +187,8 @@ export default function App() {
 
         <div className="relative z-10 mx-auto max-w-6xl">
           <div className="max-w-xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4A84B]">
-              Shared structure for a stronger local food economy
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#C65A1E]">
+              Shared Structure for a Stronger Local Food Economy
             </p>
             <h1 className="hero-title mt-2 font-display">
               Connecting people, land &amp; opportunity.
@@ -198,14 +198,14 @@ export default function App() {
               and build clearer pathways into a coordinated regional food system.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <a href="#resource-agent" className="cta-sand">
+              <a href="#resource-agent" className="cta-pumpkin">
                 Find resources
               </a>
               <a
                 href={CULTIVATOR_INTAKE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-ghost-light"
+                className="cta-linen"
               >
                 Cultivator intake
               </a>
@@ -222,7 +222,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Feature strip — overlaps hero like the reference */}
+      {/* Feature strip */}
       <section id="how-it-works" className="relative z-20 -mt-14 px-6">
         <div className="feature-strip mx-auto max-w-5xl px-6 py-10 md:px-12 md:py-12">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -270,21 +270,21 @@ export default function App() {
             ].map((f) => (
               <div key={f.title} className="text-center">
                 <div className="feature-icon">{f.icon}</div>
-                <h3 className="text-sm font-semibold text-[#F5EDE0]">{f.title}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-[#F5EDE0]/55">{f.body}</p>
+                <h3 className="text-sm font-semibold text-[#F3E9DD]">{f.title}</h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-[#F3E9DD]/55">{f.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pathways — nature cards */}
-      <section id="pathways" className="px-6 py-20 md:py-28">
+      {/* Pathways on linen ground */}
+      <section id="pathways" className="section-linen px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4A84B]">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-[#C65A1E]">
             Get involved
           </p>
-          <h2 className="mt-3 text-center text-3xl font-semibold tracking-tight text-[#F5EDE0] md:text-4xl font-display">
+          <h2 className="mt-3 text-center text-3xl font-semibold tracking-tight text-[#1A1A1A] md:text-4xl font-display">
             Three ways to begin.
           </h2>
 
@@ -292,10 +292,10 @@ export default function App() {
             <a href="#resource-agent" className="nature-card card-green">
               <div className="card-icon">🌿</div>
               <h3 className="text-lg font-semibold">Resource Agent</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-80">
+              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-85">
                 Guided pathways to programs, training, funding, land, and business resources.
               </p>
-              <span className="mt-4 text-sm font-semibold opacity-90">Find resources →</span>
+              <span className="mt-4 text-sm font-semibold">Find resources →</span>
             </a>
 
             <a
@@ -306,24 +306,24 @@ export default function App() {
             >
               <div className="card-icon">🌱</div>
               <h3 className="text-lg font-semibold">Become a Cultivator</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-80">
+              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-85">
                 Share experience, goals, land access, and training needs.
               </p>
-              <span className="mt-4 text-sm font-semibold opacity-90">Start intake →</span>
+              <span className="mt-4 text-sm font-semibold">Start intake →</span>
             </a>
 
             <a
               href={LAND_HOST_INTAKE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="nature-card card-sand sm:col-span-2 lg:col-span-1"
+              className="nature-card card-pumpkin sm:col-span-2 lg:col-span-1"
             >
               <div className="card-icon">🌾</div>
               <h3 className="text-lg font-semibold">Become a Land Host</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-75">
+              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-90">
                 Share available land, water, access, and interest in supporting production.
               </p>
-              <span className="mt-4 text-sm font-semibold opacity-90">Start intake →</span>
+              <span className="mt-4 text-sm font-semibold">Start intake →</span>
             </a>
           </div>
 
@@ -345,15 +345,15 @@ export default function App() {
               </div>
             </div>
 
-            <div className="nature-card card-soil !min-h-[180px]">
+            <div className="nature-card card-denim !min-h-[180px]">
               <div className="card-icon">🍃</div>
               <h3 className="text-base font-semibold">Community first</h3>
-              <p className="mt-2 text-xs leading-relaxed opacity-75">
+              <p className="mt-2 text-xs leading-relaxed opacity-85">
                 Built for cultivators, hosts, and neighbors — not a marketplace.
               </p>
             </div>
 
-            <div className="nature-card card-cream !min-h-[180px]">
+            <div className="nature-card card-linen !min-h-[180px]">
               <div className="card-icon">⬡</div>
               <h3 className="text-base font-semibold">Clear next steps</h3>
               <p className="mt-2 text-xs leading-relaxed opacity-70">
@@ -367,15 +367,15 @@ export default function App() {
       <RecognitionCard />
 
       {/* Agent */}
-      <section id="resource-agent" className="px-6 py-20 md:py-28">
+      <section id="resource-agent" className="px-6 py-20 md:py-28" style={{ background: "#0B3D1E" }}>
         <div className="mx-auto max-w-6xl">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4A84B]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#C65A1E]">
             Find the right next step
           </p>
-          <h2 className="mt-3 max-w-lg text-3xl font-semibold tracking-tight text-[#F5EDE0] md:text-4xl font-display">
+          <h2 className="mt-3 max-w-lg text-3xl font-semibold tracking-tight text-[#F3E9DD] md:text-4xl font-display">
             Resource Discovery Agent
           </h2>
-          <p className="mt-4 max-w-lg text-base leading-relaxed text-[#F5EDE0]/60">
+          <p className="mt-4 max-w-lg text-base leading-relaxed text-[#F3E9DD]/60">
             Share a goal, location, and constraints. The agent organizes relevant
             options and next steps — not a dump of links.
           </p>
@@ -393,12 +393,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer — denim */}
       <footer className="site-footer px-6 py-14">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="text-lg font-semibold tracking-tight text-[#F5EDE0]">INDYpendent Bytes</p>
-            <p className="mt-1 text-sm text-[#F5EDE0]/45">
+            <p className="text-lg font-semibold tracking-tight text-[#F3E9DD]">INDYpendent Bytes</p>
+            <p className="mt-1 text-sm text-[#F3E9DD]/45">
               Regional Food Systems Coordination Infrastructure
             </p>
           </div>
@@ -411,7 +411,7 @@ export default function App() {
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
-        <div className="mx-auto mt-12 max-w-6xl border-t border-white/5 pt-6 text-xs text-[#F5EDE0]/30 flex flex-col gap-1 sm:flex-row sm:justify-between">
+        <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 pt-6 text-xs text-[#F3E9DD]/30 flex flex-col gap-1 sm:flex-row sm:justify-between">
           <span>© {new Date().getFullYear()} INDYpendent Bytes</span>
           <span>Built for regional food system coordination</span>
         </div>
