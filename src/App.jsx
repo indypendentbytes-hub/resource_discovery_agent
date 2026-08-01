@@ -2,6 +2,7 @@ import { useState } from "react";
 import DiscoveryAgentLayout from "./components/layout/DiscoveryAgentLayout";
 import RecognitionCard from "./components/RecognitionCard";
 import BrandLogo from "./components/BrandLogo";
+import HeroIllustration from "./components/HeroIllustration";
 import { routeResources } from "./agent/routingEngine";
 import { searchResources } from "./services/resourceSearch";
 
@@ -158,7 +159,7 @@ export default function App() {
 
   return (
     <main className="min-h-screen">
-      {/* Header */}
+      {/* Header — logo mark, no competing CTA */}
       <header className="site-header sticky top-0 z-50">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
           <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-[#F3E9DD]">
@@ -170,29 +171,21 @@ export default function App() {
             <a href="#pathways">Get involved</a>
             <a href="#resource-agent">Find resources</a>
           </nav>
-          <a href="#resource-agent" className="cta-pumpkin !py-2 !px-4 text-xs md:text-sm">
+          <a href="#resource-agent" className="text-sm font-semibold text-[#F3E9DD]/80 hover:text-white md:hidden">
             Find resources
           </a>
         </div>
       </header>
 
-      {/* Hero — deep green kept */}
+      {/* Hero */}
       <section id="top" className="hero relative px-6 pt-8 pb-24 md:pt-12 md:pb-28">
-        <div className="leaf-cluster" aria-hidden="true">
-          <div className="leaf leaf-1" />
-          <div className="leaf leaf-2" />
-          <div className="leaf leaf-3" />
-          <div className="leaf leaf-4" />
-          <div className="leaf leaf-5" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div className="max-w-xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#C65A1E]">
               Shared Structure for a Stronger Local Food Economy
             </p>
             <h1 className="hero-title mt-2 font-display">
-              Connecting people, land &amp; opportunity.
+              Connecting people, land, resources, and local food opportunity.
             </h1>
             <p className="hero-sub mt-3 text-base leading-relaxed md:text-lg">
               Navigate support, activate underused land, prepare cultivators,
@@ -201,32 +194,37 @@ export default function App() {
             <div className="mt-5 flex flex-wrap gap-3">
               <a href="#resource-agent" className="cta-pumpkin">
                 Find resources
+                <span aria-hidden="true">→</span>
               </a>
               <a
                 href={CULTIVATOR_INTAKE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-linen"
+                className="cta-secondary"
               >
                 Cultivator intake
+                <span className="cta-arrow" aria-hidden="true">→</span>
               </a>
               <a
                 href={LAND_HOST_INTAKE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-ghost-light"
+                className="cta-secondary"
               >
                 Land host intake
+                <span className="cta-arrow" aria-hidden="true">→</span>
               </a>
             </div>
           </div>
+
+          <HeroIllustration />
         </div>
       </section>
 
-      {/* Feature strip */}
+      {/* How it works — more air */}
       <section id="how-it-works" className="relative z-20 -mt-14 px-6">
-        <div className="feature-strip mx-auto max-w-5xl px-6 py-10 md:px-12 md:py-12">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="feature-strip mx-auto max-w-5xl px-6 py-12 md:px-14 md:py-14">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: (
@@ -260,26 +258,25 @@ export default function App() {
               {
                 icon: (
                   <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" strokeLinecap="round" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" strokeLinecap="round" />
+                    <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="12" cy="12" r="9" />
                   </svg>
                 ),
-                title: "Stay connected",
-                body: "Join a coordinated system linking land, growers, and local buyers.",
+                title: "Continue with support",
+                body: "Stay on a coordinated path linking land, growers, and local buyers.",
               },
             ].map((f) => (
               <div key={f.title} className="text-center">
                 <div className="feature-icon">{f.icon}</div>
-                <h3 className="text-sm font-semibold text-[#F3E9DD]">{f.title}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-[#F3E9DD]/55">{f.body}</p>
+                <h3 className="text-base font-semibold text-[#F3E9DD]">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#F3E9DD]/60">{f.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pathways on linen ground */}
+      {/* Pathways */}
       <section id="pathways" className="section-linen px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
           <p className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-[#C65A1E]">
@@ -307,7 +304,7 @@ export default function App() {
             >
               <div className="card-icon">🌱</div>
               <h3 className="text-lg font-semibold">Become a Cultivator</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-80">
+              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-85">
                 Share experience, goals, land access, and training needs.
               </p>
               <span className="mt-4 text-sm font-semibold">Start intake →</span>
@@ -328,37 +325,29 @@ export default function App() {
             </a>
           </div>
 
+          {/* Informative lower cards — not decorative filler */}
           <div className="mt-5 grid gap-5 sm:grid-cols-3">
-            <div
-              className="nature-card !min-h-[180px] overflow-hidden !p-0"
-              style={{
-                backgroundImage:
-                  "url(https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-              role="img"
-              aria-label="Community garden with raised beds and growing vegetables"
-            >
-              <div className="flex h-full flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-5">
-                <p className="text-sm font-semibold text-white">Community gardens</p>
-                <p className="mt-1 text-xs text-white/70">Land · people · local markets</p>
-              </div>
-            </div>
-
-            <div className="nature-card card-denim !min-h-[180px]">
-              <div className="card-icon">🍃</div>
-              <h3 className="text-base font-semibold">Community first</h3>
-              <p className="mt-2 text-xs leading-relaxed opacity-85">
-                Built for cultivators, hosts, and neighbors — not a marketplace.
+            <div className="nature-card card-denim !min-h-[160px]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] opacity-70">Who IB serves</p>
+              <h3 className="mt-2 text-base font-semibold">Cultivators, land hosts, buyers &amp; partners</h3>
+              <p className="mt-2 text-xs leading-relaxed opacity-80">
+                Growers seeking land or support, hosts with underused parcels, and organizations coordinating local food.
               </p>
             </div>
 
-            <div className="nature-card card-linen !min-h-[180px]">
-              <div className="card-icon">⬡</div>
-              <h3 className="text-base font-semibold">Clear next steps</h3>
+            <div className="nature-card card-soil !min-h-[160px]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] opacity-70">What IB coordinates</p>
+              <h3 className="mt-2 text-base font-semibold">People · land · resources · markets</h3>
+              <p className="mt-2 text-xs leading-relaxed opacity-80">
+                Intake pathways, resource discovery, cluster mapping, and structured next steps — not a marketplace.
+              </p>
+            </div>
+
+            <div className="nature-card card-linen !min-h-[160px]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C65A1E]">What to expect</p>
+              <h3 className="mt-2 text-base font-semibold">Clear steps, not a list of links</h3>
               <p className="mt-2 text-xs leading-relaxed opacity-70">
-                Every path ends with what to prepare and what happens next.
+                Every path ends with what to prepare, what happens next, and how to stay on track.
               </p>
             </div>
           </div>
@@ -394,9 +383,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer — denim */}
+      {/* Footer */}
       <footer className="site-footer px-6 py-14">
-        <div className="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-start md:justify-between">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="flex items-center gap-3">
             <BrandLogo className="h-10 w-10" />
             <div>
@@ -415,7 +404,7 @@ export default function App() {
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
-        <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 pt-6 text-xs text-[#F3E9DD]/30 flex flex-col gap-1 sm:flex-row sm:justify-between">
+        <div className="relative z-10 mx-auto mt-12 max-w-6xl border-t border-white/10 pt-6 text-xs text-[#F3E9DD]/30 flex flex-col gap-1 sm:flex-row sm:justify-between">
           <span>© {new Date().getFullYear()} INDYpendent Bytes</span>
           <span>Built for regional food system coordination</span>
         </div>

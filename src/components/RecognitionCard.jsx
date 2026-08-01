@@ -6,7 +6,7 @@ export default function RecognitionCard() {
       aria-labelledby="recognition-heading"
     >
       <div className="mx-auto max-w-5xl">
-        <div className="grid items-center gap-10 rounded-lg border border-[#D4CFC6] bg-[#F3E9DD] px-8 py-10 md:grid-cols-[1fr_1.1fr] md:gap-14 md:px-12 md:py-14">
+        <div className="grid items-center gap-8 rounded-lg border border-[#D4CFC6] bg-[#F3E9DD] px-8 py-10 md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:px-12 md:py-12">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C65A1E]">
               Recognition
@@ -22,14 +22,14 @@ export default function RecognitionCard() {
               work that connects people, land, and opportunity across the region.
             </p>
           </div>
-          <div>
+          <div className="flex justify-center md:justify-end">
             <img
               src="https://cdn.bmapinc.com/shareables/20046473/recognition-card/latest.png"
               alt="Recognition received by INDYpendent Bytes"
-              className="mx-auto w-full max-w-sm h-auto rounded-lg shadow-lg"
+              className="w-full max-w-[220px] h-auto rounded-lg shadow-md"
               loading="lazy"
-              width="400"
-              height="400"
+              width="220"
+              height="220"
             />
           </div>
         </div>
