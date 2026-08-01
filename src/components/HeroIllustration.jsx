@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 
 /**
  * Crossfade photo loop — real people across the local food system.
- * Progressive loading: only the active + next slide download bandwidth.
+ * Progressive loading: first slide eager; next slide prefetched ahead of time.
  */
 const SLIDES = [
   {
@@ -26,8 +26,8 @@ const SLIDES = [
     label: "Neighborhood land",
   },
   {
-    src: "https://i.imgur.com/Xr4K9EV.jpeg",
-    alt: "Greenhouse production rows and harvest crates",
+    src: "https://i.imgur.com/tnpPJ4i.jpeg",
+    alt: "Workers loading crates of produce onto a delivery truck",
     label: "Production & logistics",
   },
 ];
@@ -44,9 +44,8 @@ function prefetch(src) {
 export default function HeroIllustration() {
   const [index, setIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
-  // Track which slide indices are allowed to load
-  const [ready, setReady] = useState(() => new Set([0]));
-  const prefetched = useRef(new Set());
+  const [loaded, setLoaded] = useState(() => new Set([0]));
+  const prefetched = useRef(new Set([SLIDES[0].src]));
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -56,7 +55,6 @@ export default function HeroIllustration() {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  // Advance slides
   useEffect(() => {
     if (reducedMotion || SLIDES.length < 2) return undefined;
     const id = setInterval(() => {
@@ -65,41 +63,30 @@ export default function HeroIllustration() {
     return () => clearInterval(id);
   }, [reducedMotion]);
 
-  // Progressive load: current + next only
+  // Ensure current + next are loaded; prefetch next
   useEffect(() => {
     const next = (index + 1) % SLIDES.length;
-    setReady((prev) => {
+    setLoaded((prev) => {
       if (prev.has(index) && prev.has(next)) return prev;
-      const nextSet = new Set(prev);
-      nextSet.add(index);
-      nextSet.add(next);
-      return nextSet;
+      const s = new Set(prev);
+      s.add(index);
+      s.add(next);
+      return s;
     });
-
-    // Prefetch next in background without blocking
-    const nextSrc = SLIDES[next]?.src;
-    if (nextSrc && !prefetched.current.has(nextSrc)) {
+    const nextSrc = SLIDES[next].src;
+    if (!prefetched.current.has(nextSrc)) {
       prefetched.current.add(nextSrc);
       prefetch(nextSrc);
     }
   }, [index]);
 
-  // Warm the first image immediately (LCP candidate)
-  useEffect(() => {
-    const first = SLIDES[0]?.src;
-    if (first && !prefetched.current.has(first)) {
-      prefetched.current.add(first);
-      prefetch(first);
-    }
-  }, []);
-
   function goTo(i) {
     setIndex(i);
-    setReady((prev) => {
-      const nextSet = new Set(prev);
-      nextSet.add(i);
-      nextSet.add((i + 1) % SLIDES.length);
-      return nextSet;
+    setLoaded((prev) => {
+      const s = new Set(prev);
+      s.add(i);
+      s.add((i + 1) % SLIDES.length);
+      return s;
     });
   }
 
@@ -110,12 +97,12 @@ export default function HeroIllustration() {
     >
       {SLIDES.map((slide, i) => {
         const isActive = i === index;
-        const shouldLoad = ready.has(i);
+        const shouldShow = loaded.has(i);
 
         return (
           <img
             key={slide.src}
-            src={shouldLoad ? slide.src : undefined}
+            src={shouldShow ? slide.src : undefined}
             alt={isActive ? slide.alt : ""}
             className={`hero-slide ${isActive ? "is-active" : ""}`}
             loading={i === 0 ? "eager" : "lazy"}
@@ -123,8 +110,6 @@ export default function HeroIllustration() {
             fetchPriority={i === 0 ? "high" : "low"}
             width={900}
             height={675}
-            // Keep layout reserved even before src resolves
-            style={shouldLoad ? undefined : { visibility: "hidden" }}
           />
         );
       })}
