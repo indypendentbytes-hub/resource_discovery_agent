@@ -10,6 +10,11 @@ const SLIDES = [
     label: "Land",
   },
   {
+    src: "https://i.imgur.com/5U7S7UY.jpeg",
+    alt: "Grower carrying a crate of fresh harvest",
+    label: "Cultivators",
+  },
+  {
     src: "https://i.imgur.com/MIumY3W.jpeg",
     alt: "Urban grower with a wheelbarrow in a backyard garden",
     label: "Neighborhood land",
@@ -20,7 +25,7 @@ const SLIDES = [
     label: "Production & logistics",
   },
   // Still needed (one photo per message):
-  // 02-tilling, 03-harvest, 05-community
+  // 02-tilling, 05-community
 ];
 
 const INTERVAL_MS = 4500;
