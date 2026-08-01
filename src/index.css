@@ -4,8 +4,8 @@
 
 /*
   Metric-adjusted system fallbacks reduce layout shift (CLS)
-  while webfonts load. size-adjust / ascent-override approximate
-  BioRhyme and Work Sans proportions.
+  while webfonts load. Fonts themselves are self-hosted via
+  @fontsource and served from the same origin as the site.
 */
 @font-face {
   font-family: "Work Sans Fallback";

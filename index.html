@@ -9,34 +9,7 @@
     />
     <meta name="color-scheme" content="light only" />
     <title>INDYpendent Bytes | Regional Food Systems Coordination</title>
-
-    <!-- DNS + TLS early; crossorigin required for font files -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!--
-      Non-blocking font stylesheet:
-      - Only the weights actually used (BioRhyme 700, Work Sans 400/600/700)
-      - display=swap so text is visible immediately
-      - preload + onload pattern avoids render-blocking CSS
-    -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&family=Work+Sans:wght@400;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&family=Work+Sans:wght@400;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&family=Work+Sans:wght@400;600;700&display=swap"
-      />
-    </noscript>
+    <!-- Fonts are self-hosted via @fontsource and bundled by Vite (same origin). -->
   </head>
   <body>
     <div id="root"></div>
