@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DiscoveryAgentLayout from "./components/layout/DiscoveryAgentLayout";
+import HeroIllustration from "./components/HeroIllustration";
 import RecognitionCard from "./components/RecognitionCard";
 import { routeResources } from "./agent/routingEngine";
 import { searchResources } from "./services/resourceSearch";
@@ -186,77 +187,68 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-ib-linen text-text-primaryLight">
-      <header className="border-b border-black/10 bg-[#F3E9DD] px-4 py-3">
+      <header className="border-b border-black/10 px-4 py-3">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
-          <a href="#top" className="flex items-center gap-3 font-black tracking-tight text-[#1A1A1A]">
-            <span className="h-3 w-3 rounded-sm bg-[#00780F]" aria-hidden="true" />
+          <a href="#top" className="flex items-center gap-3 font-black tracking-tight">
+            <span className="brand-marker" aria-hidden="true" />
             INDYpendent Bytes
           </a>
           <nav className="hidden items-center gap-6 text-sm font-semibold md:flex" aria-label="Primary navigation">
-            <a href="#how-it-works" className="hover:text-[#00780F]">How it works</a>
-            <a href="#pathways" className="hover:text-[#00780F]">Get involved</a>
-            <a href="#resource-agent" className="hover:text-[#00780F]">Find resources</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#pathways">Get involved</a>
+            <a href="#resource-agent">Find resources</a>
           </nav>
         </div>
       </header>
 
-      <section id="top" className="px-4 py-8 md:py-10">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-4xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#005588] sm:text-sm">
+      <section id="top" className="px-4 py-6 md:py-8">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="hero-copy">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#005588] sm:text-sm">
               Shared Structure for a Stronger Local Food Economy
             </p>
-            <h1 className="max-w-4xl text-3xl font-black leading-[1.06] sm:text-4xl lg:text-5xl">
+            <h1>
               Connecting people, land, resources, and local food opportunity.
             </h1>
+
+            <div className="hero-actions mt-5 grid gap-3 sm:grid-cols-3">
+              <a href="#resource-agent" className="action-button action-primary">
+                <span className="action-kicker">Need support?</span>
+                <span className="action-label">Find resources</span>
+                <span className="action-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href={CULTIVATOR_INTAKE_URL} target="_blank" rel="noreferrer" className="action-button action-secondary">
+                <span className="action-kicker">Want to cultivate?</span>
+                <span className="action-label">Start cultivator intake</span>
+                <span className="action-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href={LAND_HOST_INTAKE_URL} target="_blank" rel="noreferrer" className="action-button action-secondary">
+                <span className="action-kicker">Have land?</span>
+                <span className="action-label">Start land host intake</span>
+                <span className="action-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+
             <p className="mt-4 max-w-3xl text-base leading-7 opacity-85 sm:text-lg">
               INDYpendent Bytes helps communities navigate support, activate underused land, prepare cultivators, and build clearer pathways into a coordinated regional food system.
             </p>
           </div>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <a
-              href="#resource-agent"
-              className="rounded-md bg-[#00780F] px-5 py-4 font-bold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#C65A1E] focus:ring-offset-2"
-            >
-              <span className="block text-xs uppercase tracking-[0.14em] opacity-80">Need support?</span>
-              <span className="mt-1 block text-lg">Find resources</span>
-            </a>
-            <a
-              href={CULTIVATOR_INTAKE_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-md border border-[#00780F] bg-white px-5 py-4 font-bold text-[#1A1A1A] transition hover:bg-[#F9F4CB] focus:outline-none focus:ring-2 focus:ring-[#C65A1E] focus:ring-offset-2"
-            >
-              <span className="block text-xs uppercase tracking-[0.14em] text-[#005588]">Want to cultivate?</span>
-              <span className="mt-1 block text-lg">Start cultivator intake</span>
-            </a>
-            <a
-              href={LAND_HOST_INTAKE_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-md border border-[#005588] bg-white px-5 py-4 font-bold text-[#1A1A1A] transition hover:bg-[#F9F4CB] focus:outline-none focus:ring-2 focus:ring-[#C65A1E] focus:ring-offset-2"
-            >
-              <span className="block text-xs uppercase tracking-[0.14em] text-[#005588]">Have land?</span>
-              <span className="mt-1 block text-lg">Start land host intake</span>
-            </a>
-          </div>
+          <HeroIllustration />
         </div>
       </section>
 
       <section id="how-it-works" className="bg-white px-4 py-12">
         <div className="mx-auto max-w-6xl">
-          <p className="font-bold uppercase tracking-[0.16em] text-[#005588]">How it works</p>
-          <h2 className="mt-2 max-w-3xl text-3xl font-black md:text-4xl">
-            One public entry point. Clear next steps.
-          </h2>
+          <p className="section-eyebrow">How it works</p>
+          <h2 className="mt-2 max-w-3xl text-3xl font-black md:text-4xl">One public entry point. Clear next steps.</h2>
           <div className="mt-7 grid gap-4 md:grid-cols-3">
             {[
               ["1", "Tell us what you need", "Use the agent or select the intake path that matches your role."],
               ["2", "Get routed correctly", "Receive relevant information, resources, preparation steps, or an IB intake pathway."],
               ["3", "Move forward prepared", "Understand what to expect, what to have ready, and what happens next."],
             ].map(([number, title, description]) => (
-              <article key={number} className="rounded-md border border-black/10 p-6">
+              <article key={number} className="motion-card rounded-md border border-black/10 p-6">
                 <p className="text-2xl font-black text-[#00780F]">{number}</p>
                 <h3 className="mt-3 text-xl font-black">{title}</h3>
                 <p className="mt-2 leading-7 opacity-80">{description}</p>
@@ -268,23 +260,16 @@ export default function App() {
 
       <section id="pathways" className="px-4 py-12 md:py-14">
         <div className="mx-auto max-w-6xl">
-          <p className="font-bold uppercase tracking-[0.16em] text-[#005588]">Get involved</p>
+          <p className="section-eyebrow">Get involved</p>
           <h2 className="mt-2 text-3xl font-black md:text-4xl">Three ways to begin.</h2>
           <div className="mt-7 grid gap-4 lg:grid-cols-3">
             {pathways.map((pathway) => (
-              <article key={pathway.title} className="flex min-h-[280px] flex-col rounded-md border border-black/10 bg-white p-6">
-                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#005588]">
-                  {pathway.eyebrow}
-                </p>
+              <article key={pathway.title} className="motion-card flex min-h-[280px] flex-col rounded-md border border-black/10 bg-white p-6">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#005588]">{pathway.eyebrow}</p>
                 <h3 className="mt-3 text-2xl font-black">{pathway.title}</h3>
                 <p className="mt-3 flex-1 leading-7 opacity-80">{pathway.description}</p>
-                <a
-                  href={pathway.href}
-                  target={pathway.external ? "_blank" : undefined}
-                  rel={pathway.external ? "noreferrer" : undefined}
-                  className="mt-6 inline-flex w-fit rounded-md bg-[#00780F] px-5 py-3 font-bold text-white transition hover:opacity-90"
-                >
-                  {pathway.label}
+                <a href={pathway.href} target={pathway.external ? "_blank" : undefined} rel={pathway.external ? "noreferrer" : undefined} className="pathway-button mt-6 inline-flex w-fit items-center gap-2 rounded-md px-5 py-3 font-bold text-white">
+                  {pathway.label}<span aria-hidden="true">→</span>
                 </a>
               </article>
             ))}
@@ -296,38 +281,28 @@ export default function App() {
 
       <section id="resource-agent" className="border-t border-black/10 bg-white px-4 py-12 md:py-14">
         <div className="mx-auto max-w-6xl">
-          <p className="mb-2 font-bold uppercase tracking-[0.16em] text-[#005588]">
-            Find the right next step
-          </p>
+          <p className="section-eyebrow mb-2">Find the right next step</p>
           <h2 className="mb-3 text-3xl font-black md:text-4xl">Resource Discovery Agent</h2>
           <p className="mb-6 max-w-3xl text-lg leading-8 opacity-80">
             Tell the agent what you are trying to accomplish, where you are located, and what constraints you are facing. It will help organize relevant options and next steps instead of giving you a list of disconnected links.
           </p>
-          <DiscoveryAgentLayout
-            messages={messages}
-            resources={resources}
-            routingState={routingState}
-            routingSummary={routingSummary}
-            onSend={handleSend}
-            onResourceSelect={handleResourceSelect}
-            isSearching={isSearching}
-          />
+          <DiscoveryAgentLayout messages={messages} resources={resources} routingState={routingState} routingSummary={routingSummary} onSend={handleSend} onResourceSelect={handleResourceSelect} isSearching={isSearching} />
         </div>
       </section>
 
-      <footer className="border-t border-black/10 bg-[#005588] px-4 py-9 text-white">
+      <footer className="border-t border-black/10 px-4 py-9 text-white">
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 md:flex-row md:items-center">
           <div>
             <p className="font-black">INDYpendent Bytes</p>
             <p className="mt-1 text-sm text-white/75">Regional Food Systems Coordination Infrastructure</p>
           </div>
           <div className="flex flex-wrap gap-4 text-sm font-bold">
-            <a href={CULTIVATOR_INTAKE_URL} target="_blank" rel="noreferrer" className="hover:underline">Cultivator intake</a>
-            <a href={LAND_HOST_INTAKE_URL} target="_blank" rel="noreferrer" className="hover:underline">Land host intake</a>
-            <a href="#resource-agent" className="hover:underline">Resource Discovery Agent</a>
-            <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" className="hover:underline">Facebook</a>
-            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
-            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:underline">Instagram</a>
+            <a href={CULTIVATOR_INTAKE_URL} target="_blank" rel="noreferrer">Cultivator intake</a>
+            <a href={LAND_HOST_INTAKE_URL} target="_blank" rel="noreferrer">Land host intake</a>
+            <a href="#resource-agent">Resource Discovery Agent</a>
+            <a href={FACEBOOK_URL} target="_blank" rel="noreferrer">Facebook</a>
+            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </div>
       </footer>
