@@ -1,0 +1,79 @@
+{
+  "source_id": "org-chip-indy",
+  "official_name": "Coalition for Homelessness Intervention and Prevention (CHIP)",
+  "common_name": "CHIP Indy",
+  "canonical_url": "https://www.chipindy.org/",
+  "organization_type": "nonprofit backbone and Continuum of Care lead agency",
+  "geography": ["Indianapolis", "Marion County", "Indiana"],
+  "authority_class": "official provider source",
+  "resource_categories": [
+    "homelessness assistance",
+    "housing instability",
+    "coordinated entry",
+    "continuum of care",
+    "community data",
+    "systems coordination",
+    "advocacy"
+  ],
+  "best_fit_roles": [
+    "people experiencing homelessness",
+    "people at immediate risk of homelessness",
+    "domestic violence survivors with housing instability",
+    "justice-impacted and reentering people with housing barriers",
+    "veterans with housing instability",
+    "service providers",
+    "community organizations"
+  ],
+  "core_user_value": "Provides access to Indianapolis homelessness-assistance pathways and serves as the lead agency coordinating the Indianapolis Continuum of Care. CHIP also publishes local homelessness data, convenes partners, supports lived-experience engagement, and coordinates community planning.",
+  "how_to_engage": {
+    "primary": "Use the 'Need Help? Get Homelessness Assistance' route on the official website for current assistance instructions.",
+    "general_phone": "317-630-0853",
+    "address": "1014 Prospect St., Indianapolis, IN 46203",
+    "website": "https://www.chipindy.org/"
+  },
+  "what_to_have_ready": [
+    "current location and safe callback information",
+    "household composition",
+    "immediate safety concerns",
+    "current housing status and date housing will be lost, if applicable",
+    "identification and income documents when available",
+    "veteran, disability, domestic violence, or reentry status only when relevant and safe to disclose",
+    "prior shelter, outreach, coordinated-entry, or housing-provider contacts"
+  ],
+  "questions_to_ask": [
+    "What is the correct current coordinated-entry or homelessness-assistance pathway for my situation?",
+    "Is there an immediate shelter, outreach, diversion, prevention, or rapid-rehousing option available?",
+    "What documents are required, and can I begin without all of them?",
+    "Are there specialized pathways for domestic violence survivors, veterans, families, youth, or people returning from incarceration?",
+    "What should I do while waiting for an assessment or placement?"
+  ],
+  "expected_outcomes": [
+    "connection to the appropriate homelessness-assistance entry point",
+    "referral or assessment through the Indianapolis homelessness-response system",
+    "access to current local housing and homelessness information",
+    "provider coordination when a partner organization is involved"
+  ],
+  "routing_rules": [
+    "For immediate danger or medical emergency, route to emergency services before CHIP.",
+    "For domestic violence survivors, do not route through a general channel when doing so could create a safety risk; prioritize confidential survivor-specific services.",
+    "Do not describe CHIP as a shelter or guarantee that CHIP directly provides housing placement.",
+    "Use CHIP primarily as an official system-navigation, coordinated-response, data, and partner-coordination source.",
+    "Verify the current 'Need Help' instructions and contact details at answer time because access points and procedures may change."
+  ],
+  "ib_alignment": {
+    "relationship_status": "prospective resource and systems-alignment organization; no formal partnership should be claimed",
+    "strategic_fit": [
+      "housing stability as a prerequisite for employment and business ownership",
+      "barrier reduction for reentering people, veterans, domestic violence survivors, and others facing economic instability",
+      "backbone coordination and collective-impact model",
+      "local data and systems planning",
+      "cross-referral between economic-mobility and housing-stability pathways"
+    ]
+  },
+  "status": "active; live verification required",
+  "last_verified": "2026-08-01",
+  "verification_sources": [
+    "https://www.chipindy.org/"
+  ],
+  "notes": "CHIP identifies itself as the lead agency for the Indianapolis Continuum of Care and coordinates action planning, workgroups, lived-experience engagement, education, fundraising, and homelessness-system strategy. It should be represented as a backbone and system-navigation organization, not as a guaranteed direct housing provider."
+}
