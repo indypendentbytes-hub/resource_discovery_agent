@@ -165,11 +165,11 @@ export default function App() {
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <img
-              src="/logo.svg"
+              src="/logo.png"
               alt="INDYpendent Bytes logo"
-              className="h-16 w-16 md:h-20 md:w-20 drop-shadow-md"
-              width="80"
-              height="80"
+              className="h-20 w-20 rounded-full object-cover shadow-md ring-2 ring-ib-denim/30 md:h-24 md:w-24"
+              width="96"
+              height="96"
             />
             <div>
               <p className="font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">
