@@ -5,8 +5,8 @@ import { loadResourceCatalog } from '../src/catalog/load-resource-catalog.js';
 test('loads the canonical resource catalog with promoted resources', async () => {
   const catalog = await loadResourceCatalog();
 
-  assert.equal(catalog.records.length, 43);
-  assert.equal(new Set(catalog.records.map((record) => record.resource_id)).size, 43);
+  assert.equal(catalog.records.length, 44);
+  assert.equal(new Set(catalog.records.map((record) => record.resource_id)).size, 44);
 
   const promotedIds = [
     'ican-assistance-center',
@@ -27,6 +27,7 @@ test('loads the canonical resource catalog with promoted resources', async () =>
     'international-association-for-food-protection',
     'american-culinary-federation',
     'association-nutrition-foodservice-professionals',
+    'national-council-of-nonprofits-fiscal-sponsorship-guide',
   ];
 
   for (const resourceId of promotedIds) {
