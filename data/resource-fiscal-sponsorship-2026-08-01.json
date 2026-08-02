@@ -1,0 +1,41 @@
+{
+  "batch_id": "resource-fiscal-sponsorship-2026-08-01",
+  "verified_at": "2026-08-01T21:35:00-04:00",
+  "scope": "Fiscal sponsorship education and nonprofit financial administration guidance",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "national-council-of-nonprofits-fiscal-sponsorship-guide",
+      "name": "Fiscal Sponsorship for Nonprofits",
+      "official_url": "https://www.councilofnonprofits.org/running-nonprofit/administration-and-financial-management/fiscal-sponsorship-nonprofits",
+      "entity_type": "nonprofit_fiscal_sponsorship_guidance_resource",
+      "description": "National Council of Nonprofits guidance explaining how fiscal sponsorship works, what fiscal sponsors may provide, why organizations use the arrangement, common administrative fees, sponsor control requirements, written-agreement considerations, and links to additional resources.",
+      "primary_category": "nonprofit administration and financial management",
+      "tags": [
+        "fiscal sponsorship",
+        "nonprofit",
+        "grant eligibility",
+        "charitable contributions",
+        "financial management",
+        "startup nonprofit",
+        "administrative support",
+        "technical assistance"
+      ],
+      "service_area": ["United States", "Indiana"],
+      "audience": [
+        "new nonprofit projects",
+        "unincorporated charitable initiatives",
+        "nonprofit founders",
+        "community organizations",
+        "program leaders seeking grant eligibility"
+      ],
+      "source_authority": "OFFICIAL_NONPROFIT_SECTOR_GUIDANCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "source_urls": [
+        "https://www.councilofnonprofits.org/running-nonprofit/administration-and-financial-management/fiscal-sponsorship-nonprofits"
+      ],
+      "availability_notes": "This is an educational resource, not a fiscal sponsor directory or sponsorship offer. Fiscal sponsors may charge administrative fees and must retain legal control and discretion over contributed funds. Users should review any arrangement with qualified legal, tax, and accounting professionals."
+    }
+  ]
+}
