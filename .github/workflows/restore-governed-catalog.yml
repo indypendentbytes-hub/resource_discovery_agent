@@ -1,0 +1,36 @@
+name: Restore governed resource catalog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/restore-governed-catalog.mjs
+      - .github/workflows/restore-governed-catalog.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Restore and merge catalog
+        run: node scripts/restore-governed-catalog.mjs
+      - name: Validate catalog
+        run: npm test
+      - name: Commit restored catalog
+        run: |
+          if git diff --quiet -- data/resource-catalog.json data/resource-catalog.generated.json; then
+            echo "No catalog changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/resource-catalog.json data/resource-catalog.generated.json
+          git commit -m "Restore full governed RDA resource catalog"
+          git push
