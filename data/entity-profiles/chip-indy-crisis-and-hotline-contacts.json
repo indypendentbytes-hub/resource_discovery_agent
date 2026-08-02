@@ -1,0 +1,43 @@
+{
+  "source": {
+    "name": "CHIP Indy resource guide screenshots",
+    "organization": "Coalition for Homelessness Intervention and Prevention (CHIP Indianapolis)",
+    "source_type": "community resource guide",
+    "verification_status": "transcribed from user-provided screenshots; each entity should be verified against its official source before live use",
+    "captured_date": "2026-08-01"
+  },
+  "entities": [
+    {"name":"Adult Protective Services Hotline","category":["abuse","violence","protective services"],"phone":"800-992-6978"},
+    {"name":"Child Protective Services Hotline","category":["child safety","abuse","protective services"],"phone":"800-800-5556"},
+    {"name":"Childhelp National Child Abuse Hotline","category":["child safety","abuse","crisis"],"phone":"800-422-4453","phone_capability":"call or text"},
+    {"name":"Domestic Violence Network","category":["domestic violence","victim services","crisis"],"phone":"317-872-1086"},
+    {"name":"IMPD Victims’ Assistance","category":["victim services","law enforcement support"],"phone":"317-327-3331","tty":"317-327-3315"},
+    {"name":"National Dating Abuse and Domestic Violence Hotline","category":["domestic violence","dating violence","crisis"],"phone":"800-799-7233","tty":"800-787-3224","text":{"keyword":"BEGIN","number":"88788"}},
+    {"name":"National Sexual Assault Hotline","category":["sexual assault","victim services","crisis"],"phone":"800-656-4673"},
+    {"name":"National Teen Dating Abuse Hotline","category":["teen dating violence","youth","crisis"],"phone":"800-799-7233","text":{"keyword":"LOVEIS","number":"22522"}},
+    {"name":"Adult & Child Health","category":["mental health","behavioral health"],"phone":"877-882-5122"},
+    {"name":"Alcoholics Anonymous","category":["substance use","alcohol recovery","peer support"],"phone":"317-632-7864"},
+    {"name":"Aspire Indiana","category":["mental health","behavioral health","substance use"],"phone":"800-560-4038"},
+    {"name":"Community Health Network","category":["mental health","crisis"],"phone":"317-621-5700","text":{"keyword":"IN","number":"741741"}},
+    {"name":"Cummins Behavioral Health Systems Crisis Line","category":["mental health","behavioral health","crisis"],"phone":"888-714-1927","phone_instructions":"option 1 or extension 1501","tty":"800-743-3333"},
+    {"name":"Indiana Suicide Intervention","category":["suicide prevention","mental health","crisis"],"phone":"988","text":{"keyword":"IN","number":"741741"}},
+    {"name":"Narcotics Anonymous of Central Indiana Area Helpline","category":["substance use","drug recovery","peer support"],"phone":"317-875-5459"},
+    {"name":"National Suicide Prevention Lifeline","category":["suicide prevention","mental health","crisis"],"phone":"988","text":{"number":"988"}},
+    {"name":"We Bloom Recovery Cafe","category":["recovery support","substance use","peer support"],"phone":"317-772-0102"},
+    {"name":"Sandra Eskenazi Mental Health Center (Midtown) Crisis Line","category":["mental health","behavioral health","crisis"],"phone":"317-880-8485"},
+    {"name":"St. Vincent Stress Center","category":["mental health","crisis"],"phone":["800-872-2210","317-338-4800"]},
+    {"name":"Trevor Project Helpline","category":["LGBTQ youth","mental health","crisis"],"phone":"866-488-7386","text":{"keyword":"START","number":"678678"}},
+    {"name":"Veterans Crisis Line","category":["veterans","mental health","suicide prevention","crisis"],"phone":"988","phone_instructions":"press 1","tty":"800-799-4889","text":{"number":"838255"}},
+    {"name":"Homeless Youth Resource Line (Outreach, Inc.)","category":["homeless youth","housing instability","youth services"],"phone":"317-699-1994","phone_capability":"call or text"},
+    {"name":"MCH MOMS Helpline for Infant Health","category":["maternal health","infant health","family support"],"phone":"844-624-6667","vanity_phone":"844-MCH-MOMS"},
+    {"name":"IndyGo Transportation Assistance","category":["transportation","mobility support"],"phone":"317-635-3344","tty":"711-463-4262"},
+    {"name":"Overdose Lifeline Naloxone Provider Finder","category":["naloxone","overdose prevention","substance use"],"url":"https://www.overdoselifeline.org"}
+  ],
+  "agent_rules": [
+    "For immediate danger, direct the user to 911.",
+    "For suicide or mental-health crisis, prioritize 988 and preserve any listed text or accessibility option.",
+    "For domestic violence, sexual assault, child abuse, or elder abuse, use safety-sensitive language and do not expose private information.",
+    "Do not assume a phone number is current solely because it appears in the CHIP guide; verify against the entity's official website before a high-stakes referral.",
+    "Store call, text, TTY, extension, and keyword instructions as separate structured fields so the agent does not omit them."
+  ]
+}
