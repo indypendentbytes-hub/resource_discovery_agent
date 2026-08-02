@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useUser } from "@clerk/clerk-react";
 import DiscoveryAgentLayout from "./components/layout/DiscoveryAgentLayout";
+import AuthHeader from "./components/auth/AuthHeader";
+import SaveProgressPrompt from "./components/auth/SaveProgressPrompt";
 import { routeResources } from "./agent/routingEngine";
 import { searchResources } from "./services/resourceSearch";
+import { getPrimaryRole } from "./lib/roles";
 
 const initialMessages = [
   {
@@ -72,6 +76,7 @@ const resourceGraph = [
 ];
 
 export default function App() {
+  const { user, isSignedIn } = useUser();
   const [messages, setMessages] = useState(initialMessages);
   const [resources, setResources] = useState([]);
   const [routingState, setRoutingState] = useState("empty");
@@ -79,6 +84,8 @@ export default function App() {
     "No matches yet. Start with one goal or constraint.",
   );
   const [isSearching, setIsSearching] = useState(false);
+
+  const primaryRole = getPrimaryRole(user);
 
   async function handleSend(text) {
     const cleanText = text.trim();
@@ -106,6 +113,9 @@ export default function App() {
         query: cleanText,
         routingSummary: localResult.summary,
         candidates: localResult.recommendations,
+        // Future: pass userId / role so the backend can personalize
+        userId: user?.id || null,
+        role: primaryRole,
       });
 
       setRoutingState(localResult.state === "empty" ? "verified" : localResult.state);
@@ -151,23 +161,27 @@ export default function App() {
   return (
     <main className="min-h-screen bg-ib-linen px-4 py-8 dark:bg-[#121212]">
       <div className="mx-auto max-w-6xl">
-        {/* Logo + Brand */}
-        <div className="mb-6 flex items-center gap-4">
-          <img
-            src="/logo.svg"
-            alt="INDYpendent Bytes logo"
-            className="h-16 w-16 md:h-20 md:w-20 drop-shadow-md"
-            width="80"
-            height="80"
-          />
-          <div>
-            <p className="font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">
-              INDYpendent Bytes
-            </p>
-            <h1 className="text-3xl font-black text-text-primaryLight dark:text-text-primaryDark md:text-5xl">
-              Resource Discovery Agent
-            </h1>
+        {/* Header with logo + soft auth */}
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <img
+              src="/logo.svg"
+              alt="INDYpendent Bytes logo"
+              className="h-16 w-16 md:h-20 md:w-20 drop-shadow-md"
+              width="80"
+              height="80"
+            />
+            <div>
+              <p className="font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">
+                INDYpendent Bytes
+              </p>
+              <h1 className="text-3xl font-black text-text-primaryLight dark:text-text-primaryDark md:text-5xl">
+                Resource Discovery Agent
+              </h1>
+            </div>
           </div>
+
+          <AuthHeader />
         </div>
 
         <DiscoveryAgentLayout
@@ -179,6 +193,9 @@ export default function App() {
           onResourceSelect={handleResourceSelect}
           isSearching={isSearching}
         />
+
+        {/* Soft prompt — only appears after the user has received recommendations */}
+        <SaveProgressPrompt hasRecommendations={resources.length > 0} />
       </div>
     </main>
   );
