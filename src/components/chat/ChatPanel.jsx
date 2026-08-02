@@ -2,11 +2,12 @@ import { useState } from "react";
 import ChatBubble from "./ChatBubble";
 import StickerButton from "../primitives/StickerButton";
 
-export default function ChatPanel({ messages, onSend }) {
+export default function ChatPanel({ messages, onSend, isSearching = false }) {
   const [draft, setDraft] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
+    if (isSearching) return;
     onSend(draft);
     setDraft("");
   }
@@ -30,9 +31,12 @@ export default function ChatPanel({ messages, onSend }) {
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
           placeholder="What resource or support do you need?"
-          className="min-w-0 flex-1 rounded-full border-2 border-ib-denim bg-white px-4 py-3 text-text-primaryLight outline-none focus:ring-4 focus:ring-ib-green/30 dark:bg-[#1E1E1E] dark:text-text-primaryDark"
+          disabled={isSearching}
+          className="min-w-0 flex-1 rounded-full border-2 border-ib-denim bg-white px-4 py-3 text-text-primaryLight outline-none focus:ring-4 focus:ring-ib-green/30 disabled:opacity-60 dark:bg-[#1E1E1E] dark:text-text-primaryDark"
         />
-        <StickerButton type="submit">Ask</StickerButton>
+        <StickerButton type="submit" disabled={isSearching}>
+          {isSearching ? "Checking…" : "Ask"}
+        </StickerButton>
       </form>
     </section>
   );
