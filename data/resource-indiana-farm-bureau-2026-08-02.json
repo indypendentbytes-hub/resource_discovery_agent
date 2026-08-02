@@ -1,0 +1,50 @@
+{
+  "batch_id": "resource-indiana-farm-bureau-2026-08-02",
+  "verified_at": "2026-08-02T16:43:00-04:00",
+  "scope": "Indiana agricultural membership, member resources, networking, advocacy and account registration",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "indiana-farm-bureau-website-registration",
+      "source_id": "SRC-197",
+      "name": "Indiana Farm Bureau Website Registration",
+      "official_url": "https://www.infarmbureau.org/CAS/register-for-website",
+      "submitted_url": "https://www.infarmbureau.org/my-account/register-for-website?fbclid=IwT01FWATciv5leHRuA2FlbQIxMABzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR5SVHWt6ue_2CsgrotJgCWcCe45COQx4DDbj-i1p0Y2q55oU7H1EGUZWgqnvg_aem_jKg-95-fqm7DKQU6Uaaw-Q",
+      "organization": "Indiana Farm Bureau, Inc.",
+      "entity_type": "agricultural_membership_account_registration_portal",
+      "description": "Official Indiana Farm Bureau portal for eligible members to locate their membership, create an INFB.org account and complete identity verification so they can access member resources and benefits.",
+      "primary_category": "Connections, Directories & Market Access",
+      "tags": [
+        "Indiana agriculture",
+        "farm bureau",
+        "membership",
+        "member benefits",
+        "education",
+        "advocacy",
+        "networking",
+        "website account"
+      ],
+      "service_area": ["Indiana"],
+      "audience": [
+        "Prospective/Beginning Cultivator",
+        "Active Cultivator/Producer",
+        "Land Host/Property Owner",
+        "Partner/Technical Assistance Provider",
+        "IB Operator/Admin",
+        "Public/Community Member"
+      ],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "This page is for registering an online account connected to an existing Indiana Farm Bureau membership. It does not itself purchase a membership or guarantee access to every program or benefit.",
+      "related_urls": [
+        "https://www.infarmbureau.org/membership",
+        "https://join.infarmbureau.org/"
+      ],
+      "source_urls": [
+        "https://www.infarmbureau.org/CAS/register-for-website",
+        "https://www.infarmbureau.org/membership"
+      ]
+    }
+  ]
+}
