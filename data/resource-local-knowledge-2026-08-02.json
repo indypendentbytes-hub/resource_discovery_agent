@@ -1,0 +1,51 @@
+{
+  "batch_id": "resource-local-knowledge-2026-08-02",
+  "verified_at": "2026-08-02T07:50:00-04:00",
+  "scope": "Indianapolis and Central Indiana local-history, civic-context, community, organizational, and place-based research resources",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "encyclopedia-of-indianapolis",
+      "name": "Encyclopedia of Indianapolis",
+      "official_url": "https://indyencyclopedia.org/",
+      "entity_type": "local_knowledge_and_civic_research_resource",
+      "description": "An expanding digital reference resource presented by The Indianapolis Public Library covering Indianapolis people, places, events, organizations, topics, timelines, exhibits, guides, and Central Indiana atlas information.",
+      "primary_category": "local knowledge and civic research",
+      "tags": [
+        "Indianapolis history",
+        "Central Indiana",
+        "local organizations",
+        "community research",
+        "civic context",
+        "places",
+        "people",
+        "events",
+        "timelines",
+        "atlas",
+        "guides",
+        "public library"
+      ],
+      "service_area": [
+        "Indianapolis",
+        "Marion County",
+        "Central Indiana"
+      ],
+      "audience": [
+        "residents",
+        "entrepreneurs",
+        "community organizations",
+        "researchers",
+        "students",
+        "program designers",
+        "local partnership developers"
+      ],
+      "source_authority": "OFFICIAL_LOCAL_PUBLIC_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "source_urls": [
+        "https://indyencyclopedia.org/"
+      ],
+      "availability_notes": "Use this resource for local context, organizational history, neighborhood and place research, civic background, and discovery of Indianapolis institutions. Entries may provide historical or descriptive context rather than current eligibility, service availability, or application instructions; verify time-sensitive operational details with the organization itself."
+    }
+  ]
+}
