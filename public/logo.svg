@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220" role="img" aria-label="INDYpendent Bytes logo">
+  <!-- Denim-style background circle for the patch feel -->
+  <circle cx="100" cy="110" r="98" fill="#3A5F8A"/>
+  <circle cx="100" cy="110" r="92" fill="none" stroke="#2A4A6A" stroke-width="3"/>
+
+  <!-- Gear / industrial element (right side, orange-brown) -->
+  <g transform="translate(100,110)">
+    <!-- Outer gear teeth -->
+    <path d="M 55,-15 L 68,-22 L 72,-8 L 85,-5 L 82,8 L 90,18 L 78,25 L 72,38 L 58,35 L 48,48 L 35,40 L 22,48 L 18,35 L 5,38 L -2,25 L -15,28 L -12,15 L -22,8 L -18,-5 L -28,-12 L -18,-22 L -12,-35 L 2,-32 L 12,-45 L 25,-38 L 38,-48 L 45,-35 L 58,-38 L 55,-15 Z" 
+          fill="#C65A1E" stroke="#E8C9A0" stroke-width="2.5"/>
+    <!-- Inner gear ring -->
+    <circle cx="35" cy="5" r="28" fill="none" stroke="#E8C9A0" stroke-width="4"/>
+    <circle cx="35" cy="5" r="18" fill="#C65A1E"/>
+  </g>
+
+  <!-- Left curved industrial / wrench-like element -->
+  <path d="M 35 140 Q 20 100 45 70 Q 55 55 70 60" 
+        fill="none" stroke="#C65A1E" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 35 140 Q 20 100 45 70 Q 55 55 70 60" 
+        fill="none" stroke="#E8C9A0" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Wheat stalk (main vertical element) -->
+  <g transform="translate(100,30)">
+    <!-- Stem -->
+    <path d="M 0 160 Q -2 100 0 40" fill="none" stroke="#D4A017" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Central wheat head -->
+    <ellipse cx="0" cy="25" rx="8" ry="18" fill="#F0C040"/>
+    <ellipse cx="0" cy="10" rx="7" ry="14" fill="#E8B030"/>
+    <ellipse cx="0" cy="-2" rx="6" ry="12" fill="#F0C040"/>
+
+    <!-- Left side grains -->
+    <ellipse cx="-14" cy="35" rx="7" ry="14" fill="#E8B030" transform="rotate(-25 -14 35)"/>
+    <ellipse cx="-16" cy="18" rx="6.5" ry="13" fill="#F0C040" transform="rotate(-30 -16 18)"/>
+    <ellipse cx="-15" cy="2" rx="6" ry="12" fill="#E8B030" transform="rotate(-28 -15 2)"/>
+    <ellipse cx="-12" cy="-12" rx="5.5" ry="11" fill="#F0C040" transform="rotate(-22 -12 -12)"/>
+
+    <!-- Right side grains -->
+    <ellipse cx="14" cy="35" rx="7" ry="14" fill="#E8B030" transform="rotate(25 14 35)"/>
+    <ellipse cx="16" cy="18" rx="6.5" ry="13" fill="#F0C040" transform="rotate(30 16 18)"/>
+    <ellipse cx="15" cy="2" rx="6" ry="12" fill="#E8B030" transform="rotate(28 15 2)"/>
+    <ellipse cx="12" cy="-12" rx="5.5" ry="11" fill="#F0C040" transform="rotate(22 12 -12)"/>
+
+    <!-- Top grains -->
+    <ellipse cx="-8" cy="-22" rx="5" ry="10" fill="#E8B030" transform="rotate(-15 -8 -22)"/>
+    <ellipse cx="8" cy="-22" rx="5" ry="10" fill="#E8B030" transform="rotate(15 8 -22)"/>
+    <ellipse cx="0" cy="-30" rx="4.5" ry="9" fill="#F0C040"/>
+  </g>
+
+  <!-- Green leaves at the base of the wheat -->
+  <g transform="translate(100,140)">
+    <!-- Left leaf -->
+    <path d="M 0 10 Q -35 5 -45 -15 Q -30 -5 -10 5 Z" fill="#4CAF50" stroke="#E8C9A0" stroke-width="1.5"/>
+    <path d="M 0 10 Q -25 0 -30 -20 Q -15 -8 0 5 Z" fill="#66BB6A"/>
+
+    <!-- Right leaf -->
+    <path d="M 0 10 Q 35 5 45 -15 Q 30 -5 10 5 Z" fill="#4CAF50" stroke="#E8C9A0" stroke-width="1.5"/>
+    <path d="M 0 10 Q 25 0 30 -20 Q 15 -8 0 5 Z" fill="#66BB6A"/>
+
+    <!-- Lower left leaf -->
+    <path d="M -5 20 Q -40 25 -50 5 Q -30 15 -8 18 Z" fill="#43A047" stroke="#E8C9A0" stroke-width="1.5"/>
+  </g>
+
+  <!-- Cream outline to give embroidered edge feel -->
+  <circle cx="100" cy="110" r="94" fill="none" stroke="#E8C9A0" stroke-width="3" opacity="0.7"/>
+</svg>

@@ -151,12 +151,25 @@ export default function App() {
   return (
     <main className="min-h-screen bg-ib-linen px-4 py-8 dark:bg-[#121212]">
       <div className="mx-auto max-w-6xl">
-        <p className="mb-2 font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">
-          INDYpendent Bytes
-        </p>
-        <h1 className="mb-6 text-4xl font-black text-text-primaryLight dark:text-text-primaryDark md:text-6xl">
-          Resource Discovery Agent
-        </h1>
+        {/* Logo + Brand */}
+        <div className="mb-6 flex items-center gap-4">
+          <img
+            src="/logo.svg"
+            alt="INDYpendent Bytes logo"
+            className="h-16 w-16 md:h-20 md:w-20 drop-shadow-md"
+            width="80"
+            height="80"
+          />
+          <div>
+            <p className="font-bold uppercase tracking-[0.18em] text-ib-denim dark:text-ib-linen">
+              INDYpendent Bytes
+            </p>
+            <h1 className="text-3xl font-black text-text-primaryLight dark:text-text-primaryDark md:text-5xl">
+              Resource Discovery Agent
+            </h1>
+          </div>
+        </div>
+
         <DiscoveryAgentLayout
           messages={messages}
           resources={resources}
