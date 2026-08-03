@@ -1,38 +1,41 @@
 import { useEffect, useState, useRef } from "react";
 
 /**
- * Crossfade photo loop — real people across the local food system.
- * Progressive loading: first slide eager; next slide prefetched ahead of time.
+ * Crossfade photo loop — optimized for LCP / Speed Insights.
+ * - Only the active slide is in the DOM at full priority
+ * - Autoplay starts after first paint + short delay
+ * - Prefetch only the next slide, not the whole set
  */
 const SLIDES = [
   {
-    src: "https://i.imgur.com/UgXbG6X.jpeg",
+    src: "https://i.imgur.com/UgXbG6Xh.jpeg",
     alt: "Open land and rolling hills at sunrise",
     label: "Land",
   },
   {
-    src: "https://i.imgur.com/sGjs98i.jpeg",
+    src: "https://i.imgur.com/sGjs98ih.jpeg",
     alt: "Cultivator tilling soil with a walk-behind tiller",
     label: "Preparing ground",
   },
   {
-    src: "https://i.imgur.com/5U7S7UY.jpeg",
+    src: "https://i.imgur.com/5U7S7UYh.jpeg",
     alt: "Grower carrying a crate of fresh harvest",
     label: "Cultivators",
   },
   {
-    src: "https://i.imgur.com/MIumY3W.jpeg",
+    src: "https://i.imgur.com/MIumY3Wh.jpeg",
     alt: "Urban grower with a wheelbarrow in a backyard garden",
     label: "Neighborhood land",
   },
   {
-    src: "https://i.imgur.com/tnpPJ4i.jpeg",
+    src: "https://i.imgur.com/tnpPJ4ih.jpeg",
     alt: "Workers loading crates of produce onto a delivery truck",
     label: "Production & logistics",
   },
 ];
 
-const INTERVAL_MS = 4500;
+const INTERVAL_MS = 5500;
+const AUTOPLAY_DELAY_MS = 2500;
 
 function prefetch(src) {
   if (!src || typeof window === "undefined") return;
@@ -44,7 +47,8 @@ function prefetch(src) {
 export default function HeroIllustration() {
   const [index, setIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [loaded, setLoaded] = useState(() => new Set([0]));
+  const [autoplayReady, setAutoplayReady] = useState(false);
+  const [firstLoaded, setFirstLoaded] = useState(false);
   const prefetched = useRef(new Set([SLIDES[0].src]));
 
   useEffect(() => {
@@ -55,66 +59,80 @@ export default function HeroIllustration() {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
+  // Don't start carousel until after first paint — protects LCP
   useEffect(() => {
-    if (reducedMotion || SLIDES.length < 2) return undefined;
+    const start = () => setAutoplayReady(true);
+    let idleId;
+    let timeoutId;
+
+    if (typeof window.requestIdleCallback === "function") {
+      idleId = window.requestIdleCallback(start, { timeout: AUTOPLAY_DELAY_MS });
+    } else {
+      timeoutId = window.setTimeout(start, AUTOPLAY_DELAY_MS);
+    }
+
+    return () => {
+      if (idleId && typeof window.cancelIdleCallback === "function") {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!autoplayReady || reducedMotion || SLIDES.length < 2) return undefined;
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % SLIDES.length);
     }, INTERVAL_MS);
     return () => clearInterval(id);
-  }, [reducedMotion]);
+  }, [autoplayReady, reducedMotion]);
 
+  // Prefetch only the next slide after first image has loaded
   useEffect(() => {
+    if (!firstLoaded) return;
     const next = (index + 1) % SLIDES.length;
-    setLoaded((prev) => {
-      if (prev.has(index) && prev.has(next)) return prev;
-      const s = new Set(prev);
-      s.add(index);
-      s.add(next);
-      return s;
-    });
     const nextSrc = SLIDES[next].src;
     if (!prefetched.current.has(nextSrc)) {
       prefetched.current.add(nextSrc);
       prefetch(nextSrc);
     }
-  }, [index]);
+  }, [index, firstLoaded]);
 
   function goTo(i) {
     setIndex(i);
-    setLoaded((prev) => {
-      const s = new Set(prev);
-      s.add(i);
-      s.add((i + 1) % SLIDES.length);
-      return s;
-    });
+    const nextSrc = SLIDES[(i + 1) % SLIDES.length].src;
+    if (!prefetched.current.has(nextSrc)) {
+      prefetched.current.add(nextSrc);
+      prefetch(nextSrc);
+    }
   }
+
+  const active = SLIDES[index];
 
   return (
     <div
       className="hero-media hero-photo-loop"
       aria-label="Photos of people and places across the local food system"
     >
-      {SLIDES.map((slide, i) => {
-        const isActive = i === index;
-        const shouldShow = loaded.has(i);
-
-        return (
-          <img
-            key={slide.src}
-            src={shouldShow ? slide.src : undefined}
-            alt={isActive ? slide.alt : ""}
-            className={`hero-slide ${isActive ? "is-active" : ""}`}
-            loading={i === 0 ? "eager" : "lazy"}
-            decoding="async"
-            fetchPriority={i === 0 ? "high" : "low"}
-            width={900}
-            height={675}
-          />
-        );
-      })}
+      {/* Single active image keeps DOM light and LCP focused */}
+      <img
+        key={active.src}
+        src={active.src}
+        alt={active.alt}
+        className="hero-slide is-active"
+        loading={index === 0 ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={index === 0 ? "high" : "auto"}
+        width={640}
+        height={480}
+        sizes="(max-width: 768px) 100vw, 560px"
+        onLoad={() => {
+          if (index === 0) setFirstLoaded(true);
+        }}
+      />
 
       <div className="hero-slide-caption">
-        <span className="hero-slide-label">{SLIDES[index].label}</span>
+        <span className="hero-slide-label">{active.label}</span>
         <div className="hero-slide-dots" role="tablist" aria-label="Photo slides">
           {SLIDES.map((slide, i) => (
             <button
