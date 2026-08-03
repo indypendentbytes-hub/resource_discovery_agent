@@ -191,7 +191,7 @@ export default function App() {
               Navigate support, activate underused land, prepare cultivators,
               and build clearer pathways into a coordinated regional food system.
             </p>
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="hero-cta-row mt-5">
               <a href="#resource-agent" className="cta-pumpkin">
                 Find resources
                 <span aria-hidden="true">→</span>
