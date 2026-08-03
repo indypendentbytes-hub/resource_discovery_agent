@@ -1,25 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ClerkProvider } from "@clerk/clerk-react";
+
+/* Self-hosted fonts — bundled by Vite, served from the same origin as the app.
+   Community visitors do not depend on Google Fonts or any third-party CDN. */
+import "@fontsource/work-sans/400.css";
+import "@fontsource/work-sans/600.css";
+import "@fontsource/work-sans/700.css";
+import "@fontsource/biorhyme/700.css";
+
 import App from "./App";
 import "./index.css";
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-
-if (!PUBLISHABLE_KEY) {
-  console.warn(
-    "Missing VITE_CLERK_PUBLISHABLE_KEY. Auth features will be disabled until you add it to .env",
-  );
-}
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {PUBLISHABLE_KEY ? (
-      <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-        <App />
-      </ClerkProvider>
-    ) : (
-      <App />
-    )}
-  </React.StrictMode>,
+    <App />
+  </React.StrictMode>
 );

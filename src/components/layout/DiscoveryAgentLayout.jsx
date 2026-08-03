@@ -1,6 +1,5 @@
 import ResourcePanel from "../resource/ResourcePanel";
 import ChatPanel from "../chat/ChatPanel";
-import GreenSurface from "../primitives/GreenSurface";
 
 export default function DiscoveryAgentLayout({
   messages,
@@ -8,12 +7,10 @@ export default function DiscoveryAgentLayout({
   onSend,
   onResourceSelect,
   isSearching,
-  routingState,
-  routingSummary,
 }) {
   return (
-    <GreenSurface>
-      <div className="flex flex-col md:flex-row gap-6">
+    <div className="agent-shell">
+      <div className="grid min-h-[520px] lg:grid-cols-[minmax(0,1.55fr)_minmax(280px,0.85fr)]">
         <ChatPanel
           messages={messages}
           onSend={onSend}
@@ -22,10 +19,8 @@ export default function DiscoveryAgentLayout({
         <ResourcePanel
           resources={resources}
           onResourceSelect={onResourceSelect}
-          routingState={routingState}
-          routingSummary={routingSummary}
         />
       </div>
-    </GreenSurface>
+    </div>
   );
 }

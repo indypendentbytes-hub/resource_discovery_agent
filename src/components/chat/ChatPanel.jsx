@@ -1,20 +1,32 @@
 import { useState } from "react";
 import ChatBubble from "./ChatBubble";
-import StickerButton from "../primitives/StickerButton";
 
-export default function ChatPanel({ messages, onSend, isSearching = false }) {
+export default function ChatPanel({ messages, onSend, isSearching }) {
   const [draft, setDraft] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (isSearching) return;
-    onSend(draft);
+    const cleanDraft = draft.trim();
+    if (!cleanDraft || isSearching) return;
+    onSend(cleanDraft);
     setDraft("");
   }
 
   return (
-    <section className="flex w-full flex-col gap-4 md:w-2/3 md:pr-4">
-      <div className="flex max-h-[32rem] flex-col gap-4 overflow-y-auto pr-1" aria-live="polite">
+    <section className="agent-chat flex min-w-0 flex-col p-5 md:p-7 lg:p-8">
+      <div className="mb-5">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C65A1E]">
+          Guided navigation
+        </p>
+        <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-[#1A1A1A] md:text-2xl font-display">
+          What are you trying to accomplish?
+        </h3>
+      </div>
+
+      <div
+        className="flex min-h-[240px] flex-1 flex-col gap-3 overflow-y-auto rounded-lg border border-[#D4CFC6]/60 bg-white p-4"
+        aria-live="polite"
+      >
         {messages.map((message, index) => (
           <ChatBubble key={`${message.sender}-${index}`} sender={message.sender}>
             {message.text}
@@ -22,7 +34,10 @@ export default function ChatPanel({ messages, onSend, isSearching = false }) {
         ))}
       </div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
+      <form
+        onSubmit={handleSubmit}
+        className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:items-center"
+      >
         <label className="sr-only" htmlFor="resource-question">
           Ask the Resource Discovery Agent
         </label>
@@ -30,13 +45,18 @@ export default function ChatPanel({ messages, onSend, isSearching = false }) {
           id="resource-question"
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
-          placeholder="What resource or support do you need?"
+          placeholder="e.g. I need land access near Indianapolis…"
+          className="agent-input min-w-0 flex-1"
           disabled={isSearching}
-          className="min-w-0 flex-1 rounded-full border-2 border-ib-denim bg-white px-4 py-3 text-text-primaryLight outline-none focus:ring-4 focus:ring-ib-green/30 disabled:opacity-60 dark:bg-[#1E1E1E] dark:text-text-primaryDark"
+          autoComplete="off"
         />
-        <StickerButton type="submit" disabled={isSearching}>
-          {isSearching ? "Checking…" : "Ask"}
-        </StickerButton>
+        <button
+          type="submit"
+          disabled={isSearching || !draft.trim()}
+          className="agent-submit"
+        >
+          {isSearching ? "Searching…" : "Find my path"}
+        </button>
       </form>
     </section>
   );

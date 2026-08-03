@@ -10,7 +10,8 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@clerk/clerk-react": "^5.0.0",
+    "@fontsource/biorhyme": "^5.2.5",
+    "@fontsource/work-sans": "^5.2.5",
     "@vitejs/plugin-react": "latest",
     "autoprefixer": "latest",
     "openai": "latest",

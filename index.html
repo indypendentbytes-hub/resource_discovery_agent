@@ -3,13 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A guided resource discovery system for business owners and aspiring entrepreneurs." />
-    <title>INDYpendent Bytes — Resource Discovery Agent</title>
+    <meta
+      name="description"
+      content="INDYpendent Bytes — Shared structure for a stronger local food economy. Connecting people, land, resources, and local food opportunity."
+    />
+    <meta name="color-scheme" content="light only" />
+    <title>INDYpendent Bytes | Regional Food Systems Coordination</title>
+
+    <!-- DNS + connection warmup for hero image host -->
+    <link rel="preconnect" href="https://i.imgur.com" crossorigin />
+    <link rel="dns-prefetch" href="https://i.imgur.com" />
+    <link rel="dns-prefetch" href="https://cdn.bmapinc.com" />
+
+    <!-- LCP: first hero slide -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://i.imgur.com/UgXbG6X.jpeg"
+      fetchpriority="high"
+    />
+
+    <!-- Fonts are self-hosted via @fontsource and bundled by Vite (same origin). -->
   </head>
   <body>
     <div id="root"></div>
-    <noscript>INDYpendent Bytes — Resource Discovery Agent is Online.</noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-
