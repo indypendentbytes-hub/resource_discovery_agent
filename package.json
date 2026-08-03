@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/biorhyme": "^5.2.5",
     "@fontsource/work-sans": "^5.2.5",
+    "@vercel/speed-insights": "^1.2.0",
     "@vitejs/plugin-react": "latest",
     "autoprefixer": "latest",
     "openai": "latest",
