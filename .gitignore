@@ -1,8 +1,7 @@
-.vercel
-.env
-.env.local
-.DS_Store
 node_modules
-Cloudflare API token/
-.cloudflared/
-cfut_*.txt
+dist
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store

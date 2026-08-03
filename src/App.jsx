@@ -113,7 +113,6 @@ export default function App() {
         query: cleanText,
         routingSummary: localResult.summary,
         candidates: localResult.recommendations,
-        // Future: pass userId / role so the backend can personalize
         userId: user?.id || null,
         role: primaryRole,
       });
@@ -165,9 +164,9 @@ export default function App() {
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <img
-              src="/logo.png"
+              src="/logo.svg"
               alt="INDYpendent Bytes logo"
-              className="h-20 w-20 rounded-full object-cover shadow-md ring-2 ring-ib-denim/30 md:h-24 md:w-24"
+              className="h-20 w-20 drop-shadow-md md:h-24 md:w-24"
               width="96"
               height="96"
             />
@@ -194,7 +193,6 @@ export default function App() {
           isSearching={isSearching}
         />
 
-        {/* Soft prompt — only appears after the user has received recommendations */}
         <SaveProgressPrompt hasRecommendations={resources.length > 0} />
       </div>
     </main>
