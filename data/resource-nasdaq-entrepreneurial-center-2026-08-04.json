@@ -1,0 +1,34 @@
+{
+  "batch_id": "resource-nasdaq-entrepreneurial-center-2026-08-04",
+  "discovered_at": "2026-08-04T07:06:00-04:00",
+  "scope": "Nationally accessible founder education, mentorship, planning, and capital-readiness resources",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "nasdaq-entrepreneurial-center",
+      "name": "Nasdaq Entrepreneurial Center",
+      "official_url": "https://nasdaqcenter.org/workbooks-and-toolkits/",
+      "entity_type": "nonprofit_entrepreneurship_education_and_mentorship_center",
+      "description": "Provides free entrepreneur education, virtual classes, mentorship, peer programs, and research-informed workbooks and toolkits covering capital readiness, pitching, milestone planning, compensation, internships, retail and consumer products, and business growth.",
+      "primary_category": "business planning",
+      "tags": ["business planning", "business funding", "capital readiness", "financial literacy", "mentorship", "pitching", "small business", "technical assistance", "training", "workforce development"],
+      "service_area": ["United States", "Virtual", "Global"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Core workbooks, toolkits, classes, and mentorship resources are described as free. Cohort-based programs, mentor availability, application windows, forms, and individual toolkit access requirements may change and should be rechecked before recommendation. Verified August 4, 2026.",
+      "featured_resources": [
+        "Capital Compass Toolkit",
+        "Entrepreneur Pitch Toolkit",
+        "Your Pay Plan",
+        "Milestone Mapping Toolkit",
+        "Capital Pathways",
+        "Intern Ready",
+        "Retail & CPG Community of Practice",
+        "Milestone Makers",
+        "Milestone Circles",
+        "Mentor Makers"
+      ]
+    }
+  ]
+}
