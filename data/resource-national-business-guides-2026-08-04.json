@@ -1,0 +1,36 @@
+{
+  "batch_id": "resource-national-business-guides-2026-08-04",
+  "discovered_at": "2026-08-04T07:10:00-04:00",
+  "scope": "Nationally available founder education and federal small-business guidance",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "nasdaq-entrepreneurial-center-workbooks-toolkits",
+      "name": "Nasdaq Entrepreneurial Center Workbooks and Toolkits",
+      "official_url": "https://nasdaqcenter.org/workbooks-and-toolkits/",
+      "entity_type": "entrepreneur_education_and_toolkit_library",
+      "description": "Provides free founder workbooks, toolkits, virtual learning resources, and communities covering capital readiness, pitching, milestone planning, founder compensation, internships, retail and consumer-products growth, and other business-building needs.",
+      "primary_category": "business planning",
+      "tags": ["business planning", "business funding", "capital readiness", "pitching", "small business", "technical assistance", "training", "workforce development"],
+      "service_area": ["United States", "Online"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Most resources are free, but individual toolkits may require a registration form. Program offerings, cohorts, communities, and access requirements can change. Verified August 4, 2026."
+    },
+    {
+      "resource_id": "sba-national-resource-guide",
+      "name": "SBA National Resource Guide",
+      "official_url": "https://www.sba.gov/document/support-national-resource-guide-english",
+      "entity_type": "federal_small_business_resource_guide",
+      "description": "Current national U.S. Small Business Administration guide to federal small-business counseling, capital, contracting, and SBA programs and operations.",
+      "primary_category": "small business",
+      "tags": ["business funding", "business planning", "contracting", "credit", "procurement", "small business", "technical assistance"],
+      "service_area": ["United States"],
+      "source_authority": "OFFICIAL_GOVERNMENT_PROGRAM",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "The English national edition was last updated June 5, 2026. Program rules, contacts, eligibility, loan terms, and contracting requirements should be rechecked before recommendation."
+    }
+  ]
+}
