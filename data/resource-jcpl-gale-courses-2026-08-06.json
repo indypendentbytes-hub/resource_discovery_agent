@@ -1,0 +1,22 @@
+{
+  "batch_id": "resource-jcpl-gale-courses-2026-08-06",
+  "discovered_at": "2026-08-06T03:24:00-04:00",
+  "scope": "Johnson County, Indiana online continuing education and professional skill development",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "jcpl-gale-courses",
+      "name": "Johnson County Public Library Gale Courses",
+      "official_url": "https://education.gale.com/l-jctypub/SearchResults.aspx?SearchFilterID=1&SearchFilterTypeID=1",
+      "entity_type": "library_sponsored_online_course_platform",
+      "description": "Provides free, instructor-led six-week online courses for Johnson County Public Library cardholders, with new sessions beginning monthly. Topics include business, accounting, finance, law, technology, Microsoft applications, web design, computer programming, and personal enrichment.",
+      "primary_category": "training",
+      "tags": ["business planning", "career development", "computer skills", "continuing education", "finance", "small business", "technical assistance", "technology", "training", "workforce development"],
+      "service_area": ["Johnson County", "Central Indiana", "Online"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Free access requires a valid Johnson County Public Library card. Courses run for six weeks, new sessions begin monthly, and current course offerings and enrollment dates should be checked before recommendation. Verified August 6, 2026."
+    }
+  ]
+}
