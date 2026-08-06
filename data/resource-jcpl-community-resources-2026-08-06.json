@@ -1,7 +1,7 @@
 {
   "batch_id": "resource-jcpl-community-resources-2026-08-06",
   "discovered_at": "2026-08-06T03:47:00-04:00",
-  "scope": "Johnson County food, housing, referral, maternal-child nutrition, and youth support resources",
+  "scope": "Johnson County basic-needs navigation, food, housing, legal, safety, maternal-child nutrition, senior, and youth support resources",
   "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
   "records": [
     {
@@ -19,18 +19,32 @@
       "availability_notes": "JCPL compiles external providers and does not operate most listed services. Eligibility, hours, documentation requirements, and program status should be verified with each provider. Verified August 6, 2026."
     },
     {
+      "resource_id": "jcpl-basic-needs-assistance-directory",
+      "name": "Johnson County Public Library Basic Needs Assistance Directory",
+      "official_url": "https://www.pageafterpage.org/basic-needs-assistance",
+      "entity_type": "comprehensive_basic_needs_directory",
+      "description": "JCPL-curated guide to employment, unemployment, legal help, food, child care, housing, domestic violence, senior services, mental health, disability, health insurance, addiction treatment, and emergency supports.",
+      "primary_category": "resource navigation",
+      "tags": ["basic needs", "employment", "food assistance", "healthcare", "housing assistance", "legal assistance", "mental health", "resource navigation"],
+      "service_area": ["Johnson County", "Central Indiana", "Indiana"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "The page aggregates external services and may retain legacy or time-limited listings. Current eligibility, funding, hours, crisis contacts, and application status must be verified directly with each provider. Verified August 6, 2026."
+    },
+    {
       "resource_id": "johnson-county-helpline",
       "name": "Johnson County Helpline",
-      "official_url": "https://www.pageafterpage.org/community-resources",
+      "official_url": "https://www.uwjc.org/",
       "entity_type": "information_and_referral_service",
       "description": "Information and referral service providing contact information and guidance for Johnson County residents seeking food, medical, housing, and other social-service resources.",
       "primary_category": "resource navigation",
       "tags": ["basic needs", "food assistance", "healthcare", "housing assistance", "referrals"],
       "service_area": ["Johnson County"],
-      "source_authority": "OFFICIAL_LIBRARY_CURATED_SOURCE",
+      "source_authority": "OFFICIAL_PROVIDER",
       "verification_status": "VERIFIED",
       "status": "ACTIVE",
-      "availability_notes": "Contact details and service coverage should be verified before referral. Verified through JCPL's community resource page August 6, 2026."
+      "availability_notes": "Contact details and service coverage should be verified before referral. JCPL lists 317-738-4636. Verified August 6, 2026."
     },
     {
       "resource_id": "interchurch-food-pantry-johnson-county",
@@ -87,6 +101,62 @@
       "verification_status": "VERIFIED",
       "status": "ACTIVE",
       "availability_notes": "Age eligibility, drop-in hours, transportation coverage, and current program capacity should be confirmed before referral. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "johnson-county-bar-association-clinic",
+      "name": "Johnson County Bar Association Legal Clinic",
+      "official_url": "https://co.johnson.in.us/",
+      "entity_type": "free_pop_up_legal_clinic",
+      "description": "Free pop-up legal service for Johnson County residents offered at Greenwood Public Library and the Johnson County Courthouse Law Library in Franklin.",
+      "primary_category": "legal assistance",
+      "tags": ["civil legal help", "free legal clinic", "legal assistance", "pro bono"],
+      "service_area": ["Johnson County", "Greenwood", "Franklin"],
+      "source_authority": "OFFICIAL_GOVERNMENT_CURATED_SOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Clinic dates, locations, appointment rules, legal-topic coverage, and capacity are schedule-sensitive and should be verified before referral. JCPL lists 317-868-2589. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "assist-johnson-county",
+      "name": "ASSIST Indiana",
+      "official_url": "https://assistindiana.org/",
+      "entity_type": "violence_survivor_support_program",
+      "description": "Johnson County program serving people directly or indirectly affected by sexual, domestic, and physical violence.",
+      "primary_category": "domestic violence support",
+      "tags": ["crisis support", "domestic violence", "sexual violence", "survivor services", "victim assistance"],
+      "service_area": ["Johnson County", "Central Indiana"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Program availability, crisis response, confidentiality, service scope, and contact methods should be verified directly. JCPL lists 317-346-2720. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "johnson-county-senior-services",
+      "name": "Johnson County Senior Services",
+      "official_url": "https://jcseniorservices.org/",
+      "entity_type": "senior_transportation_and_support_provider",
+      "description": "Nonprofit providing no-cost, door-to-door wheelchair-accessible transportation for Johnson County residents age 60 and older, plus durable medical equipment and a pantry of food and household items.",
+      "primary_category": "senior services",
+      "tags": ["durable medical equipment", "food pantry", "senior services", "transportation"],
+      "service_area": ["Johnson County"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Transportation scheduling, geographic limits, age eligibility, equipment inventory, and pantry availability should be confirmed before referral. JCPL lists 317-738-4544. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "jcpl-naloxboxes",
+      "name": "JCPL NaloxBoxes",
+      "official_url": "https://www.pageafterpage.org/basic-needs-assistance",
+      "entity_type": "self_service_overdose_prevention_resource",
+      "description": "Self-serve naloxone overdose-reversal kits available at JCPL locations through a partnership with Upstream Prevention and the Johnson County Health Department.",
+      "primary_category": "substance use support",
+      "tags": ["harm reduction", "naloxone", "opioid overdose prevention", "public health", "self-service"],
+      "service_area": ["Johnson County"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Kit stock can vary by branch. Naloxone is an emergency overdose-reversal tool and does not replace calling emergency services or obtaining medical care. Verified August 6, 2026."
     }
   ]
 }
