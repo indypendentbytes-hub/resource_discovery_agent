@@ -5,8 +5,8 @@ import { loadResourceCatalog } from '../src/catalog/load-resource-catalog.js';
 test('loads the canonical resource catalog with promoted resources', async () => {
   const catalog = await loadResourceCatalog();
 
-  assert.equal(catalog.records.length, 74);
-  assert.equal(new Set(catalog.records.map((record) => record.resource_id)).size, 74);
+  assert.equal(catalog.records.length, 84);
+  assert.equal(new Set(catalog.records.map((record) => record.resource_id)).size, 84);
 
   const promotedIds = [
     'ican-assistance-center',
@@ -56,6 +56,16 @@ test('loads the canonical resource catalog with promoted resources', async () =>
     'johnson-county-senior-services',
     'jcpl-naloxboxes',
     'central-nine-adult-education',
+    'excel-center-indiana',
+    'fathers-and-families-center-indiana',
+    'martindale-brightwood-cdc',
+    'mary-rigg-neighborhood-center',
+    'foster-success-indiana',
+    'indiana-plan-apprenticeship-readiness',
+    'erskine-green-training-institute',
+    'freedom-academy-continuing-education',
+    'arc-of-evansville',
+    'youthbuild-evansville',
   ];
 
   for (const resourceId of promotedIds) {
