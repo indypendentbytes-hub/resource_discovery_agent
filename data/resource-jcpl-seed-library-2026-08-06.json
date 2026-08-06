@@ -1,0 +1,22 @@
+{
+  "batch_id": "resource-jcpl-seed-library-2026-08-06",
+  "discovered_at": "2026-08-06T02:48:00-04:00",
+  "scope": "Johnson County seed and gardening equipment access",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "jcpl-seed-library",
+      "name": "Johnson County Public Library Seed Library",
+      "official_url": "https://www.pageafterpage.org/jcpl-seed-library",
+      "entity_type": "public_library_seed_and_garden_resource",
+      "description": "Provides free self-service access to vegetable, herb, flower, and native wildflower seeds at Johnson County Public Library branches, along with borrowable gardening tool bags containing basic hand tools and gloves.",
+      "primary_category": "agriculture",
+      "tags": ["agriculture", "community gardening", "equipment access", "food access", "seed access", "training"],
+      "service_area": ["Johnson County", "Central Indiana"],
+      "source_authority": "OFFICIAL_LOCAL_GOVERNMENT_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "No library card or checkout is required for seeds. The 2026 program lists 46 seed varieties and is available only while supplies last. Seed packets are for planting, not consumption. Gardening tool bags are separately borrowable and may require catalog availability. Verified August 6, 2026."
+    }
+  ]
+}
