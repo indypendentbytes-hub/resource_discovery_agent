@@ -1,0 +1,92 @@
+{
+  "batch_id": "resource-jcpl-community-resources-2026-08-06",
+  "discovered_at": "2026-08-06T03:47:00-04:00",
+  "scope": "Johnson County food, housing, referral, maternal-child nutrition, and youth support resources",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "jcpl-community-resources-directory",
+      "name": "Johnson County Public Library Community Resources Directory",
+      "official_url": "https://www.pageafterpage.org/community-resources",
+      "entity_type": "local_resource_directory",
+      "description": "JCPL-curated directory connecting Johnson County residents to food pantries, free meals, housing support, homelessness services, WIC, referral lines, and related community assistance.",
+      "primary_category": "resource navigation",
+      "tags": ["basic needs", "food assistance", "housing assistance", "referrals", "resource navigation"],
+      "service_area": ["Johnson County", "Central Indiana"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "JCPL compiles external providers and does not operate most listed services. Eligibility, hours, documentation requirements, and program status should be verified with each provider. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "johnson-county-helpline",
+      "name": "Johnson County Helpline",
+      "official_url": "https://www.pageafterpage.org/community-resources",
+      "entity_type": "information_and_referral_service",
+      "description": "Information and referral service providing contact information and guidance for Johnson County residents seeking food, medical, housing, and other social-service resources.",
+      "primary_category": "resource navigation",
+      "tags": ["basic needs", "food assistance", "healthcare", "housing assistance", "referrals"],
+      "service_area": ["Johnson County"],
+      "source_authority": "OFFICIAL_LIBRARY_CURATED_SOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Contact details and service coverage should be verified before referral. Verified through JCPL's community resource page August 6, 2026."
+    },
+    {
+      "resource_id": "interchurch-food-pantry-johnson-county",
+      "name": "Interchurch Food Pantry of Johnson County",
+      "official_url": "https://www.jcpantry.org/",
+      "entity_type": "local_food_pantry",
+      "description": "Faith-based food pantry serving Johnson County residents from its Franklin location.",
+      "primary_category": "food assistance",
+      "tags": ["basic needs", "food access", "food pantry", "household support"],
+      "service_area": ["Johnson County", "Franklin"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "JCPL notes that proof of Johnson County residency with picture identification is required. Hours and documentation rules should be verified before referral. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "johnson-county-wic",
+      "name": "Johnson County WIC",
+      "official_url": "https://johnsoncountywic.com/",
+      "entity_type": "maternal_and_child_nutrition_program",
+      "description": "Local WIC program supporting eligible pregnant and postpartum women, infants, and children up to age five with nutrition services and family-health support.",
+      "primary_category": "food assistance",
+      "tags": ["children", "family resources", "food access", "maternal health", "nutrition", "WIC"],
+      "service_area": ["Johnson County"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Categorical eligibility includes pregnant and postpartum women, infants, and children through age five; income, residency, appointment, and documentation requirements should be confirmed. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "johnson-county-blessing-boxes",
+      "name": "Johnson County Blessing Boxes",
+      "official_url": "https://www.feedjoco.org/",
+      "entity_type": "self_service_food_pantry_network",
+      "description": "Mapped network of self-serve blessing boxes offering nonperishable food items across Johnson County.",
+      "primary_category": "food assistance",
+      "tags": ["basic needs", "food access", "self-service pantry", "emergency food"],
+      "service_area": ["Johnson County"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Individual box locations and inventory can change without notice; users should check the current map and expect variable supply. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "kic-it-johnson-county",
+      "name": "KIC-IT",
+      "official_url": "https://www.kic-it.org/",
+      "entity_type": "youth_homelessness_support_organization",
+      "description": "Franklin-based organization serving unhoused and housing-unstable youth ages 16 to 25 through a drop-in center, hot meals, case management, transportation, and related support.",
+      "primary_category": "housing assistance",
+      "tags": ["case management", "homelessness", "housing assistance", "transportation", "youth"],
+      "service_area": ["Johnson County", "Franklin", "Central Indiana"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Age eligibility, drop-in hours, transportation coverage, and current program capacity should be confirmed before referral. Verified August 6, 2026."
+    }
+  ]
+}
