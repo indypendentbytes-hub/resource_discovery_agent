@@ -5,8 +5,8 @@ import { loadResourceCatalog } from '../src/catalog/load-resource-catalog.js';
 test('loads the canonical resource catalog with promoted resources', async () => {
   const catalog = await loadResourceCatalog();
 
-  assert.equal(catalog.records.length, 52);
-  assert.equal(new Set(catalog.records.map((record) => record.resource_id)).size, 52);
+  assert.equal(catalog.records.length, 102);
+  assert.equal(new Set(catalog.records.map((record) => record.resource_id)).size, 102);
 
   const promotedIds = [
     'ican-assistance-center',
@@ -34,6 +34,56 @@ test('loads the canonical resource catalog with promoted resources', async () =>
     'idoc-indianapolis-parole-district-3',
     'nasdaq-entrepreneurial-center-workbooks-toolkits',
     'sba-national-resource-guide',
+    'jcpl-seed-library',
+    'jcpl-gale-courses',
+    'jcpl-learningexpress-library',
+    'jcpl-atozdatabases',
+    'jcpl-atoz-the-world',
+    'jcpl-linkedin-learning',
+    'jcpl-ebscohost',
+    'jcpl-value-line',
+    'jcpl-world-book-online',
+    'jcpl-gale-legalforms',
+    'jcpl-community-resources-directory',
+    'jcpl-basic-needs-assistance-directory',
+    'johnson-county-helpline',
+    'interchurch-food-pantry-johnson-county',
+    'johnson-county-wic',
+    'johnson-county-blessing-boxes',
+    'kic-it-johnson-county',
+    'johnson-county-bar-association-clinic',
+    'assist-johnson-county',
+    'johnson-county-senior-services',
+    'jcpl-naloxboxes',
+    'central-nine-adult-education',
+    'excel-center-indiana',
+    'fathers-and-families-center-indiana',
+    'martindale-brightwood-cdc',
+    'mary-rigg-neighborhood-center',
+    'foster-success-indiana',
+    'indiana-plan-apprenticeship-readiness',
+    'erskine-green-training-institute',
+    'freedom-academy-continuing-education',
+    'arc-of-evansville',
+    'youthbuild-evansville',
+    'us-department-of-labor-job-seeker-resources',
+    'apprenticeship-gov',
+    'indiana-next-level-jobs',
+    'workone-northwest-indiana-reentry-employment-services',
+    'indiana-dwd-veterans-services',
+    'indiana-career-connect',
+    'indiana-office-work-based-learning-apprenticeship',
+    'indiana-intraining-program-search',
+    'indiana-cte-career-pathways-programs-of-study',
+    'dol-agricultural-recruitment-system-gal-07-92',
+    'workforcegps',
+    'careeronestop-american-job-center-finder',
+    'careeronestop-tools-technology-finder',
+    'cfare-council-food-agricultural-resource-economics',
+    'cfare-affordability-under-pressure-food-supply-chain',
+    'cfare-big-data-agriculture-food-systems',
+    'ncat-attra-sustainable-agriculture',
+    'ncat-full-circle-local-food-systems',
   ];
 
   for (const resourceId of promotedIds) {

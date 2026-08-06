@@ -1,0 +1,41 @@
+{
+  "batch_id": "resource-ncat-attra-local-food-systems-2026-08-06",
+  "discovered_at": "2026-08-06T05:27:00-04:00",
+  "scope": "Sustainable agriculture technical assistance and local food-system education",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "ncat-attra-sustainable-agriculture",
+      "name": "NCAT ATTRA Sustainable Agriculture",
+      "official_url": "https://www.ncat.org/sustainable-agriculture/attra/",
+      "entity_type": "agricultural_technical_assistance_and_knowledge_platform",
+      "description": "National sustainable-agriculture technical assistance program offering direct access to agriculture specialists, publications, videos, podcasts, short courses, events, funding leads, and practical guidance for farmers, ranchers, land managers, and educators.",
+      "primary_category": "agricultural technical assistance",
+      "tags": ["agriculture", "Ask an Ag Expert", "business and risk management", "climate resilience", "cultivators", "farm marketing", "funding opportunities", "organic agriculture", "regenerative agriculture", "technical assistance"],
+      "service_area": ["United States", "Indiana", "Online"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "access_steps": [
+        "Browse ATTRA topics or search the resource library.",
+        "Use Ask an Ag Expert by phone or online for individualized guidance.",
+        "Verify dates, eligibility, and geography for funding opportunities and events before acting."
+      ],
+      "availability_notes": "ATTRA provides information and technical assistance, not guaranteed funding or legal, tax, or individualized financial advice. Funding opportunities, events, courses, and featured materials change frequently. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "ncat-full-circle-local-food-systems",
+      "name": "The Full Circle of Local Food Systems",
+      "official_url": "https://www.ncat.org/blog/the-full-circle-of-local-food-systems/",
+      "entity_type": "food_systems_education_article",
+      "description": "NCAT educational article explaining local food systems as interconnected networks across five sectors: production, processing, distribution, consumption, and waste management or food recovery.",
+      "primary_category": "food systems education",
+      "tags": ["community food systems", "distribution", "food recovery", "local economies", "local food", "processing", "production", "systems thinking", "waste management"],
+      "service_area": ["United States", "Indiana", "Online"],
+      "source_authority": "OFFICIAL_PROVIDER_PUBLICATION",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Published June 16, 2025. This is an educational framework and not a direct assistance program. It is useful for explaining food-system roles, relationships, gaps, and sequencing. Verified August 6, 2026."
+    }
+  ]
+}

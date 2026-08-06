@@ -1,0 +1,50 @@
+{
+  "batch_id": "resource-cfare-agricultural-economics-2026-08-06",
+  "discovered_at": "2026-08-06T05:17:00-04:00",
+  "scope": "Agricultural and applied economics policy translation, food affordability, and agricultural data research",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "cfare-council-food-agricultural-resource-economics",
+      "name": "Council on Food, Agricultural & Resource Economics (C-FARE)",
+      "official_url": "https://www.cfare.org/",
+      "entity_type": "agricultural_and_applied_economics_policy_organization",
+      "description": "National organization that translates agricultural and applied economics research into educational programming and policy-relevant information for policymakers, federal leaders, stakeholders, researchers, and practitioners.",
+      "primary_category": "agricultural economics",
+      "tags": ["agricultural economics", "food policy", "policy education", "research translation", "resource economics", "webinars"],
+      "service_area": ["United States", "Online"],
+      "source_authority": "OFFICIAL_ORGANIZATION",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "C-FARE primarily provides research translation, webinars, newsletters, and policy education rather than direct grants, case management, or enrollment services. Program topics and event schedules change. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "cfare-affordability-under-pressure-food-supply-chain",
+      "name": "C-FARE: Affordability Under Pressure — Challenges Across the Food Supply Chain",
+      "official_url": "https://www.cfare.org/items/affordability-under-pressure",
+      "entity_type": "food_supply_chain_economics_webinar",
+      "description": "Research and policy webinar examining how inflation, economic shocks, and changing consumer behavior affect producers, food businesses, supply chains, and households.",
+      "primary_category": "food system research",
+      "tags": ["consumer behavior", "food affordability", "food prices", "food supply chain", "inflation", "market research"],
+      "service_area": ["United States", "Online"],
+      "source_authority": "OFFICIAL_ORGANIZATION_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "This is an educational research resource rather than individualized financial assistance or a current price database. Recording, speaker materials, and supporting links may change. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "cfare-big-data-agriculture-food-systems",
+      "name": "C-FARE: Big Data — Background and Applications in Agriculture and Food Systems",
+      "official_url": "https://www.cfare.org/items/alternativefuelsandpolicies-4dskr",
+      "entity_type": "agricultural_data_research_webinar",
+      "description": "Educational webinar covering agricultural big data, remote sensing, geospatial and consumer scanner data, data quality and access, cover-crop measurement, and applications for agricultural and food-system decisions.",
+      "primary_category": "agricultural data",
+      "tags": ["agricultural data", "big data", "consumer research", "cover crops", "food systems", "geospatial data", "remote sensing"],
+      "service_area": ["United States", "Online"],
+      "source_authority": "OFFICIAL_ORGANIZATION_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "The supplied URL slug suggests alternative fuels, but the current page title and content are Big Data: Background and Applications used in Agriculture and Food Systems. This is a research resource, and some referenced datasets have access restrictions or reporting lags. Verified August 6, 2026."
+    }
+  ]
+}

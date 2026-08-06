@@ -1,0 +1,22 @@
+{
+  "batch_id": "resource-central-nine-adult-education-2026-08-06",
+  "discovered_at": "2026-08-06T04:05:00-04:00",
+  "scope": "Johnson County adult education, HSE, English-language learning, and career certification",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "central-nine-adult-education",
+      "name": "Central Nine Adult Education",
+      "official_url": "https://www.centralnineadulted.org/",
+      "entity_type": "adult_education_and_career_training_provider",
+      "description": "Greenwood-based adult education provider offering free English-language classes, free High School Equivalency preparation, HSE testing support, and career training and certification programs with multiple funding options, including grant-funded tuition for eligible students.",
+      "primary_category": "workforce development",
+      "tags": ["adult education", "career training", "certification", "English language learning", "HSE", "job readiness", "training", "workforce development"],
+      "service_area": ["Johnson County", "Greenwood", "Central Indiana"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "English classes are free for students age 18 or older. HSE preparation is free for eligible students age 16 or older who are not enrolled in high school; students under 18 need withdrawal or exit-interview documentation. Career-training grants may cover up to $5,000, but funding and seats are first come, first served. Several Fall 2026 healthcare cohorts were already full when verified August 6, 2026, so current schedules, capacity, funding, and enrollment dates must be checked before recommendation."
+    }
+  ]
+}
