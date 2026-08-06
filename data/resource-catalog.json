@@ -1,15 +1,17 @@
 {
-  "catalog_version": "2026-08-02.2",
-  "verified_at": "2026-08-02T16:43:00-04:00",
-  "scope": "Indianapolis, Marion County, Central Indiana, Indiana, and nationally relevant professional resources",
-  "record_count": 46,
+  "catalog_version": "2026-08-04.1",
+  "verified_at": "2026-08-04T07:10:00-04:00",
+  "scope": "Indianapolis, Marion County, Central Indiana, Indiana, and nationally relevant professional and business resources",
+  "record_count": 52,
   "sources": [
     "resource-catalog.seed.json",
     "resource-discovery-batch-2026-07-30.json",
     "resource-professional-organizations-2026-07-30.json",
     "resource-fiscal-sponsorship-2026-08-01.json",
     "resource-local-knowledge-2026-08-02.json",
-    "resource-indiana-farm-bureau-2026-08-02.json"
+    "resource-indiana-farm-bureau-2026-08-02.json",
+    "resource-freshbucks-hire-2026-08-03.json",
+    "resource-national-business-guides-2026-08-04.json"
   ],
   "rules": {
     "require_unique_resource_ids": true,

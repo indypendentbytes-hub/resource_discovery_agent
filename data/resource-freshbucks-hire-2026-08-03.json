@@ -1,0 +1,64 @@
+{
+  "batch_id": "resource-freshbucks-hire-2026-08-03",
+  "discovered_at": "2026-08-03T09:22:00-04:00",
+  "scope": "Current Marion County nutrition incentives and Indiana reentry resources",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "fresh-bucks-indy",
+      "name": "Fresh Bucks Indy",
+      "official_url": "https://freshbucksindy.org/",
+      "entity_type": "nutrition_incentive_program",
+      "description": "Marion County nutrition incentive program that matches eligible SNAP purchases for fresh fruits, vegetables, herbs, edible plants, and seedlings at participating retailers, farmers markets, and farm stands.",
+      "primary_category": "food access",
+      "tags": ["food access", "agriculture", "market access", "retail", "SNAP"],
+      "service_area": ["Indianapolis", "Marion County"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Participating locations and seasonal market dates change. Farmers markets must already accept SNAP before applying to distribute Fresh Bucks; produce vendors may separately apply to accept Fresh Bucks. Verified August 3, 2026."
+    },
+    {
+      "resource_id": "marion-county-produce-rx",
+      "name": "Marion County Produce Prescription (Rx) Program",
+      "official_url": "https://freshbucksindy.org/produce-prescription-rx-program",
+      "entity_type": "produce_prescription_program",
+      "description": "County-wide Food as Medicine initiative that enables participating healthcare professionals to refer eligible patients for nutrition education and produce-purchase benefits.",
+      "primary_category": "food access",
+      "tags": ["food access", "healthcare", "nutrition education", "produce prescription"],
+      "service_area": ["Indianapolis", "Marion County"],
+      "source_authority": "OFFICIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Referral based through participating healthcare systems and providers; not open self-enrollment. Current clinic partnerships and redemption sites must be verified before referral. Verified August 3, 2026."
+    },
+    {
+      "resource_id": "idoc-hire",
+      "name": "Hoosier Initiative for Re-Entry (HIRE)",
+      "official_url": "https://www.in.gov/idoc/hire/",
+      "entity_type": "state_reentry_employment_program",
+      "description": "Indiana Department of Correction program providing job readiness, résumé and interview assistance, digital and financial literacy, employer matching, pre-release interviews, and post-release employment support.",
+      "primary_category": "reentry support",
+      "tags": ["reentry support", "training", "workforce development", "employment"],
+      "service_area": ["Indiana", "Indianapolis", "Marion County"],
+      "source_authority": "OFFICIAL_GOVERNMENT_PROGRAM",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Coordinator assignments and contact details are update-sensitive. Marion County is currently served by HIRE Region 5B. Verified August 3, 2026."
+    },
+    {
+      "resource_id": "idoc-indianapolis-parole-district-3",
+      "name": "IDOC Indianapolis Parole District 3",
+      "official_url": "https://www.in.gov/idoc/facilities/parole-districts/indianapolis-pd-3/",
+      "entity_type": "local_parole_and_reentry_office",
+      "description": "Marion County parole office providing supervision, transition support, reentry contacts, HIRE coordination, healthcare transition facilitation, and community-based service connections.",
+      "primary_category": "reentry support",
+      "tags": ["reentry support", "healthcare", "workforce development", "government services"],
+      "service_area": ["Indianapolis", "Marion County"],
+      "source_authority": "OFFICIAL_GOVERNMENT_PROGRAM",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Office hours, supervisors, HIRE coordinator, and transitional healthcare facilitator are update-sensitive. Verified August 3, 2026."
+    }
+  ]
+}
