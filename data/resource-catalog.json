@@ -1,8 +1,8 @@
 {
-  "catalog_version": "2026-08-06.15",
-  "verified_at": "2026-08-06T06:34:00-04:00",
+  "catalog_version": "2026-08-06.16",
+  "verified_at": "2026-08-06T14:09:00-04:00",
   "scope": "Indianapolis, Marion County, Central Indiana, Indiana, and nationally relevant professional and business resources",
-  "record_count": 107,
+  "record_count": 108,
   "sources": [
     "resource-catalog.seed.json",
     "resource-discovery-batch-2026-07-30.json",
@@ -23,7 +23,8 @@
     "resource-cfare-agricultural-economics-2026-08-06.json",
     "resource-ncat-attra-local-food-systems-2026-08-06.json",
     "resource-nutrien-ekonomics-2026-08-06.json",
-    "resource-food-systems-planning-policy-2026-08-06.json"
+    "resource-food-systems-planning-policy-2026-08-06.json",
+    "resource-community-reentry-network-2026-08-06.json"
   ],
   "rules": {
     "require_unique_resource_ids": true,
