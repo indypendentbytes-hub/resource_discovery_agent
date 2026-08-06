@@ -1,8 +1,8 @@
 {
-  "catalog_version": "2026-08-06.8",
-  "verified_at": "2026-08-06T04:05:00-04:00",
+  "catalog_version": "2026-08-06.9",
+  "verified_at": "2026-08-06T04:13:00-04:00",
   "scope": "Indianapolis, Marion County, Central Indiana, Indiana, and nationally relevant professional and business resources",
-  "record_count": 74,
+  "record_count": 84,
   "sources": [
     "resource-catalog.seed.json",
     "resource-discovery-batch-2026-07-30.json",
@@ -16,7 +16,8 @@
     "resource-jcpl-gale-courses-2026-08-06.json",
     "resource-jcpl-digital-databases-2026-08-06.json",
     "resource-jcpl-community-resources-2026-08-06.json",
-    "resource-central-nine-adult-education-2026-08-06.json"
+    "resource-central-nine-adult-education-2026-08-06.json",
+    "resource-indiana-workforce-community-2026-08-06.json"
   ],
   "rules": {
     "require_unique_resource_ids": true,
