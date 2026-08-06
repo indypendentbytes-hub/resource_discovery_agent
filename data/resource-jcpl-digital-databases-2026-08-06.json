@@ -1,7 +1,7 @@
 {
   "batch_id": "resource-jcpl-digital-databases-2026-08-06",
   "discovered_at": "2026-08-06T03:36:00-04:00",
-  "scope": "Johnson County Public Library digital training, business research, investment, and reference databases",
+  "scope": "Johnson County Public Library digital training, business research, legal, investment, and reference databases",
   "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
   "records": [
     {
@@ -87,6 +87,20 @@
       "verification_status": "VERIFIED",
       "status": "ACTIVE",
       "availability_notes": "Remote access requires an eligible JCPL library card or authorized account. Available modules and authentication requirements may change. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "jcpl-gale-legalforms",
+      "name": "Johnson County Public Library Gale LegalForms",
+      "official_url": "https://link.gale.com/apps/TGLF?u=jcli_frank",
+      "entity_type": "legal_forms_and_reference_database",
+      "description": "Provides state-specific and general legal forms, document templates, legal definitions, and reference materials for common personal, business, property, employment, and civil legal needs.",
+      "primary_category": "legal assistance",
+      "tags": ["business formation", "contracts", "legal assistance", "legal forms", "small business", "templates"],
+      "service_area": ["Johnson County", "Central Indiana", "Online"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Access requires a Johnson County Public Library card number. Forms are self-help resources and are not a substitute for advice from a licensed attorney. Verified August 6, 2026."
     }
   ]
 }
