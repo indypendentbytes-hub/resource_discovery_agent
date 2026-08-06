@@ -1,7 +1,7 @@
 {
   "batch_id": "resource-jcpl-digital-databases-2026-08-06",
-  "discovered_at": "2026-08-06T03:36:00-04:00",
-  "scope": "Johnson County Public Library digital training, business research, legal, investment, and reference databases",
+  "discovered_at": "2026-08-06T03:44:00-04:00",
+  "scope": "Johnson County Public Library digital training, business research, legal, investment, cultural, and reference databases",
   "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
   "records": [
     {
@@ -31,6 +31,20 @@
       "verification_status": "VERIFIED",
       "status": "ACTIVE",
       "availability_notes": "Access requires an eligible JCPL library card or authorized account. Database coverage, download limits, and acceptable-use rules should be checked before bulk list creation. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "jcpl-atoz-the-world",
+      "name": "Johnson County Public Library AtoZ the World",
+      "official_url": "https://www.pageafterpage.org/articles-and-databases",
+      "entity_type": "international_culture_and_country_reference_database",
+      "description": "Provides country profiles covering culture, customs, food, religion, language, maps, travel information, and points of interest for more than 170 countries.",
+      "primary_category": "research",
+      "tags": ["cultural literacy", "education", "international research", "language", "maps", "reference", "travel"],
+      "service_area": ["Johnson County", "Central Indiana", "Online"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Remote access requires an eligible JCPL library card number entered through the library login. Country coverage and authentication requirements may change. Verified August 6, 2026."
     },
     {
       "resource_id": "jcpl-linkedin-learning",
