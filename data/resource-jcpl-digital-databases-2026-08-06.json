@@ -1,0 +1,92 @@
+{
+  "batch_id": "resource-jcpl-digital-databases-2026-08-06",
+  "discovered_at": "2026-08-06T03:36:00-04:00",
+  "scope": "Johnson County Public Library digital training, business research, investment, and reference databases",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "jcpl-learningexpress-library",
+      "name": "Johnson County Public Library LearningExpress Library",
+      "official_url": "https://www.pageafterpage.org/articles-and-databases",
+      "entity_type": "career_and_exam_preparation_platform",
+      "description": "Provides online practice tests, exam and certification preparation, career exploration, vocational guidance, résumé support, and academic-skills training through Johnson County Public Library.",
+      "primary_category": "workforce development",
+      "tags": ["career exploration", "certification preparation", "exam preparation", "resume", "training", "workforce development"],
+      "service_area": ["Johnson County", "Central Indiana", "Online"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Remote access generally requires an eligible JCPL library card or authorized student account. Platform content and authentication requirements may change. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "jcpl-atozdatabases",
+      "name": "Johnson County Public Library AtoZdatabases",
+      "official_url": "https://www.pageafterpage.org/articles-and-databases",
+      "entity_type": "business_and_consumer_research_database",
+      "description": "Business and consumer research database for finding companies, people, jobs, sales leads, mailing lists, new movers, homeowners, and audience segments by geography and demographic characteristics.",
+      "primary_category": "market research",
+      "tags": ["business planning", "job search", "lead generation", "market research", "marketing", "sales"],
+      "service_area": ["Johnson County", "Central Indiana", "Online"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Access requires an eligible JCPL library card or authorized account. Database coverage, download limits, and acceptable-use rules should be checked before bulk list creation. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "jcpl-linkedin-learning",
+      "name": "Johnson County Public Library LinkedIn Learning for Library",
+      "official_url": "https://www.pageafterpage.org/linkedin",
+      "entity_type": "professional_online_learning_platform",
+      "description": "Provides thousands of self-paced instructional courses in business, marketing, data analytics, software, Microsoft Office, Adobe tools, web design, programming, photography, and other professional skills.",
+      "primary_category": "training",
+      "tags": ["business", "computer skills", "data analytics", "marketing", "software", "technology", "training", "workforce development"],
+      "service_area": ["Johnson County", "Online"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Available at no cost to eligible JCPL district cardholders using a library card number and PIN; no personal LinkedIn profile is required. Course availability can change. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "jcpl-ebscohost",
+      "name": "Johnson County Public Library EBSCOhost Research Databases",
+      "official_url": "https://www.pageafterpage.org/articles-and-databases",
+      "entity_type": "academic_and_general_research_database",
+      "description": "Provides searchable full-text articles, journals, magazines, reports, and reference materials for business, education, workforce, community, and general research through JCPL and participating database services.",
+      "primary_category": "research",
+      "tags": ["business research", "education", "market research", "reference", "research", "technical assistance"],
+      "service_area": ["Johnson County", "Central Indiana", "Online"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Specific EBSCO collections, full-text coverage, and authentication pathways vary. Use the JCPL databases page rather than a temporary login-session URL. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "jcpl-value-line",
+      "name": "Johnson County Public Library Value Line",
+      "official_url": "https://www.pageafterpage.org/articles-and-databases",
+      "entity_type": "investment_research_database",
+      "description": "Provides investment research, data, expert analysis, rankings, and commentary covering approximately 3,500 stocks, including small- and mid-cap companies.",
+      "primary_category": "financial education",
+      "tags": ["financial education", "investment research", "market research", "small business", "stocks"],
+      "service_area": ["Johnson County", "Central Indiana", "Online"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "JCPL notes a limit of four simultaneous users. Access requires an eligible library account, and the database is informational rather than personalized investment advice. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "jcpl-world-book-online",
+      "name": "Johnson County Public Library World Book Online",
+      "official_url": "https://www.pageafterpage.org/articles-and-databases",
+      "entity_type": "online_reference_library",
+      "description": "Provides online encyclopedias, reference articles, multimedia, learning tools, and general educational research materials for children, students, adults, families, and community learners.",
+      "primary_category": "education",
+      "tags": ["digital literacy", "education", "family resources", "reference", "research", "youth"],
+      "service_area": ["Johnson County", "Central Indiana", "Online"],
+      "source_authority": "OFFICIAL_LIBRARY_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Remote access requires an eligible JCPL library card or authorized account. Available modules and authentication requirements may change. Verified August 6, 2026."
+    }
+  ]
+}
