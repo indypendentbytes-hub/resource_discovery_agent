@@ -1,0 +1,22 @@
+{
+  "batch_id": "resource-nutrien-ekonomics-2026-08-06",
+  "discovered_at": "2026-08-06T06:26:00-04:00",
+  "scope": "Crop nutrition, soil fertility, agronomic calculators, technical assistance, and continuing education",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "nutrien-ekonomics-soil-fertility-resource",
+      "name": "Nutrien eKonomics Soil Fertility Information Resource",
+      "official_url": "https://nutrien-ekonomics.com/",
+      "entity_type": "industry_sponsored_agronomy_information_platform",
+      "description": "Free crop-nutrition and soil-fertility platform offering Ask an Agronomist technical assistance, research summaries, podcasts, crop guides, agronomic toolkits, nutrient-balance analysis, webinars, continuing-education opportunities, and calculators for yield return, growing degree days, rainfall, nutrient removal, fertilizer planning, application rates, acreage, and input planning.",
+      "primary_category": "agronomic technical assistance",
+      "tags": ["agronomy", "calculators", "continuing education", "crop nutrition", "fertilizer planning", "soil fertility", "technical assistance", "toolkits"],
+      "service_area": ["United States", "Canada", "Online"],
+      "source_authority": "OFFICIAL_INDUSTRY_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "eKonomics is operated by Nutrien, a commercial crop-input and fertilizer company. Its educational materials, calculators, and free agronomist support can be useful, but product-related assumptions and recommendations should be compared with independent Extension, soil-test, conservation, and locally appropriate agronomic guidance. Tool inputs, datasets, research summaries, webinars, and continuing-education availability may change. The tracking parameters from the submitted advertising URL were removed. Verified August 6, 2026."
+    }
+  ]
+}

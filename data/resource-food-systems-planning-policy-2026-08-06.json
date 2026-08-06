@@ -1,0 +1,64 @@
+{
+  "batch_id": "resource-food-systems-planning-policy-2026-08-06",
+  "discovered_at": "2026-08-06T06:34:00-04:00",
+  "scope": "Community and regional food systems planning, resilience, equity, and public-land urban agriculture policy",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "apa-food-systems-knowledgebase",
+      "name": "American Planning Association Food Systems KnowledgeBase",
+      "official_url": "https://www.planning.org/knowledgebase/food/",
+      "entity_type": "food_systems_planning_knowledgebase",
+      "description": "Curated planning collection covering community and regional food systems, including plans, policies, model codes, reports, case studies, training, maps, toolkits, and examples of local recommendations.",
+      "primary_category": "food systems planning",
+      "tags": ["community food assessment", "economic development", "food access", "food policy", "land use", "planning", "regional food systems", "waste recovery"],
+      "service_area": ["United States", "Online"],
+      "source_authority": "OFFICIAL_PROFESSIONAL_ASSOCIATION",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "This is a curated research and policy collection rather than direct technical assistance or funding. Linked plans, codes, and examples may vary in date, jurisdiction, and current legal applicability. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "apa-planners-guide-community-regional-food-planning",
+      "name": "A Planner's Guide to Community and Regional Food Planning",
+      "official_url": "https://www.planning.org/publications/report/9026878/",
+      "entity_type": "professional_planning_report",
+      "description": "American Planning Association PAS Report 554 on food environments, healthy-food access, planning and zoning, community examples, measurement, and planning strategies.",
+      "primary_category": "food systems planning",
+      "tags": ["food environment", "food policy councils", "healthy food access", "planning", "public health", "zoning"],
+      "service_area": ["United States", "Online"],
+      "source_authority": "OFFICIAL_PROFESSIONAL_ASSOCIATION_PUBLICATION",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE_ARCHIVAL",
+      "availability_notes": "Published October 15, 2008. Full access may require APA membership or purchase. Use as a foundational planning reference and verify current laws, programs, data, and terminology before application. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "apa-local-food-systems-resilient-equitable-communities",
+      "name": "Local Food Systems Key to Healthy, Resilient, Equitable Communities",
+      "official_url": "https://www.planning.org/planning/2021/winter/local-food-systems-key-to-healthy-resilient-equitable-communities/",
+      "entity_type": "food_systems_planning_article",
+      "description": "Planning Magazine article explaining how local and regional food systems can advance resilience, equity, economic development, food access, environmental goals, food sovereignty, and food-business incubation.",
+      "primary_category": "food system research",
+      "tags": ["economic development", "equity", "food business incubators", "food justice", "food sovereignty", "resilience", "urban agriculture"],
+      "service_area": ["United States", "Online"],
+      "source_authority": "OFFICIAL_PROFESSIONAL_ASSOCIATION_PUBLICATION",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE_ARCHIVAL",
+      "availability_notes": "Published February 1, 2021. This is an educational article, not a current program directory. Examples and statistics should be checked against newer local and primary sources before use. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "changelab-dig-eat-be-healthy",
+      "name": "ChangeLab Solutions: Dig, Eat, & Be Healthy",
+      "official_url": "https://www.changelabsolutions.org/product/dig-eat-be-healthy",
+      "entity_type": "public_land_food_growing_legal_policy_guide",
+      "description": "Guide and model legal resource for growing food on public property, including site inventories, access processes, leases, licenses, interagency agreements, liability, utilities, maintenance, contamination, security, improvements, and school-property issues.",
+      "primary_category": "urban agriculture policy",
+      "tags": ["community gardens", "land access", "leases", "licenses", "model agreements", "public land", "urban agriculture"],
+      "service_area": ["United States", "Online"],
+      "source_authority": "OFFICIAL_POLICY_ORGANIZATION",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "This is general policy and model-document guidance, not legal advice. Agreements and recommendations must be adapted to Indiana law, local ordinances, agency authority, environmental conditions, insurance, and site-specific risks with qualified review. Verified August 6, 2026."
+    }
+  ]
+}
