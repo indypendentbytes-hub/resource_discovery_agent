@@ -1,0 +1,64 @@
+{
+  "batch_id": "resource-workforce-navigation-tools-2026-08-06",
+  "discovered_at": "2026-08-06T04:52:00-04:00",
+  "scope": "Federal workforce-system knowledge, local workforce navigation, occupational tools research, and archival agricultural recruitment policy",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "dol-agricultural-recruitment-system-gal-07-92",
+      "name": "DOL Agricultural Recruitment System — GAL 07-92",
+      "official_url": "https://oui.doleta.gov/dmstree/gal/gal_pre_93/gal_07-92.htm",
+      "entity_type": "archival_federal_policy_guidance",
+      "description": "Historical 1992 U.S. Department of Labor guidance on implementing an improved Agricultural Recruitment System and providing labor-market and employment services to agricultural employers.",
+      "primary_category": "policy and regulatory research",
+      "tags": ["agricultural employment", "archival guidance", "employment services", "farm labor", "policy research", "workforce system"],
+      "service_area": ["United States", "Indiana", "Online"],
+      "source_authority": "OFFICIAL_FEDERAL_ARCHIVE",
+      "verification_status": "VERIFIED_ARCHIVAL",
+      "status": "ARCHIVAL_REFERENCE",
+      "availability_notes": "Issued in 1992. Preserve for historical and policy research only; do not present as current legal guidance, a current recruitment procedure, or an enrollment resource without checking current federal and state rules. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "workforcegps",
+      "name": "WorkforceGPS",
+      "official_url": "https://workforcegps.org/",
+      "entity_type": "workforce_professional_knowledge_platform",
+      "description": "U.S. Department of Labor-sponsored knowledge platform offering workforce-system resources, technical-assistance materials, communities, webinars, research, promising practices, and policy implementation tools.",
+      "primary_category": "workforce professional development",
+      "tags": ["American Job Centers", "policy implementation", "technical assistance", "training", "WIOA", "workforce professionals"],
+      "service_area": ["United States", "Indiana", "Online"],
+      "source_authority": "OFFICIAL_FEDERAL_SPONSORED_PLATFORM",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Primarily designed for workforce professionals, grantees, program operators, and partners rather than direct job-seeker enrollment. Some participation features may require an account. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "careeronestop-american-job-center-finder",
+      "name": "CareerOneStop American Job Center Finder",
+      "official_url": "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx",
+      "entity_type": "local_workforce_center_locator",
+      "description": "National locator for nearby American Job Centers, including comprehensive and affiliate centers offering free job-search help, career counseling, skills assessments, workshops, training referrals, resource rooms, veteran services, youth services, and supportive-service connections.",
+      "primary_category": "workforce navigation",
+      "tags": ["American Job Centers", "career counseling", "job search", "local help", "training referrals", "WorkOne"],
+      "service_area": ["United States", "Indiana", "Online"],
+      "source_authority": "OFFICIAL_FEDERAL_SPONSORED_PLATFORM",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Services vary by center. Users should confirm current hours, appointments, accessibility, veteran and youth staffing, funding, and supportive-service availability directly with the selected location. Verified August 6, 2026."
+    },
+    {
+      "resource_id": "careeronestop-tools-technology-finder",
+      "name": "CareerOneStop Tools and Technology Finder",
+      "official_url": "https://www.careeronestop.org/Toolkit/Skills/find-tools-technology.aspx",
+      "entity_type": "occupational_tools_and_technology_research_tool",
+      "description": "Career exploration tool showing commonly used tools, machines, devices, and technologies associated with occupations, helping users understand job requirements, compare pathways, and plan training or equipment needs.",
+      "primary_category": "career exploration",
+      "tags": ["career planning", "occupational research", "skills", "technology", "tools", "training planning"],
+      "service_area": ["United States", "Indiana", "Online"],
+      "source_authority": "OFFICIAL_FEDERAL_SPONSORED_PLATFORM",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Occupational information describes common tools and technologies and may not match every employer, worksite, specialization, or local training program. Use it for planning rather than as a guarantee of job requirements. Verified August 6, 2026."
+    }
+  ]
+}
