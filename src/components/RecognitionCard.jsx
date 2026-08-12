@@ -1,42 +1,32 @@
 export default function RecognitionCard() {
   return (
-    <section
-      id="recognition"
-      className="section-cream px-6 py-16 md:py-20"
-      aria-labelledby="recognition-heading"
-      style={{ contentVisibility: "auto", containIntrinsicSize: "auto 360px" }}
-    >
-      <div className="mx-auto max-w-5xl">
-        <div className="grid items-center gap-8 rounded-lg border border-[#D4CFC6] bg-[#F3E9DD] px-8 py-10 md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:px-12 md:py-12">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C65A1E]">
-              Recognition
-            </p>
-            <h2
-              id="recognition-heading"
-              className="mt-3 text-2xl font-semibold tracking-tight text-[#1A1A1A] md:text-3xl font-display"
-            >
-              Building visible, community-centered food-system infrastructure.
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-[#1A1A1A]/65 md:text-base">
-              INDYpendent Bytes has been recognized for practical coordination
-              work that connects people, land, and opportunity across the region.
-            </p>
-          </div>
-          <div className="flex justify-center md:justify-end">
-            <img
-              src="https://cdn.bmapinc.com/shareables/20046473/recognition-card/latest.png"
-              alt="Recognition received by INDYpendent Bytes"
-              className="w-full max-w-[220px] h-auto rounded-lg shadow-md"
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
-              width="220"
-              height="220"
-            />
-          </div>
-        </div>
+    <div className="badge-outer text-center max-w-[200px]">
+      <a
+        href="https://influentialwomen.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        <img
+          src="https://cdn.bmapinc.com/configurations/config_68454009b3957.png"
+          alt="Influential Women Badge"
+          className="mx-auto block h-auto w-[180px]"
+          width={180}
+          height="auto"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <div className="client-name mt-1.5 text-[15px] leading-snug" style={{ fontFamily: "Cambria, Times, serif" }}>
+        <a
+          href="https://influentialwomen.com/profile/alyssa-duff"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#F3E9DD]/85 no-underline hover:underline"
+        >
+          Alyssa Duff
+        </a>
       </div>
-    </section>
+    </div>
   );
 }

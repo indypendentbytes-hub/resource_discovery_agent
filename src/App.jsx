@@ -353,8 +353,6 @@ export default function App() {
         </div>
       </section>
 
-      <RecognitionCard />
-
       {/* Agent */}
       <section id="resource-agent" className="px-6 py-20 md:py-28" style={{ background: "#0B3D1E" }}>
         <div className="mx-auto max-w-6xl">
@@ -403,7 +401,13 @@ export default function App() {
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
-        <div className="relative z-10 mx-auto mt-12 max-w-6xl border-t border-white/10 pt-6 text-xs text-[#F3E9DD]/30 flex flex-col gap-1 sm:flex-row sm:justify-between">
+
+        {/* Compact Influential Women recognition badge */}
+        <div className="relative z-10 mx-auto mt-10 flex max-w-6xl justify-center md:justify-end">
+          <RecognitionCard />
+        </div>
+
+        <div className="relative z-10 mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-xs text-[#F3E9DD]/30 flex flex-col gap-1 sm:flex-row sm:justify-between">
           <span>© {new Date().getFullYear()} INDYpendent Bytes</span>
           <span>Built for regional food system coordination</span>
         </div>
