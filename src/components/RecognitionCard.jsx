@@ -17,14 +17,17 @@ export default function RecognitionCard() {
           decoding="async"
         />
       </a>
-      <div className="client-name mt-1.5 text-[15px] leading-snug" style={{ fontFamily: "Cambria, Times, serif" }}>
+      <div
+        className="client-name mt-2 text-center text-[16px] leading-snug"
+        style={{ fontFamily: "Cambria, Times, serif" }}
+      >
         <a
-          href="https://influentialwomen.com/profile/alyssa-duff"
+          href="https://influentialwomen.com/profile/alyssa-duff-1"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#F3E9DD]/85 no-underline hover:underline"
         >
-          Alyssa Duff
+          Alyssa Janae Duff
         </a>
       </div>
     </div>
