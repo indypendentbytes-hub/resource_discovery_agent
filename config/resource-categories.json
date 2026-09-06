@@ -10,6 +10,7 @@
     {"name": "food access", "priority": "CRITICAL", "minimum_total": 5},
     {"name": "business funding", "priority": "HIGH", "minimum_total": 5},
     {"name": "technical assistance", "priority": "HIGH", "minimum_total": 4},
+    {"name": "horticulture planning", "priority": "HIGH", "minimum_total": 3},
     {"name": "business planning", "priority": "HIGH", "minimum_total": 3},
     {"name": "workforce development", "priority": "HIGH", "minimum_total": 4},
     {"name": "training", "priority": "HIGH", "minimum_total": 4},
