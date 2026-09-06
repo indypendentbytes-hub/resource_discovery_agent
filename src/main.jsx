@@ -11,6 +11,7 @@ import App from "./App";
 import PublicDashboard from "./pages/PublicDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import "./index.css";
+import "./agent-path.css";
 import "./dashboard.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

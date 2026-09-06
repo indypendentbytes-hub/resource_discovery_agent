@@ -12,32 +12,30 @@ export default function ChatPanel({ messages, onSend, isSearching }) {
     setDraft("");
   }
 
+  const visibleMessages = messages.slice(-4);
+
   return (
-    <section className="agent-chat flex min-w-0 flex-col p-5 md:p-7 lg:p-8">
-      <div className="mb-5">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C65A1E]">
-          Guided navigation
+    <section className="agent-chat-core">
+      <div className="agent-chat-copy">
+        <p className="agent-chat-kicker">Resource Discovery Agent</p>
+        <h3>What are you trying to accomplish?</h3>
+        <p>
+          Start with the goal. RDA will surface the actors, dependencies, and
+          resources only when they become relevant to the path.
         </p>
-        <h3 className="mt-1.5 text-xl font-semibold tracking-tight text-[#1A1A1A] md:text-2xl font-display">
-          What are you trying to accomplish?
-        </h3>
       </div>
 
-      <div
-        className="flex min-h-[240px] flex-1 flex-col gap-3 overflow-y-auto rounded-lg border border-[#D4CFC6]/60 bg-white p-4"
-        aria-live="polite"
-      >
-        {messages.map((message, index) => (
-          <ChatBubble key={`${message.sender}-${index}`} sender={message.sender}>
-            {message.text}
-          </ChatBubble>
-        ))}
-      </div>
+      {messages.length > 1 && (
+        <div className="agent-chat-transcript" aria-live="polite">
+          {visibleMessages.map((message, index) => (
+            <ChatBubble key={`${message.sender}-${index}`} sender={message.sender}>
+              {message.text}
+            </ChatBubble>
+          ))}
+        </div>
+      )}
 
-      <form
-        onSubmit={handleSubmit}
-        className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:items-center"
-      >
+      <form onSubmit={handleSubmit} className="agent-conversation-bar">
         <label className="sr-only" htmlFor="resource-question">
           Ask the Resource Discovery Agent
         </label>
@@ -45,19 +43,25 @@ export default function ChatPanel({ messages, onSend, isSearching }) {
           id="resource-question"
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
-          placeholder="e.g. I need land access near Indianapolis…"
-          className="agent-input min-w-0 flex-1"
+          placeholder="Tell RDA what you need, what changed, or what constraint just appeared…"
+          className="agent-conversation-input"
           disabled={isSearching}
           autoComplete="off"
         />
         <button
           type="submit"
           disabled={isSearching || !draft.trim()}
-          className="agent-submit"
+          className="agent-conversation-submit"
+          aria-label={isSearching ? "Evaluating path" : "Send"}
         >
-          {isSearching ? "Searching…" : "Find my path"}
+          {isSearching ? "…" : "↑"}
         </button>
       </form>
+
+      <p className="agent-chat-note">
+        RDA evaluates possibilities privately. Named organizations should appear
+        only after they are sufficiently validated for the path.
+      </p>
     </section>
   );
 }
