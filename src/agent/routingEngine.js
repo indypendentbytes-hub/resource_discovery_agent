@@ -14,10 +14,13 @@ const CONSTRAINT_RULES = {
   capital: /\bfunding|capital|loan|grant|money|budget\b/i,
   equipment: /\bequipment|tools|tractor|irrigation\b/i,
   labor: /\blabor|staff|workers|employees|help\b/i,
-  timeline: /\btoday|week|month|season|deadline|soon|urgent\b/i,
-  certifications: /\bcertif|organic|licensed|permit|food safety\b/i,
+  timeline: /\btoday|week|month|season|deadline|soon|urgent|harvest|planting\b/i,
+  certifications: /\bcertif|organic|licensed|permit|food safety|gap|ghp\b/i,
   transportation: /\btransport|delivery|vehicle|truck|ride|logistics\b/i,
   riskTolerance: /\brisk|safe|conservative|aggressive\b/i,
+  productionCapacity: /\bbed feet|bed-feet|row feet|row-feet|plant capacity|production capacity|yield\b/i,
+  water: /\birrigation|water source|water system|well|drip line\b/i,
+  productionSystem: /\bfield grown|field-grown|high tunnel|greenhouse|hydroponic|aquaponic|raised bed\b/i,
 };
 
 const CATEGORY_KEYWORDS = {
@@ -27,6 +30,11 @@ const CATEGORY_KEYWORDS = {
   training: ["training", "learn", "course", "class"],
   financing: ["funding", "capital", "loan", "grant"],
   technicalAssistance: ["technical assistance", "advisor", "mentor", "planning"],
+  horticulturePlanning: [
+    "horticulture", "horticulturist", "crop planning", "production planning",
+    "yield", "succession", "maturity", "planting date", "harvest window",
+    "bed feet", "bed-feet", "row feet", "row-feet", "production capacity",
+  ],
   procurement: ["buyer", "procurement", "market", "sell"],
   logistics: ["delivery", "transport", "logistics", "truck"],
   sharedUseFacilities: ["shared kitchen", "facility", "processing", "commercial kitchen"],
@@ -35,6 +43,7 @@ const CATEGORY_KEYWORDS = {
 };
 
 const ESCALATION_PATTERN = /\blegal|tax|compliance|loan terms|securities|contract|zoning determination\b/i;
+const HORTICULTURE_REVIEW_PATTERN = /\bpesticide|herbicide|fungicide|disease diagnosis|plant disease|pest diagnosis|chemical application\b/i;
 
 export function detectStage(message) {
   const normalized = message.toLowerCase();
@@ -89,6 +98,18 @@ export function routeResources(message, resources) {
   const constraints = extractConstraints(message);
   const categories = requestedCategories(message);
 
+  if (HORTICULTURE_REVIEW_PATTERN.test(message)) {
+    return {
+      state: "escalation",
+      stage,
+      constraints,
+      categories: ["horticulturePlanning", "technicalAssistance"],
+      question: null,
+      recommendations: [],
+      summary: "This horticultural question needs qualified human review. RDA can organize crop, site, timing, and evidence context and locate appropriate extension or horticulture expertise, but should not make the diagnosis or chemical-use determination."
+    };
+  }
+
   if (ESCALATION_PATTERN.test(message)) {
     return {
       state: "escalation",
@@ -107,9 +128,9 @@ export function routeResources(message, resources) {
       stage,
       constraints,
       categories: [],
-      question: "What are you trying to accomplish first: start a business, find land, secure funding, complete training, or reach buyers?",
+      question: "What are you trying to accomplish first: start a business, find land, secure funding, complete training, plan production, or reach buyers?",
       recommendations: [],
-      summary: "I need one business-stage signal before ranking resources."
+      summary: "I need one business-stage or capability signal before ranking resources."
     };
   }
 
