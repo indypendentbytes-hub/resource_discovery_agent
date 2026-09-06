@@ -1,38 +1,59 @@
 import OpenAI from "openai";
+import { runIntakeAgent } from "../src/agent/agents/intakeAgent.js";
+import { runDiscoveryAgent } from "../src/agent/agents/discoveryAgent.js";
+import { orchestrateResourceDiscovery } from "../src/agent/orchestrator.js";
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const AGENT_INSTRUCTIONS = `
-You are the Resource Discovery Agent for INDYpendent Bytes.
+const LIVE_DISCOVERY_INSTRUCTIONS = `
+You are the live discovery and verification tool for the INDYpendent Bytes Resource Discovery Agent.
 
-Use live web search to verify and expand governed resource recommendations.
-Evaluate business stage, hard constraints, geography, eligibility, capacity,
-requirements, cost, seasonality, availability, confidence, and freshness.
+Your only job is to find and verify candidate resources. Deterministic application code will make the final eligibility, ranking, sequencing, gap-detection, and response decisions.
 
-Prioritize official government agencies, original program providers, and
-primary institutional sources. Never invent eligibility, deadlines, capacity,
-contact information, legal requirements, funding status, or citations.
+Search authoritative sources first:
+1. official government agencies
+2. original program providers
+3. universities and Extension
+4. established nonprofit or institutional providers
+5. other sources only when primary sources are unavailable
 
-For each recommended resource, include:
-- resource name
-- why it fits the user's stage and constraints
-- current availability or deadline status
-- eligibility status, clearly marked confirmed or unconfirmed
-- geographic relevance
-- source URL or cited source
-- date checked
-- confidence percentage
-- freshness: verified, stale, closed, or uncertain
-- one concrete next step
+Never invent eligibility, deadlines, capacity, contact information, legal requirements, funding status, or citations.
 
-Rank by highest fit, lowest friction, fastest path to progress,
-stage-appropriateness, and geographic relevance.
-Ask only one clarifying question when a hard constraint is genuinely missing.
-For legal, tax, financing, zoning, food-safety, or compliance issues, provide
-primary sources and route the user to a qualified advisor rather than making a
-professional determination.
+Return ONLY valid JSON. No Markdown and no prose outside the JSON object.
+
+Shape:
+{
+  "resources": [
+    {
+      "name": "string",
+      "provider": "string or null",
+      "description": "string",
+      "category": "growers | landHosts | infrastructure | training | financing | technicalAssistance | procurement | logistics | sharedUseFacilities | regulatorySupport | communityPartners",
+      "stages": ["Idea | Pre-revenue | Early revenue | Growth | Stabilizing | Pivoting | Recovery"],
+      "geography": "string or null",
+      "eligibilityStatus": "confirmed | likely | potential | not_eligible | unknown",
+      "eligibilityNotes": "string or null",
+      "availability": "string or null",
+      "deadline": "string or null",
+      "requirements": ["string"],
+      "benefits": ["string"],
+      "cost": "number or null",
+      "confidence": "number from 0 to 1",
+      "freshness": "verified | stale | closed | uncertain",
+      "verificationDate": "ISO date",
+      "sourceUrl": "primary source URL or null",
+      "sourceType": "primary | secondary | unknown",
+      "friction": "number from 0 to 1",
+      "nextAction": "one concrete action",
+      "whyFit": "short factual fit explanation"
+    }
+  ]
+}
+
+If a fact is not confirmed, mark it unknown rather than inferring it.
+Closed or expired programs may be returned only when useful to prevent a false recommendation; mark freshness "closed".
 `;
 
 function normalizeBody(body) {
@@ -45,6 +66,26 @@ function normalizeBody(body) {
     }
   }
   return body;
+}
+
+function parseLiveResources(outputText) {
+  if (typeof outputText !== "string" || !outputText.trim()) return [];
+
+  const cleaned = outputText
+    .replace(/^\s*```(?:json)?/i, "")
+    .replace(/```\s*$/i, "")
+    .trim();
+
+  const start = cleaned.indexOf("{");
+  const end = cleaned.lastIndexOf("}");
+  if (start === -1 || end === -1 || end <= start) return [];
+
+  try {
+    const parsed = JSON.parse(cleaned.slice(start, end + 1));
+    return Array.isArray(parsed.resources) ? parsed.resources : [];
+  } catch {
+    return [];
+  }
 }
 
 export default async function handler(request, response) {
@@ -63,26 +104,42 @@ export default async function handler(request, response) {
   const query = typeof body.query === "string" ? body.query.trim() : "";
   const routingSummary =
     typeof body.routingSummary === "string" ? body.routingSummary.trim() : "";
-  const candidates = Array.isArray(body.candidates) ? body.candidates.slice(0, 5) : [];
+  const candidates = Array.isArray(body.candidates) ? body.candidates.slice(0, 8) : [];
 
   if (!query) {
     return response.status(400).json({ error: "A resource question is required." });
   }
 
+  const intake = runIntakeAgent(query);
+  const discoveryPlan = runDiscoveryAgent(intake);
+
+  if (intake.escalationRequired) {
+    const orchestration = orchestrateResourceDiscovery({
+      query,
+      catalogCandidates: candidates,
+    });
+
+    return response.status(200).json({
+      ...orchestration,
+      summary: intake.escalationSummary,
+      checkedAt: new Date().toISOString(),
+      responseId: null,
+    });
+  }
+
   const candidateContext = candidates.length
-    ? `\nGoverned catalog candidates to verify first:\n${candidates
-        .map(
-          (resource, index) =>
-            `${index + 1}. ${resource.title} — ${resource.details || "No details"} — ` +
-            `freshness: ${resource.freshness || "unknown"}; citation: ${resource.citation || "none"}`,
-        )
-        .join("\n")}`
-    : "\nNo governed catalog candidate matched strongly. Search for authoritative alternatives.";
+    ? `Governed catalog candidates to verify first:\n${JSON.stringify(candidates, null, 2)}`
+    : "No governed catalog candidate matched strongly.";
+
+  const searchPlan = discoveryPlan.tasks
+    .map((task) => `- ${task.category}: ${task.query} — ${task.reason}`)
+    .join("\n");
 
   try {
+    const checkedAt = new Date().toISOString();
     const result = await client.responses.create({
-      model: "gpt-5",
-      instructions: AGENT_INSTRUCTIONS,
+      model: process.env.RDA_MODEL || "gpt-5",
+      instructions: LIVE_DISCOVERY_INSTRUCTIONS,
       tools: [
         {
           type: "web_search",
@@ -96,15 +153,45 @@ export default async function handler(request, response) {
           },
         },
       ],
-      input: `User question: ${query}\n\nLocal routing result: ${
-        routingSummary || "No local summary available."
-      }${candidateContext}`,
+      input: [
+        `User question: ${query}`,
+        `Detected stage: ${intake.stage}`,
+        `Detected geography: ${intake.geography || "unknown"}`,
+        `Detected constraints: ${JSON.stringify(intake.constraints)}`,
+        `Pathway tags: ${intake.pathwayTags.join(", ") || "none"}`,
+        "",
+        "Discovery plan:",
+        searchPlan,
+        "",
+        `Local routing summary: ${routingSummary || "No local summary available."}`,
+        candidateContext,
+        "",
+        "Find current authoritative candidates for the discovery plan. Verify governed catalog candidates before trusting their status.",
+      ].join("\n"),
     });
 
+    const liveCandidates = parseLiveResources(result.output_text);
+    const orchestration = orchestrateResourceDiscovery({
+      query,
+      catalogCandidates: candidates,
+      liveCandidates,
+      checkedAt,
+    });
+
+    const structuredDiscoverySucceeded = liveCandidates.length > 0;
+    const answer = structuredDiscoverySucceeded
+      ? orchestration.answer
+      : result.output_text || orchestration.answer;
+
     return response.status(200).json({
-      answer: result.output_text,
+      ...orchestration,
+      answer,
       responseId: result.id,
-      checkedAt: new Date().toISOString(),
+      checkedAt,
+      summary: structuredDiscoverySucceeded
+        ? `Verified and ranked ${orchestration.resources.length} viable resource matches across ${discoveryPlan.categories.length} pathway categories.`
+        : "Live search completed, but its structured resource payload could not be parsed; local orchestration remains available.",
+      discoveryStructured: structuredDiscoverySucceeded,
     });
   } catch (error) {
     console.error("Live resource search failed", error);

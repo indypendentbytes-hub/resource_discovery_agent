@@ -117,9 +117,16 @@ export default function App() {
         candidates: localResult.recommendations,
       });
 
-      setRoutingState(localResult.state === "empty" ? "verified" : localResult.state);
+      if (Array.isArray(liveResult.resources) && liveResult.resources.length) {
+        setResources(liveResult.resources);
+      }
+
+      setRoutingState(
+        liveResult.state || (localResult.state === "empty" ? "verified" : localResult.state),
+      );
       setRoutingSummary(
-        `Live verification completed ${new Date(liveResult.checkedAt).toLocaleString()}.`,
+        liveResult.summary ||
+          `Live verification completed ${new Date(liveResult.checkedAt).toLocaleString()}.`,
       );
       setMessages((current) => [
         ...current.slice(0, -1),
