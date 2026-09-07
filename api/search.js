@@ -1,45 +1,9 @@
 import OpenAI from "openai";
-import { buildSkillContext, selectSkills } from "../lib/skills/index.js";
+import { runRdaMaestro } from "../lib/agents/orchestrator.js";
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
-const AGENT_INSTRUCTIONS = `
-You are the Resource Discovery Agent for INDYpendent Bytes.
-
-Use live web search to verify and expand governed resource recommendations.
-Evaluate business stage, hard constraints, geography, eligibility, capacity,
-requirements, cost, seasonality, availability, confidence, and freshness.
-
-Prioritize official government agencies, original program providers, and
-primary institutional sources. Never invent eligibility, deadlines, capacity,
-contact information, legal requirements, funding status, or citations.
-
-You may receive an RDA SKILL CONTEXT containing specialized reasoning procedures.
-Apply those procedures to the current question. Treat them as analysis methods,
-not as substitutes for evidence. When a skill requires evidence, use live search
-and primary sources to obtain it.
-
-For each recommended resource, include:
-- resource name
-- why it fits the user's stage and constraints
-- current availability or deadline status
-- eligibility status, clearly marked confirmed or unconfirmed
-- geographic relevance
-- source URL or cited source
-- date checked
-- confidence percentage
-- freshness: verified, stale, closed, or uncertain
-- one concrete next step
-
-Rank by highest fit, lowest friction, fastest path to progress,
-stage-appropriateness, and geographic relevance.
-Ask only one clarifying question when a hard constraint is genuinely missing.
-For legal, tax, financing, zoning, food-safety, or compliance issues, provide
-primary sources and route the user to a qualified advisor rather than making a
-professional determination.
-`;
 
 function normalizeBody(body) {
   if (!body) return {};
@@ -75,57 +39,32 @@ export default async function handler(request, response) {
     return response.status(400).json({ error: "A resource question is required." });
   }
 
-  const selectedSkills = selectSkills({
-    query,
-    context: routingSummary,
-  });
-  const skillContext = buildSkillContext({
-    query,
-    context: routingSummary,
-  });
-
-  const candidateContext = candidates.length
-    ? `\nGoverned catalog candidates to verify first:\n${candidates
-        .map(
-          (resource, index) =>
-            `${index + 1}. ${resource.title} — ${resource.details || "No details"} — ` +
-            `freshness: ${resource.freshness || "unknown"}; citation: ${resource.citation || "none"}`,
-        )
-        .join("\n")}`
-    : "\nNo governed catalog candidate matched strongly. Search for authoritative alternatives.";
-
   try {
-    const result = await client.responses.create({
-      model: "gpt-5",
-      instructions: AGENT_INSTRUCTIONS,
-      tools: [
-        {
-          type: "web_search",
-          search_context_size: "high",
-          user_location: {
-            type: "approximate",
-            city: "Indianapolis",
-            region: "Indiana",
-            country: "US",
-            timezone: "America/Indiana/Indianapolis",
-          },
-        },
-      ],
-      input: `User question: ${query}\n\nLocal routing result: ${
-        routingSummary || "No local summary available."
-      }${candidateContext}\n\nRDA SKILL CONTEXT:\n${skillContext}`,
+    const result = await runRdaMaestro({
+      client,
+      query,
+      routingSummary,
+      candidates,
+      model: process.env.RDA_MODEL || "gpt-5",
     });
 
     return response.status(200).json({
-      answer: result.output_text,
-      responseId: result.id,
+      answer: result.answer,
+      responseId: result.responseId,
       checkedAt: new Date().toISOString(),
-      skillsApplied: selectedSkills.map(skill => skill.id),
+      agentsApplied: result.agentsApplied,
+      skillsApplied: result.skillsApplied,
+      agentFailures: result.agentFailures,
+      agentRuns: result.agentRuns.map(run => ({
+        agentId: run.agentId,
+        responseId: run.responseId,
+        skillsApplied: run.skillsApplied,
+      })),
     });
   } catch (error) {
-    console.error("Live resource search failed", error);
+    console.error("RDA Maestro search failed", error);
     return response.status(500).json({
-      error: "The live resource search could not be completed. Please try again.",
+      error: "The multi-agent resource search could not be completed. Please try again.",
     });
   }
 }
