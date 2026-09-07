@@ -1,0 +1,22 @@
+{
+  "batch_id": "resource-indyweb-digital-services-2026-08-06",
+  "discovered_at": "2026-08-06T15:04:00-04:00",
+  "scope": "Indianapolis commercial website, e-commerce, branding, hosting, SEO, and computer-support services",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "indyweb-digital-business-services",
+      "name": "IndyWeb.net",
+      "official_url": "https://indyweb.net/",
+      "entity_type": "commercial_local_technology_and_web_services_provider",
+      "description": "Indianapolis-based commercial technology provider offering WordPress website development, website hosting, Shopify and WooCommerce e-commerce support, logo design and branding, search-engine optimization, Microsoft 365 support, computer repair, and custom-built computers.",
+      "primary_category": "digital business services",
+      "tags": ["branding", "computer repair", "e-commerce", "local vendor", "Microsoft 365", "SEO", "website development", "website hosting"],
+      "service_area": ["Indianapolis", "Central Indiana"],
+      "source_authority": "OFFICIAL_COMMERCIAL_PROVIDER",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "This is a paid commercial vendor, not a free digital-equity, grant, or nonprofit technical-assistance program. Pricing, project scope, hosting terms, platform compatibility, turnaround times, ownership of domains and creative assets, maintenance responsibilities, and support terms should be confirmed before engagement. Verified August 6, 2026."
+    }
+  ]
+}

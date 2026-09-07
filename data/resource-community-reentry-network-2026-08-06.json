@@ -1,0 +1,22 @@
+{
+  "batch_id": "resource-community-reentry-network-2026-08-06",
+  "discovered_at": "2026-08-06T14:09:00-04:00",
+  "scope": "National reentry resource navigation for returning citizens, families, correctional staff, and community organizations",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "federal-bureau-prisons-community-reentry-network",
+      "name": "Federal Bureau of Prisons Community Reentry Network",
+      "official_url": "https://crn.reentry.gov/crn/s/resources",
+      "entity_type": "national_reentry_resource_clearinghouse",
+      "description": "Federal Bureau of Prisons electronic clearinghouse connecting returning citizens, incarcerated people preparing for release, families, staff, and the public with faith-based community organizations offering reentry support across the United States.",
+      "primary_category": "reentry navigation",
+      "tags": ["child care", "clothing", "employment", "faith-based organizations", "food assistance", "housing", "identification", "mentoring", "reentry", "substance use treatment", "transportation", "veterans", "women"],
+      "service_area": ["United States", "Indiana", "Online"],
+      "source_authority": "OFFICIAL_FEDERAL_AGENCY",
+      "verification_status": "VERIFIED_WITH_SITE_ACCESS_LIMITATION",
+      "status": "ACTIVE",
+      "availability_notes": "The Federal Bureau of Prisons described the network in September 2024 as a national public resource with more than 4,000 member organizations. The directory emphasizes faith-based organizations, and individual listings, services, eligibility, accessibility, religious expectations, geographic coverage, and contact information must be verified directly. The Salesforce-based public page produced intermittent loading and CSS errors during verification on August 6, 2026, so RDA should provide a fallback link to the BOP overview and never imply that every directory result is currently reachable or available."
+    }
+  ]
+}

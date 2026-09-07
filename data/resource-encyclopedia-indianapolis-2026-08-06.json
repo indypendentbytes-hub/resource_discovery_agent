@@ -1,0 +1,22 @@
+{
+  "batch_id": "resource-encyclopedia-indianapolis-2026-08-06",
+  "discovered_at": "2026-08-06T16:14:00-04:00",
+  "scope": "Indianapolis and Central Indiana civic history, organizations, neighborhoods, places, events, timelines, maps, and community context",
+  "promotion_status": "PROMOTED_TO_CANONICAL_CATALOG",
+  "records": [
+    {
+      "resource_id": "encyclopedia-of-indianapolis",
+      "name": "Encyclopedia of Indianapolis",
+      "official_url": "https://indyencyclopedia.org/browse/",
+      "entity_type": "local_civic_knowledge_platform",
+      "description": "Continuously updated digital encyclopedia covering Indianapolis and Central Indiana people, places, events, organizations, neighborhoods, institutions, history, culture, infrastructure, and community development through searchable entries, maps, timelines, guides, exhibits, and atlas content.",
+      "primary_category": "local knowledge",
+      "tags": ["Central Indiana", "civic history", "community organizations", "Indianapolis", "local research", "maps", "neighborhoods", "timelines"],
+      "service_area": ["Indianapolis", "Marion County", "Central Indiana", "Online"],
+      "source_authority": "PUBLIC_LIBRARY_CIVIC_RESOURCE",
+      "verification_status": "VERIFIED",
+      "status": "ACTIVE",
+      "availability_notes": "Presented and sustained by The Indianapolis Public Library and developed through the Polis Center and local heritage partners. Entries include publication and revision information, but historical profiles do not necessarily establish an organization's current operating status, leadership, contact information, or eligibility. Verify present-day service details directly before making referrals. Verified August 6, 2026."
+    }
+  ]
+}
