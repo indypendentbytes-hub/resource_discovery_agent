@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { buildSkillContext, selectSkills } from "../lib/skills/index.js";
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -14,6 +15,11 @@ requirements, cost, seasonality, availability, confidence, and freshness.
 Prioritize official government agencies, original program providers, and
 primary institutional sources. Never invent eligibility, deadlines, capacity,
 contact information, legal requirements, funding status, or citations.
+
+You may receive an RDA SKILL CONTEXT containing specialized reasoning procedures.
+Apply those procedures to the current question. Treat them as analysis methods,
+not as substitutes for evidence. When a skill requires evidence, use live search
+and primary sources to obtain it.
 
 For each recommended resource, include:
 - resource name
@@ -69,6 +75,15 @@ export default async function handler(request, response) {
     return response.status(400).json({ error: "A resource question is required." });
   }
 
+  const selectedSkills = selectSkills({
+    query,
+    context: routingSummary,
+  });
+  const skillContext = buildSkillContext({
+    query,
+    context: routingSummary,
+  });
+
   const candidateContext = candidates.length
     ? `\nGoverned catalog candidates to verify first:\n${candidates
         .map(
@@ -98,13 +113,14 @@ export default async function handler(request, response) {
       ],
       input: `User question: ${query}\n\nLocal routing result: ${
         routingSummary || "No local summary available."
-      }${candidateContext}`,
+      }${candidateContext}\n\nRDA SKILL CONTEXT:\n${skillContext}`,
     });
 
     return response.status(200).json({
       answer: result.output_text,
       responseId: result.id,
       checkedAt: new Date().toISOString(),
+      skillsApplied: selectedSkills.map(skill => skill.id),
     });
   } catch (error) {
     console.error("Live resource search failed", error);
